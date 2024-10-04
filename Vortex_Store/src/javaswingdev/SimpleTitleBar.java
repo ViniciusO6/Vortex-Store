@@ -19,11 +19,11 @@ public class SimpleTitleBar extends javax.swing.JPanel {
     }
 
     public void init(JFrame fram) {
-        resize = new ComponentResizer();
-        resize.setSnapSize(new Dimension(10, 10));
-        resize.setMinimumSize(new Dimension(500, 500));
-        resize.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
-        resize.registerComponent(fram);
+ //       resize = new ComponentResizer();
+ //       resize.setSnapSize(new Dimension(10, 10));
+  //      resize.setMinimumSize(new Dimension(500, 500));
+   //     resize.setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
+   //     resize.registerComponent(fram);
         initMoving(fram);
         simpleButtonBar1.initEvent(fram);
     }

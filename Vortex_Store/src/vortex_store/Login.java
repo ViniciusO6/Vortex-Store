@@ -4,6 +4,7 @@
  */
 package vortex_store;
 
+import javax.swing.ToolTipManager;
 import conexao.Conexao;
 import java.awt.Color;
 import javax.swing.ImageIcon;
@@ -24,6 +25,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         con_cliente = new Conexao(); 
         con_cliente.conecta(false);
+        ToolTipManager.sharedInstance().setEnabled(false);
  //       ImageIcon icon = new ImageIcon("caminho/para/o/seu/icone.png");;
  //       setIconImage(icon.getImage());
     }
@@ -191,8 +193,10 @@ public class Login extends javax.swing.JFrame {
         jTextField2.setBackground(new java.awt.Color(50, 53, 60));
         jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setToolTipText("");
         jTextField2.setBorder(null);
-        jTextField2.setNextFocusableComponent(jTextField2);
+        jTextField2.setName(""); // NOI18N
+        jTextField2.setNextFocusableComponent(jTextField1);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -325,7 +329,7 @@ public class Login extends javax.swing.JFrame {
             String pesquisa = "select * from cliente where email like '" + Email + "' && senha = '" + Senha + "'";
             con_cliente.executaSQL(pesquisa);
             if(con_cliente.resultset.first()){
-                Home mostra = new Home();
+                TelaPrincipal mostra = new TelaPrincipal();
                 mostra.setVisible(true);
                 dispose();
                 
