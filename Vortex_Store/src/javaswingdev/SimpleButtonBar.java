@@ -83,8 +83,14 @@ public class SimpleButtonBar extends javax.swing.JPanel {
         iconRestore.setColor2(new java.awt.Color(215, 215, 215));
         iconRestore.setIcon(javaswingdev.GoogleMaterialDesignIcon.CROP_DIN);
 
+        setBackground(new java.awt.Color(59, 32, 91));
+
+        cmdClose.setBackground(new java.awt.Color(59, 32, 91));
         cmdClose.setHoverColor(new java.awt.Color(255, 48, 48));
 
+        cmdResize.setBackground(new java.awt.Color(59, 32, 91));
+
+        cmdMinimize.setBackground(new java.awt.Color(59, 32, 91));
         cmdMinimize.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 1, 1, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
