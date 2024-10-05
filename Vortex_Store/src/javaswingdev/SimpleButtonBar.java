@@ -24,7 +24,7 @@ public class SimpleButtonBar extends javax.swing.JPanel {
                 if (we.getNewState() == JFrame.MAXIMIZED_BOTH) {
                     cmdResize.setIcon(iconMax.toIcon());
                 } else if (we.getNewState() == JFrame.NORMAL) {
-                    cmdResize.setIcon(iconRestore.toIcon());
+                   cmdResize.setIcon(iconRestore.toIcon());
                 }
             }
         });
@@ -43,11 +43,11 @@ public class SimpleButtonBar extends javax.swing.JPanel {
         cmdResize.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                if (fram.getExtendedState() == JFrame.MAXIMIZED_BOTH) {
-                    fram.setExtendedState(JFrame.NORMAL);
-                } else {
-                    fram.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                }
+//                if (fram.getExtendedState() == JFrame.MAXIMIZED_BOTH) {
+//                    fram.setExtendedState(JFrame.NORMAL);
+//                } else {
+//                    fram.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//                }
             }
         });
     }
@@ -89,6 +89,11 @@ public class SimpleButtonBar extends javax.swing.JPanel {
         cmdClose.setHoverColor(new java.awt.Color(255, 48, 48));
 
         cmdResize.setBackground(new java.awt.Color(59, 32, 91));
+        cmdResize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdResizeActionPerformed(evt);
+            }
+        });
 
         cmdMinimize.setBackground(new java.awt.Color(59, 32, 91));
         cmdMinimize.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 1, 1, 1));
@@ -112,6 +117,10 @@ public class SimpleButtonBar extends javax.swing.JPanel {
             .addComponent(cmdMinimize, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdResizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdResizeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmdResizeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javaswingdev.Buttont cmdClose;

@@ -113,6 +113,9 @@
           <Color blue="5b" green="20" red="3b" type="rgb"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdResizeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javaswingdev.Buttont" name="cmdMinimize">
       <Properties>
