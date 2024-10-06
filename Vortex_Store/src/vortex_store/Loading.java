@@ -30,7 +30,10 @@ public class Loading extends javax.swing.JFrame {
         jProgressBar1.setForeground(new Color(143,101,189));  // Laranja, por exemplo
         jProgressBar1.setBackground(new Color (217,217,217));
         setLocationRelativeTo(null);
-        con_cliente = new Conexao();   
+        con_cliente = new Conexao();  
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
+        setIconImage(icon.getImage());
     }
     
 

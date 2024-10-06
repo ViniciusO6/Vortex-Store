@@ -4,11 +4,17 @@
  */
 package vortex_store;
 
+import Buckup.*;
+import vortex_store.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JScrollBar;
+
 
 /**
  *
@@ -21,8 +27,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+             this.jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);//rolagem rapida
+       this.setLocationRelativeTo(null);//janela no meio da tela
+       //Valido para NetBeans
         simpleTitleBar1.init(this);
         getContentPane().setBackground(Color.BLACK);
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
+        setIconImage(icon.getImage());
         
         sVGImage2.setSvgImage("imagens/icones/lupa.svg", 20, 20);
         sVGImage2.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -69,6 +81,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 // Colocar função do botão de pesquisar
             }
         });
+        
     }
 
     /**
@@ -83,6 +96,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -111,24 +128,69 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(10, 15, 22));
 
-        jLabel6.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel6.setText("1");
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jPanel6.setBackground(new java.awt.Color(10, 15, 22));
+        jPanel6.setMaximumSize(new java.awt.Dimension(1263, 2023));
+        jPanel6.setPreferredSize(new java.awt.Dimension(1263, 2023));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Biblioteca");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 185, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 247, Short.MAX_VALUE)
+        );
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("MINECRAFT");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel4)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(1024, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel4)
+                .addGap(29, 29, 29)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addContainerGap(1626, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jPanel6);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(409, 409, 409)
-                .addComponent(jLabel6)
-                .addContainerGap(870, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel6)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addGap(9, 9, 9)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab2", jPanel9);
@@ -152,7 +214,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(222, 222, 222)
                 .addComponent(jLabel7)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addContainerGap(390, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab1", jPanel8);
@@ -176,7 +238,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(222, 222, 222)
                 .addComponent(jLabel8)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addContainerGap(390, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("tab3", jPanel10);
@@ -382,7 +444,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -458,6 +520,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         jTabbedPane1.setSelectedIndex(2);
     }//GEN-LAST:event_jPanel7MouseClicked
+    
+
 
     /**
      * @param args the command line arguments
@@ -485,6 +549,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -505,6 +576,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -513,11 +585,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private imagens.SVGImage sVGImage1;
     private imagens.SVGImage sVGImage2;
     private imagens.SVGImage sVGImage3;
-    private imagens.SVGImage sVGImage4;
     private imagens.SVGImage sVGImage5;
     private imagens.SVGImage sVGImage6;
     private javaswingdev.SimpleTitleBar simpleTitleBar1;

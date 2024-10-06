@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 import javax.sql.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,6 +24,9 @@ public class Cadastro extends javax.swing.JFrame {
         initComponents();
         con_cliente = new Conexao(); 
         con_cliente.conecta(false);
+        
+        ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
+        setIconImage(icon.getImage());
     }
 
     /**
@@ -244,9 +248,7 @@ public class Cadastro extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel5))
                 .addContainerGap(56, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(171, 171, 171)

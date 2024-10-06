@@ -4,6 +4,7 @@
  */
 package vortex_store;
 
+import javaswingdev.TelaPrincipal;
 import javax.swing.ToolTipManager;
 import conexao.Conexao;
 import java.awt.Color;
@@ -26,8 +27,9 @@ public class Login extends javax.swing.JFrame {
         con_cliente = new Conexao(); 
         con_cliente.conecta(false);
         ToolTipManager.sharedInstance().setEnabled(false);
- //       ImageIcon icon = new ImageIcon("caminho/para/o/seu/icone.png");;
- //       setIconImage(icon.getImage());
+
+        ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
+        setIconImage(icon.getImage());
     }
     
 
