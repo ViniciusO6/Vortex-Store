@@ -13,22 +13,25 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import javax.swing.ImageIcon;
-import javax.swing.JScrollBar;
-
-
+import javax.swing.JScrollBar; 
+import scrollbar.ScrollBarCustom;
 /**
  *
  * @author vinic
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
         initComponents();
-             this.jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);//rolagem rapida
-       this.setLocationRelativeTo(null);//janela no meio da tela
+        
+        
+        //Configuração da tela rolavel
+        jScrollPane1.setVerticalScrollBar(new ScrollBarCustom());
+        this.jScrollPane1.getVerticalScrollBar().setUnitIncrement(30);//rolagem rapida
+        this.setLocationRelativeTo(null);//janela no meio da tela
        //Valido para NetBeans
         simpleTitleBar1.init(this);
         getContentPane().setBackground(Color.BLACK);
@@ -135,6 +138,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel6.setMaximumSize(new java.awt.Dimension(1263, 2023));
         jPanel6.setPreferredSize(new java.awt.Dimension(1263, 2023));
 
+        jLabel4.setBackground(new java.awt.Color(76, 31, 129));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Biblioteca");
