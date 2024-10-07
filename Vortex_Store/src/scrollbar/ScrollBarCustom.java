@@ -15,4 +15,8 @@ public class ScrollBarCustom extends JScrollBar{
         setForeground(new Color(76,31,129));
         setBackground(new Color(27,30,43));
     }
+    
+    public void imprimir(){
+        System.out.println("Hello, world!");
+}
 }
