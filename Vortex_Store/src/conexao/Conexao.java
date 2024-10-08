@@ -50,7 +50,7 @@ public class Conexao {
             JOptionPane.showMessageDialog(null, "Erro ao fechar a conexão: " + fecha, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }
     }
-
+ 
     // Método para executar uma consulta SQL
     public void executaSQL(String sql) {
         try {
