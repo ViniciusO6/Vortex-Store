@@ -1670,7 +1670,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         TextCard1.setText("<html>" + texto + "</html>");
         
-        PanelCard5.setVisible(false);
+        PanelCard16.setVisible(false);
+        PanelCard17.setVisible(false);
+        PanelCard18.setVisible(false);
+        PanelCard19.setVisible(false);
+        PanelCard20.setVisible(false);
         
         
         
