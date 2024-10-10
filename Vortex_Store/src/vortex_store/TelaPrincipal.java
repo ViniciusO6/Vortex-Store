@@ -4,6 +4,7 @@
  */
 package vortex_store;
 
+import conexao.Conexao;
 import Buckup.*;
 import vortex_store.*;
 import java.awt.Color;
@@ -12,29 +13,37 @@ import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollBar; 
 import scrollbar.ScrollBarCustom;
 /**
  *
  * @author vinic
  */
+
 public class TelaPrincipal extends javax.swing.JFrame {
+    Conexao conexao;   
     
-    ScrollBarCustom scrollBarCustom = new  ScrollBarCustom();
-    /**
-     * Creates new form TelaPrincipal
-     */
+    
+    int[] ID_CARD = new int[20] ;
+    int ID_BUSCAR;
+
+
+    
+    
+     ScrollBarCustom scrollBarCustom = new  ScrollBarCustom();
     public TelaPrincipal() {
-        int ID_BUSCAR;
-        int[] ID_CARD = new int[19] ;
-        
+        conexao = new Conexao(); 
+        conexao.conecta(false);
         
         initComponents();
         scrollBarCustom.imprimir();
         
-        
+
         //Configuração da tela rolavel
         jScrollPane1.setVerticalScrollBar(new ScrollBarCustom());
         this.jScrollPane1.getVerticalScrollBar().setUnitIncrement(30);//rolagem rapida
@@ -1668,13 +1677,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String texto = "EA SPORTS FC 25 Standard Edition Standard Edition";   
         String imagePath = "/imagens/gta.png";
         
-        TextCard1.setText("<html>" + texto + "</html>");
+   //     TextCard1.setText("<html>" + texto + "</html>");
         
         PanelCard16.setVisible(false);
         PanelCard17.setVisible(false);
         PanelCard18.setVisible(false);
         PanelCard19.setVisible(false);
         PanelCard20.setVisible(false);
+       CarregarJogos();
         
         
         
@@ -1690,6 +1700,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Mouse click dos Cards, direciona o usuario para parte de compra do jogo
     private void ImgCard1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard1MouseClicked
         jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD[0];
     }//GEN-LAST:event_ImgCard1MouseClicked
 
     private void ImgCard2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard2MouseClicked
@@ -1769,7 +1780,52 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_ImgCard20MouseClicked
     
 
+    public void CarregarJogos(){
+            JPanel[] JPanel = {
+            PanelCard1, PanelCard2, PanelCard3, PanelCard4, PanelCard5,
+            PanelCard6, PanelCard7, PanelCard8, PanelCard9, PanelCard10,
+            PanelCard11, PanelCard12, PanelCard13, PanelCard14, PanelCard15,
+            PanelCard16, PanelCard17, PanelCard18, PanelCard19, PanelCard20
+            };
+            JLabel[] labels = {
+            TextCard1, TextCard2, TextCard3, TextCard4, TextCard5, 
+            TextCard6, TextCard7, TextCard8, TextCard9, TextCard10, 
+            TextCard11, TextCard12, TextCard13, TextCard14, TextCard15, 
+            TextCard16, TextCard17, TextCard18, TextCard19, TextCard20
+            };
+            
+            for(int i = 0; i < 20; i++) {
+                JPanel[i].setVisible(false);
+             }
+        
+        try{
 
+            int i = -1;
+            String pesquisa = "select ID_jogo, titulo_do_jogo from jogo where ID_jogo < 20;";
+            conexao.executaSQL(pesquisa);
+            String titulo_jogo;
+            
+            if(conexao.resultset.first()){
+                do {               
+                    i++;         
+                    titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
+                    JPanel[i].setVisible(true);
+                    labels[i].setText("<html>" + titulo_jogo + "</html>");      
+                } while (conexao.resultset.next());
+
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
