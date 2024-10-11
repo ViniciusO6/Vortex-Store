@@ -14,6 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.sql.SQLException;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -31,6 +32,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     int[] ID_CARD = new int[20] ;
     int ID_BUSCAR;
+    int linhas = 0;
 
 
     
@@ -1674,26 +1676,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        String texto = "EA SPORTS FC 25 Standard Edition Standard Edition";   
-        String imagePath = "/imagens/gta.png";
-        
-   //     TextCard1.setText("<html>" + texto + "</html>");
-        
-        PanelCard16.setVisible(false);
-        PanelCard17.setVisible(false);
-        PanelCard18.setVisible(false);
-        PanelCard19.setVisible(false);
-        PanelCard20.setVisible(false);
-       CarregarJogos();
-        
-        
-        
- //      JLabel[] labels = {CardImg16,CardImg1, CardImg18, CardImg19, CardImg20};
-        
 
-   //     for (int i = 0; i < labels.length; i++) {
- //           labels[i].setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
-  //      }
+        CarregarJogos();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     
@@ -1780,7 +1764,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_ImgCard20MouseClicked
     
 
-    public void CarregarJogos(){
+    public void CarregarJogos(){  
             JPanel[] JPanel = {
             PanelCard1, PanelCard2, PanelCard3, PanelCard4, PanelCard5,
             PanelCard6, PanelCard7, PanelCard8, PanelCard9, PanelCard10,
@@ -1793,7 +1777,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             TextCard11, TextCard12, TextCard13, TextCard14, TextCard15, 
             TextCard16, TextCard17, TextCard18, TextCard19, TextCard20
             };
-            
+  
+               
             for(int i = 0; i < 20; i++) {
                 JPanel[i].setVisible(false);
              }
@@ -1801,17 +1786,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
         try{
 
             int i = -1;
+            int height1 = 400 ;
             String pesquisa = "select ID_jogo, titulo_do_jogo from jogo where ID_jogo < 20;";
             conexao.executaSQL(pesquisa);
             String titulo_jogo;
             
             if(conexao.resultset.first()){
                 do {               
-                    i++;         
+                    i++;
+                    switch(i){
+                        case 0:
+                           linhas = 1;
+                           break;
+                        case 5:
+                           linhas = 2;
+                           break;
+                        case 10:
+                           linhas = 3;
+                           break;
+                        case 17:
+                            linhas = 4;
+                            break;                
+                    }
+                    System.out.println("Rodou"+ i +" Vez");
+
+
+                    
+
                     titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
                     JPanel[i].setVisible(true);
                     labels[i].setText("<html>" + titulo_jogo + "</html>");      
                 } while (conexao.resultset.next());
+                    height1 = height1 * linhas;
+                    System.out.println(height1);
+                    jPanel6.setPreferredSize(new Dimension(1263, height1));
+                    jPanel6.revalidate();
+                    jPanel6.repaint(); 
 
             }
             else{
