@@ -1,5 +1,6 @@
 package conexao;
 
+import vortex_store.Error;
 import javax.swing.JOptionPane;
 import java.sql.*;
 
@@ -13,6 +14,8 @@ public class Conexao {
     private Connection conexao;
     public Statement statement;
     public ResultSet resultset;
+    
+  
 
     // Método para conectar ao banco de dados
     //metodo mensagem, se for true exibe a mensagem de conexao estabelecida se for false não exibe nada
@@ -33,8 +36,10 @@ public class Conexao {
             JOptionPane.showMessageDialog(null, "Driver não localizado: " + Driver, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
             result = false;
         } catch (SQLException Fonte) {
-            JOptionPane.showMessageDialog(null, "Fonte de dados não localizada: " + Fonte, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Fonte de dados não localizada: " + Fonte, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);      
             result = false;
+            /*Error errotela = new Error();
+            errotela.setVisible(true);*/
         }
         return result;
     }
