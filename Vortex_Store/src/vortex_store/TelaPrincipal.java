@@ -10,6 +10,7 @@ import vortex_store.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
@@ -28,24 +29,24 @@ import scrollbar.ScrollBarCustom;
 
 public class TelaPrincipal extends javax.swing.JFrame {
     Conexao conexao;   
-    
-    int offset = 0;
+    int offset = -20;
     int[] ID_CARD = new int[20] ;
     int ID_BUSCAR;
     int linhas = 0;
+    boolean MaisJogos;
+    int avancou = 0;
 
-
-    
-    
      ScrollBarCustom scrollBarCustom = new  ScrollBarCustom();
     public TelaPrincipal() {
         conexao = new Conexao(); 
         conexao.conecta(false);
-        
         initComponents();
+        btnVoltar.setVisible(false);
+        btnAvancar.setVisible(false);
+        CarregarJogos(false);
         scrollBarCustom.imprimir();
         
-
+        
         //Configuração da tela rolavel
         jScrollPane1.setVerticalScrollBar(new ScrollBarCustom());
         this.jScrollPane1.getVerticalScrollBar().setUnitIncrement(30);//rolagem rapida
@@ -103,7 +104,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         
-        sVGImage5.setSvgImage("imagens/icones/carrinho.svg", 15, 15);
+        sVGImage5.setSvgImage("imagens/icones/carrinho.svg", 35, 35);
         sVGImage5.setCursor(new Cursor(Cursor.HAND_CURSOR));
         sVGImage5.addMouseListener(new MouseAdapter() {
             @Override
@@ -121,8 +122,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         
+        
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -132,6 +133,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ocultoPanel = new javax.swing.JPanel();
+        OcultoText = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
@@ -219,11 +222,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImgCard20 = new javax.swing.JLabel();
         TextCard20 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        sVGImage4 = new imagens.SVGImage();
-        jPanel14 = new javax.swing.JPanel();
+        btnVoltar = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         sVGImage8 = new imagens.SVGImage();
+        btnAvancar = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        sVGImage4 = new imagens.SVGImage();
         jPanel8 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
@@ -243,6 +247,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         sVGImage6 = new imagens.SVGImage();
         simpleTitleBar1 = new javaswingdev.SimpleTitleBar();
+
+        javax.swing.GroupLayout ocultoPanelLayout = new javax.swing.GroupLayout(ocultoPanel);
+        ocultoPanel.setLayout(ocultoPanelLayout);
+        ocultoPanelLayout.setHorizontalGroup(
+            ocultoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 19, Short.MAX_VALUE)
+        );
+        ocultoPanelLayout.setVerticalGroup(
+            ocultoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 13, Short.MAX_VALUE)
+        );
+
+        OcultoText.setText("jLabel11");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -1269,61 +1286,77 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jPanel11.setBackground(new java.awt.Color(59, 32, 91));
-        jPanel11.setMaximumSize(new java.awt.Dimension(212, 39));
-        jPanel11.setMinimumSize(new java.awt.Dimension(212, 39));
+        jPanel11.setOpaque(false);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Próxima Página");
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sVGImage4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addGap(0, 5, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(9, 9, 9))
-            .addComponent(sVGImage4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel14.setBackground(new java.awt.Color(59, 32, 91));
-        jPanel14.setMaximumSize(new java.awt.Dimension(212, 39));
-        jPanel14.setMinimumSize(new java.awt.Dimension(212, 39));
+        btnVoltar.setBackground(new java.awt.Color(59, 32, 91));
+        btnVoltar.setMaximumSize(new java.awt.Dimension(212, 39));
+        btnVoltar.setMinimumSize(new java.awt.Dimension(212, 39));
+        btnVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVoltarMouseClicked(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Página Anterior");
 
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
+        javax.swing.GroupLayout btnVoltarLayout = new javax.swing.GroupLayout(btnVoltar);
+        btnVoltar.setLayout(btnVoltarLayout);
+        btnVoltarLayout.setHorizontalGroup(
+            btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnVoltarLayout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(sVGImage8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18))
         );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        btnVoltarLayout.setVerticalGroup(
+            btnVoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sVGImage8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-            .addGroup(jPanel14Layout.createSequentialGroup()
+            .addGroup(btnVoltarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel11.add(btnVoltar);
+
+        btnAvancar.setBackground(new java.awt.Color(59, 32, 91));
+        btnAvancar.setMaximumSize(new java.awt.Dimension(212, 39));
+        btnAvancar.setMinimumSize(new java.awt.Dimension(212, 39));
+        btnAvancar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAvancarMouseClicked(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Próxima Página");
+
+        javax.swing.GroupLayout btnAvancarLayout = new javax.swing.GroupLayout(btnAvancar);
+        btnAvancar.setLayout(btnAvancarLayout);
+        btnAvancarLayout.setHorizontalGroup(
+            btnAvancarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnAvancarLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sVGImage4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+        btnAvancarLayout.setVerticalGroup(
+            btnAvancarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnAvancarLayout.createSequentialGroup()
+                .addGap(0, 5, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(9, 9, 9))
+            .addComponent(sVGImage4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel11.add(btnAvancar);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -1379,12 +1412,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(45, 45, 45)
                         .addComponent(PanelCard20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(68, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(388, 388, 388))
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1414,16 +1442,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(PanelCard14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelCard16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelCard17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelCard20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelCard18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelCard19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PanelCard19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCard16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel6);
@@ -1771,7 +1797,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
 
-        CarregarJogos();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     
@@ -1856,34 +1881,59 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void ImgCard20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard20MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard20MouseClicked
-    
 
-    public void CarregarJogos(){  
+    private void btnAvancarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvancarMouseClicked
+        avancou++;
+        jScrollPane1.getViewport().setViewPosition(new Point(0, 0));
+        btnVoltar.setVisible(true);
+        CarregarJogos(false);
+    }//GEN-LAST:event_btnAvancarMouseClicked
+
+    private void btnVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseClicked
+        avancou--;
+        jScrollPane1.getViewport().setViewPosition(new Point(0, 0));
+        CarregarJogos(true);
+    }//GEN-LAST:event_btnVoltarMouseClicked
+    
+    
+    
+    public void CarregarJogos(boolean voltou){  
             JPanel[] JPanel = {
             PanelCard1, PanelCard2, PanelCard3, PanelCard4, PanelCard5,
             PanelCard6, PanelCard7, PanelCard8, PanelCard9, PanelCard10,
             PanelCard11, PanelCard12, PanelCard13, PanelCard14, PanelCard15,
-            PanelCard16, PanelCard17, PanelCard18, PanelCard19, PanelCard20
+            PanelCard16, PanelCard17, PanelCard18, PanelCard19, PanelCard20, ocultoPanel
             };
             JLabel[] labels = {
             TextCard1, TextCard2, TextCard3, TextCard4, TextCard5, 
             TextCard6, TextCard7, TextCard8, TextCard9, TextCard10, 
             TextCard11, TextCard12, TextCard13, TextCard14, TextCard15, 
-            TextCard16, TextCard17, TextCard18, TextCard19, TextCard20
+            TextCard16, TextCard17, TextCard18, TextCard19, TextCard20, OcultoText
             };
+            int[] MargemLihas = {
+            450, 450, 445, 410, 390
+            };
+            int Margem;
+            
   
-               
+           ocultoPanel.setVisible(false);
+           OcultoText.setVisible(false);
             for(int i = 0; i < 20; i++) {
                 JPanel[i].setVisible(false);
              }
         
         try{
-
             int i = -1;
-            int height1 = 388 ;
+            if(voltou == false){
+              offset += 20; 
+              System.out.println("Avançou");
+            }else{
+              offset -= 20;
+                System.out.println("Voltou");
+            }
+            String pesquisa = "select ID_jogo, titulo_do_jogo from jogo LIMIT 21 OFFSET " + offset + ";";
+
             
-            String pesquisa = "select ID_jogo, titulo_do_jogo from jogo LIMIT 20 OFFSET " + offset + ";";
-            offset = offset = 20;
             conexao.executaSQL(pesquisa);
             String titulo_jogo;
             
@@ -1893,17 +1943,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     switch(i){
                         case 0:
                            linhas = 1;
+                           MaisJogos = false;
                            break;
                         case 5:
                            linhas = 2;
+                           MaisJogos = false;
                            break;
                         case 10:
                            linhas = 3;
+                           MaisJogos = false;
                            break;
                         case 15:
                             linhas = 4;
+                            MaisJogos = false;
                             System.out.println("4");
-                           break; 
+                           break;
+                        case 20:
+                            MaisJogos = true;
+                           break;
                     }
                     System.out.println("Rodou"+ i +" Vez");
 
@@ -1911,11 +1968,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     JPanel[i].setVisible(true);
                     labels[i].setText("<html>" + titulo_jogo + "</html>");      
                 } while (conexao.resultset.next());
-                    height1 = height1 * linhas;
-                    System.out.println(height1);
-                    jPanel6.setPreferredSize(new Dimension(1263, height1));
+                    Margem = MargemLihas[linhas] * linhas;
+                    System.out.println(Margem);
+                    jPanel6.setPreferredSize(new Dimension(1263, Margem));
                     jPanel6.revalidate();
                     jPanel6.repaint(); 
+                    if(MaisJogos == true){
+                        btnAvancar.setVisible(true);
+                        System.out.println("truou");           
+                    }else{
+                        btnAvancar.setVisible(false);
+                        System.out.println("falsou");
+                    }
+                    if(avancou == 0){
+                        btnVoltar.setVisible(false);
+                        System.out.println("não pode mais voltar, voltou demais");
+                    }
+                        
+                    
 
             }
             else{
@@ -1993,6 +2063,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel ImgCard7;
     private javax.swing.JLabel ImgCard8;
     private javax.swing.JLabel ImgCard9;
+    private javax.swing.JLabel OcultoText;
     private javax.swing.JPanel PanelCard1;
     private javax.swing.JPanel PanelCard10;
     private javax.swing.JPanel PanelCard11;
@@ -2033,6 +2104,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel TextCard7;
     private javax.swing.JLabel TextCard8;
     private javax.swing.JLabel TextCard9;
+    private javax.swing.JPanel btnAvancar;
+    private javax.swing.JPanel btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -2048,7 +2121,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2079,6 +2151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel ocultoPanel;
     private imagens.SVGImage sVGImage1;
     private imagens.SVGImage sVGImage2;
     private imagens.SVGImage sVGImage3;
