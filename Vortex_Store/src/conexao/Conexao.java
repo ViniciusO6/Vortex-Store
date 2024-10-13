@@ -6,10 +6,10 @@ import java.sql.*;
 
 public class Conexao {
     // Informações do banco de dados
-    final private String driver = "com.mysql.jdbc.Driver";
-    final private String url = "jdbc:mysql://localhost/vortex_store";
+    final private String driver = "com.mysql.cj.jdbc.Driver";
+    final private String url = "jdbc:mysql://191.180.167.91:3306/k_bom";
     final private String usuario = "root";
-    final private String senha = "";
+    final private String senha = "server323";
 
     private Connection conexao;
     public Statement statement;
