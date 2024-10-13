@@ -8,7 +8,7 @@ public class Conexao {
     final private String driver = "com.mysql.cj.jdbc.Driver";
     final private String url = "jdbc:mysql://191.180.167.91:3306/k_bom";
     final private String usuario = "root";
-    final private String senha = "server323";
+    final private String senha = "df533a9d-4426-4417-a91e-fcc55df8159f";
 
     private Connection conexao;
     public Statement statement;
