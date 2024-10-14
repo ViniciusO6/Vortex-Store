@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 import javax.sql.*;
 import javax.swing.ImageIcon;
+import vortex_store.TelaPrincipal;
 
 /**
  *
@@ -27,6 +28,10 @@ public class Cadastro extends javax.swing.JFrame {
         
         ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
         setIconImage(icon.getImage());
+       
+        
+              
+        
     }
 
     /**
@@ -38,6 +43,7 @@ public class Cadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtEstado2 = new com.raven.swing.combobox.ComboBoxSuggestion();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -47,10 +53,8 @@ public class Cadastro extends javax.swing.JFrame {
         txtNome = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
-        txtSenha = new javax.swing.JTextField();
+        txtSenha = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        txtNasc = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         txtPais = new com.raven.swing.combobox.ComboBoxSuggestion();
@@ -58,6 +62,16 @@ public class Cadastro extends javax.swing.JFrame {
         button2 = new com.raven.swing.Button();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        Dia = new com.raven.swing.combobox.ComboBoxSuggestion();
+        Mes = new com.raven.swing.combobox.ComboBoxSuggestion();
+        Ano = new com.raven.swing.combobox.ComboBoxSuggestion();
+
+        txtEstado2.setBackground(new java.awt.Color(50, 53, 60));
+        txtEstado2.setBorder(null);
+        txtEstado2.setEditable(false);
+        txtEstado2.setForeground(new java.awt.Color(255, 255, 255));
+        txtEstado2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AC  ", "AL  ", "AM  ", "AP  ", "BA  ", "CE  ", "DF  ", "ES  ", "GO  ", "MA  ", "MG  ", "MS  ", "MT  ", "PA  ", "PB  ", "PE  ", "PI  ", "PR  ", "RJ  ", "RN  ", "RO  ", "RR  ", "RS  ", "SC  ", "SE  ", "SP  ", "TO" }));
+        txtEstado2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -125,17 +139,21 @@ public class Cadastro extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(50, 53, 60));
 
         txtSenha.setBackground(new java.awt.Color(50, 53, 60));
-        txtSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setBorder(null);
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE))
+                .addComponent(txtSenha))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,31 +163,6 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Senha");
-
-        jPanel11.setBackground(new java.awt.Color(50, 53, 60));
-
-        txtNasc.setBackground(new java.awt.Color(50, 53, 60));
-        txtNasc.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtNasc.setForeground(new java.awt.Color(255, 255, 255));
-        txtNasc.setBorder(null);
-        txtNasc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNascActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtNasc, javax.swing.GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtNasc, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-        );
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,6 +220,27 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
 
+        Dia.setBackground(new java.awt.Color(50, 53, 60));
+        Dia.setBorder(null);
+        Dia.setEditable(false);
+        Dia.setForeground(new java.awt.Color(255, 255, 255));
+        Dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        Dia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        Mes.setBackground(new java.awt.Color(50, 53, 60));
+        Mes.setBorder(null);
+        Mes.setEditable(false);
+        Mes.setForeground(new java.awt.Color(255, 255, 255));
+        Mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro", " " }));
+        Mes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        Ano.setBackground(new java.awt.Color(50, 53, 60));
+        Ano.setBorder(null);
+        Ano.setEditable(false);
+        Ano.setForeground(new java.awt.Color(255, 255, 255));
+        Ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926", "1925", "1924", "1923", "1922", "1921", "1920", " " }));
+        Ano.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -236,20 +250,25 @@ public class Cadastro extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel10)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel6)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel7)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)
-                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
-                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel5))
-                .addContainerGap(56, Short.MAX_VALUE))
+                            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Dia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Ano, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 1, Short.MAX_VALUE)))
+                .addContainerGap(55, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(171, 171, 171)
                 .addComponent(jLabel1)
@@ -279,10 +298,13 @@ public class Cadastro extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Dia, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(Mes, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(Ano, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -291,7 +313,7 @@ public class Cadastro extends javax.swing.JFrame {
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -316,16 +338,61 @@ public class Cadastro extends javax.swing.JFrame {
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         String email = txtEmail.getText();
         String nome = txtNome.getText();
-        String senha= txtSenha.getText();
-        String data_nasc = txtNasc.getText();
+        char[] senha= txtSenha.getPassword();
+        System.out.println(senha+"");
+        String dia = (String) Dia.getSelectedItem();
+        String mes = (String) Mes.getSelectedItem();
+        String ano = (String) Ano.getSelectedItem();
         String pais = (String) txtPais.getSelectedItem();
+
+            if(mes.equals("Janeiro")){
+                mes = "1";
+            }
+            else if(mes.equals("Fevereiro")){
+                mes = "2";
+            }
+            else if(mes.equals("Março")){
+                mes = "3";
+            }
+            else if(mes.equals("Abril")){
+                mes = "4";
+            }
+            else if(mes.equals("Maio")){
+                mes = "5";
+            }
+            else if(mes.equals("Junho")){
+                mes = "6";
+            }
+            else if(mes.equals("Julho")){
+                mes = "7";
+            }
+            else if(mes.equals("Agosto")){
+                mes = "8";
+            }
+            else if(mes.equals("Setembro")){
+                mes = "9";
+            }
+            else if(mes.equals("Outubro")){
+                mes = "10";
+            }
+            else if(mes.equals("Novembro")){
+                mes = "11";
+            }
+            else if(mes.equals("Dezembro")){
+                mes = "12";
+            }
+                
+        String anoformatado =ano+"-"+mes+"-"+dia;        
+        
+        System.out.println(""+anoformatado);
         
         try{
-            String insert_sql="insert into cliente (email, nome, senha, data_nasc, pais, foto_perfil) values ('" +email+ "','" +nome+"','" +senha+ "','" +data_nasc+ "','" +pais+ "','" +null+ "')";
+            String insert_sql="insert into cliente (email, nome, senha, data_nasc, pais, foto_perfil) values ('" +email+ "','" +nome+"','" +senha+ "','" +anoformatado+ "','" +pais+ "','" +null+ "')";
             con_cliente.statement.executeUpdate(insert_sql);
             JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            Cadastrado();
             con_cliente.resultset.first();
-            
+         
         }catch(SQLException errosql){
             JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -339,9 +406,9 @@ public class Cadastro extends javax.swing.JFrame {
         AbrirTela();
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void txtNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNascActionPerformed
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNascActionPerformed
+    }//GEN-LAST:event_txtSenhaActionPerformed
     
      private void abrirSuavemente() {
         new Thread(() -> {
@@ -372,6 +439,26 @@ public class Cadastro extends javax.swing.JFrame {
             setVisible(false);
         }).start();
     }
+        
+        
+         private void Cadastrado() {
+        // Gradualmente reduz a opacidade da janela
+        new Thread(() -> {
+            try {
+                for (float i = 1.0f; i > 0.0f; i -= 0.05f) {
+                    setOpacity(i);  // Reduz a opacidade da janela
+                    Thread.sleep(2); // Aguarda 50ms para criar o efeito de transição suave
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            TelaPrincipal tela = new TelaPrincipal();
+            tela.setVisible(true);
+            setVisible(false);
+        }).start();
+    }
+         
+         
     /**
      * @param args the command line arguments
      */
@@ -409,6 +496,9 @@ public class Cadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.raven.swing.combobox.ComboBoxSuggestion Ano;
+    private com.raven.swing.combobox.ComboBoxSuggestion Dia;
+    private com.raven.swing.combobox.ComboBoxSuggestion Mes;
     private com.raven.swing.Button button2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -420,14 +510,13 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtNasc;
+    private com.raven.swing.combobox.ComboBoxSuggestion txtEstado2;
     private javax.swing.JTextField txtNome;
     private com.raven.swing.combobox.ComboBoxSuggestion txtPais;
-    private javax.swing.JTextField txtSenha;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

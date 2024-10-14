@@ -33,8 +33,11 @@ public class Conexao {
             }
             
         } catch (ClassNotFoundException Driver) {
+             if(mensagem == true){
             JOptionPane.showMessageDialog(null, "Driver não localizado: " + Driver, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+             }
             result = false;
+             
         } catch (SQLException Fonte) {
             //JOptionPane.showMessageDialog(null, "Fonte de dados não localizada: " + Fonte, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);      
             result = false;
@@ -45,19 +48,23 @@ public class Conexao {
     }
 
     // Método para desconectar do banco de dados
-    public void desconecta() {
+    public void desconecta(boolean mensagem) {
         try {
             if (conexao != null) {
                 conexao.close();
+                 if(mensagem == true){
                 JOptionPane.showMessageDialog(null, "Conexão com o banco fechada", "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-            }
+                 }
+                }
         } catch (SQLException fecha) {
+             if(mensagem == true){
             JOptionPane.showMessageDialog(null, "Erro ao fechar a conexão: " + fecha, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-        }
+             }
+             }
     }
  
     // Método para executar uma consulta SQL
-    public void executaSQL(String sql) {
+    public void executaSQL(String sql, boolean mensagem) {
         try {
             if (statement == null) {
                 // Cria o statement se ele não existir
@@ -65,7 +72,9 @@ public class Conexao {
             }
             resultset = statement.executeQuery(sql);
         } catch (SQLException execao) {
+             if(mensagem == true){
             JOptionPane.showMessageDialog(null, "Erro no comando SQL! \nErro: " + execao, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+             }
         }
     }
 }
