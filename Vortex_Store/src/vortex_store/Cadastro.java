@@ -338,7 +338,7 @@ public class Cadastro extends javax.swing.JFrame {
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         String email = txtEmail.getText();
         String nome = txtNome.getText();
-        char[] senha= txtSenha.getPassword();
+        char[]   senha= txtSenha.getPassword();
         System.out.println(senha+"");
         String dia = (String) Dia.getSelectedItem();
         String mes = (String) Mes.getSelectedItem();
@@ -409,6 +409,9 @@ public class Cadastro extends javax.swing.JFrame {
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
+    
+    
+    
     
      private void abrirSuavemente() {
         new Thread(() -> {
