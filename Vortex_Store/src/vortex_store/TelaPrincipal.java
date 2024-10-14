@@ -1884,7 +1884,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             
             String pesquisa = "select ID_jogo, titulo_do_jogo from jogo LIMIT 20 OFFSET " + offset + ";";
             offset = offset = 20;
-            conexao.executaSQL(pesquisa);
+            conexao.executaSQL(pesquisa, true);
             String titulo_jogo;
             
             if(conexao.resultset.first()){
