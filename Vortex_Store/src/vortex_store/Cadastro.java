@@ -30,8 +30,11 @@ public class Cadastro extends javax.swing.JFrame {
         setIconImage(icon.getImage());
        
         
-              
-        
+           
+    }
+    
+    public void atualizarDia(){
+      
     }
 
     /**
@@ -338,12 +341,15 @@ public class Cadastro extends javax.swing.JFrame {
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         String email = txtEmail.getText();
         String nome = txtNome.getText();
-        char[]   senha= txtSenha.getPassword();
+        String senha= txtSenha.getPassword().toString();
         System.out.println(senha+"");
+        
         String dia = (String) Dia.getSelectedItem();
         String mes = (String) Mes.getSelectedItem();
         String ano = (String) Ano.getSelectedItem();
         String pais = (String) txtPais.getSelectedItem();
+        
+
 
             if(mes.equals("Janeiro")){
                 mes = "1";
@@ -410,7 +416,10 @@ public class Cadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
     
-    
+    public void verificarDatas(){
+        
+        
+    }
     
     
      private void abrirSuavemente() {
