@@ -7,9 +7,9 @@ import java.sql.*;
 public class Conexao {
     // Informações do banco de dados
     final private String driver = "com.mysql.cj.jdbc.Driver";
-    final private String url = "jdbc:mysql://localhost/vortex_store";
+    final private String url = "jdbc:mysql://tentreosbrothers.shop/vortex_store";
     final private String usuario = "root";
-    final private String senha = "";
+    final private String senha = "df533a9d-4426-4417-a91e-fcc55df8159f";
 
     private Connection conexao;
     public Statement statement;

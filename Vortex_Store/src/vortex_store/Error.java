@@ -23,6 +23,7 @@ public class Error extends javax.swing.JFrame {
         initComponents();
         
         setLocationRelativeTo(null);
+        setAlwaysOnTop(true);
         sVGImage1.setSvgImage("imagens/RostoFalha.svg", 100, 100);
         sVGImage1.setCursor(new Cursor(Cursor.HAND_CURSOR));
        
@@ -156,7 +157,9 @@ public class Error extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-      
+        Loading loading = new Loading();
+        loading.setVisible(true);
+        dispose();
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
