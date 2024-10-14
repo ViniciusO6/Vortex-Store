@@ -57,14 +57,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         
         
-        //Configuração da tela rolavel
+        //Configuração da tela rolavel, a ScrollBar de todas as telas
+        
+        // Tela da Biblioteca
         jScrollPane1.setVerticalScrollBar(new ScrollBarCustom());
         this.jScrollPane1.getVerticalScrollBar().setUnitIncrement(30);//rolagem rapida
         this.setLocationRelativeTo(null);//janela no meio da tela
-       //Valido para NetBeans
         simpleTitleBar1.init(this);
         getContentPane().setBackground(Color.BLACK);
         
+        //Tela de meus jogos
+        jScrollPane2.setVerticalScrollBar(new ScrollBarCustom());
+        this.jScrollPane2.getVerticalScrollBar().setUnitIncrement(30);//rolagem rapida
+        this.setLocationRelativeTo(null);//janela no meio da tela
+        simpleTitleBar1.init(this);
+        getContentPane().setBackground(Color.BLACK);
+        
+        
+        
+        
+        //Setando icone
         ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
         setIconImage(icon.getImage());
         
@@ -148,6 +160,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
@@ -239,8 +253,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnAvancar = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         sVGImage4 = new imagens.SVGImage();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -278,6 +290,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(10, 15, 22));
+
+        jPanel8.setBackground(new java.awt.Color(10, 15, 22));
+
+        jLabel7.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel7.setText("2");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(409, 409, 409)
+                .addComponent(jLabel7)
+                .addContainerGap(870, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(222, 222, 222)
+                .addComponent(jLabel7)
+                .addContainerGap(390, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab1", jPanel8);
 
         jPanel9.setBackground(new java.awt.Color(10, 15, 22));
 
@@ -1424,7 +1460,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(PanelCard19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
                         .addComponent(PanelCard20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
@@ -1481,30 +1517,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("tab2", jPanel9);
-
-        jPanel8.setBackground(new java.awt.Color(10, 15, 22));
-
-        jLabel7.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel7.setText("2");
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(409, 409, 409)
-                .addComponent(jLabel7)
-                .addContainerGap(870, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jLabel7)
-                .addContainerGap(390, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab1", jPanel8);
 
         jPanel10.setBackground(new java.awt.Color(10, 15, 22));
 
@@ -1797,7 +1809,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        jTabbedPane1.setSelectedIndex(2);
+        jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void sVGImage5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage5MouseClicked
