@@ -1957,7 +1957,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
 
             
-            conexao.executaSQL(pesquisa);
+            conexao.executaSQL(pesquisa, false);
             String titulo_jogo;
             String URL_IMG;
             
