@@ -22,6 +22,11 @@
         <Property name="text" type="java.lang.String" value="jLabel11"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel9"/>
+      </Properties>
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -207,7 +212,7 @@
                                           <Component id="PanelCard20" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="68" max="32767" attributes="0"/>
+                                  <EmptySpace pref="80" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jPanel11" max="32767" attributes="0"/>
                           </Group>
