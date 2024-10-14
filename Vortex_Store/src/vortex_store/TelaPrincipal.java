@@ -10,11 +10,18 @@ import vortex_store.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -43,8 +50,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
         btnVoltar.setVisible(false);
         btnAvancar.setVisible(false);
-        CarregarJogos(false);
+        CarregarJogos(false, false);
         scrollBarCustom.imprimir();
+
+        
+        
         
         
         //Configuração da tela rolavel
@@ -135,6 +145,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         ocultoPanel = new javax.swing.JPanel();
         OcultoText = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
@@ -260,6 +271,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         OcultoText.setText("jLabel11");
+
+        jLabel9.setText("jLabel9");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -1411,7 +1424,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(PanelCard19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
                         .addComponent(PanelCard20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
@@ -1796,7 +1809,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel7MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-
+    CarregarJogos(false, true);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     
@@ -1886,18 +1899,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         avancou++;
         jScrollPane1.getViewport().setViewPosition(new Point(0, 0));
         btnVoltar.setVisible(true);
-        CarregarJogos(false);
+        CarregarJogos(false, false);
     }//GEN-LAST:event_btnAvancarMouseClicked
 
     private void btnVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseClicked
         avancou--;
         jScrollPane1.getViewport().setViewPosition(new Point(0, 0));
-        CarregarJogos(true);
+        CarregarJogos(true, false);
     }//GEN-LAST:event_btnVoltarMouseClicked
     
     
     
-    public void CarregarJogos(boolean voltou){  
+    public void CarregarJogos(boolean voltou, boolean recarregar){  
             JPanel[] JPanel = {
             PanelCard1, PanelCard2, PanelCard3, PanelCard4, PanelCard5,
             PanelCard6, PanelCard7, PanelCard8, PanelCard9, PanelCard10,
@@ -1909,6 +1922,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             TextCard6, TextCard7, TextCard8, TextCard9, TextCard10, 
             TextCard11, TextCard12, TextCard13, TextCard14, TextCard15, 
             TextCard16, TextCard17, TextCard18, TextCard19, TextCard20, OcultoText
+            };
+            JLabel[] ImgCard = {
+            ImgCard1, ImgCard2, ImgCard3, ImgCard4, ImgCard5, 
+            ImgCard6, ImgCard7, ImgCard8, ImgCard9, ImgCard10, 
+            ImgCard11, ImgCard12, ImgCard13, ImgCard14, ImgCard15, 
+            ImgCard16, ImgCard17, ImgCard18, ImgCard19, ImgCard20, jLabel9
             };
             int[] MargemLihas = {
             450, 450, 445, 410, 390
@@ -1924,18 +1943,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         try{
             int i = -1;
-            if(voltou == false){
+            if(recarregar == true){
+              offset = offset;
+            }
+            else if(voltou == false){
               offset += 20; 
               System.out.println("Avançou");
             }else{
               offset -= 20;
                 System.out.println("Voltou");
             }
-            String pesquisa = "select ID_jogo, titulo_do_jogo from jogo LIMIT 21 OFFSET " + offset + ";";
+            String pesquisa = "select ID_jogo, titulo_do_jogo, imagens_do_jogo from jogo  ORDER BY titulo_do_jogo ASC LIMIT 21 OFFSET " + offset + ";";
+
 
             
             conexao.executaSQL(pesquisa, false);
             String titulo_jogo;
+            String URL_IMG;
             
             if(conexao.resultset.first()){
                 do {               
@@ -1965,8 +1989,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     System.out.println("Rodou"+ i +" Vez");
 
                     titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
+                    URL_IMG = ""+conexao.resultset.getString("imagens_do_jogo");
+                    
+                    URL imageUrl = new URL(URL_IMG);
+                    // Carregar a imagem da URL
+                    Image image = ImageIO.read(imageUrl);
+                    
                     JPanel[i].setVisible(true);
                     labels[i].setText("<html>" + titulo_jogo + "</html>");      
+                    ImgCard[i].setIcon(new ImageIcon(image));
                 } while (conexao.resultset.next());
                     Margem = MargemLihas[linhas] * linhas;
                     System.out.println(Margem);
@@ -1993,6 +2024,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }catch(SQLException errosql){
             JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -2119,8 +2154,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2158,7 +2191,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private imagens.SVGImage sVGImage4;
     private imagens.SVGImage sVGImage5;
     private imagens.SVGImage sVGImage6;
-    private imagens.SVGImage sVGImage7;
     private imagens.SVGImage sVGImage8;
     private javaswingdev.SimpleTitleBar simpleTitleBar1;
     // End of variables declaration//GEN-END:variables
