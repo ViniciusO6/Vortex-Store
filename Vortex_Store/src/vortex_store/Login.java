@@ -25,7 +25,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         con_cliente = new Conexao(); 
-        con_cliente.conecta(false);
+        con_cliente.conecta();
         ToolTipManager.sharedInstance().setEnabled(false);
 
         ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
@@ -362,7 +362,7 @@ public class Login extends javax.swing.JFrame {
                 
             }else{
                 JOptionPane.showMessageDialog(null, "\n Usuário não cadastrado!!!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-                con_cliente.desconecta(true);
+                con_cliente.desconecta();
                 System.exit(0);
             }
             

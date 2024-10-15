@@ -6,6 +6,7 @@ package vortex_store;
 
 import conexao.Conexao;
 import Buckup.*;
+import com.mysql.jdbc.PreparedStatement;
 import vortex_store.*;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -19,6 +20,9 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -49,7 +53,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     public TelaPrincipal() {
         conexao = new Conexao(); 
-        conexao.conecta(false);
+        conexao.conecta();
         
         initComponents();
         
@@ -5226,14 +5230,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
               offset -= 20;
               System.out.println("Voltou");
             }
-            
-            String pesquisa = "select ID_jogo, titulo_do_jogo, imagens_do_jogo from jogo  ORDER BY titulo_do_jogo ASC LIMIT 21 OFFSET " + offset + ";";   
+                      
+            String pesquisa = "select ID_jogo, titulo_do_jogo, from jogo  ORDER BY ID_jogo ASC LIMIT 21 OFFSET " + offset + ";"; 
+            String imagens = "select URL from jogo  ORDER BY ID_jogo ASC LIMIT 21 OFFSET " + offset + ";"; 
             conexao.executaSQL(pesquisa, false);
             
             String titulo_jogo;
             String URL_IMG;
             
-            if(conexao.resultset.first()){
+ 
+            if(conexao.resultset != null && conexao.resultset.first()){
                 do {               
                     i++;
                     switch(i){
@@ -5306,9 +5312,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     
     public void CadastrarJogo(){
+        int id_desenvolvedor = 1;
         String nome = NomeJogo.getText();
         String precoString = preco.getText();
-        double Preco = Double.parseDouble(precoString);
+        double precojogo = Double.parseDouble(precoString);
         String sinopse = Sinopse.getText();
         String descricao = Descricao.getText();
         String Stringclassificacao = (String) Classificacao.getSelectedItem();
@@ -5333,8 +5340,82 @@ public class TelaPrincipal extends javax.swing.JFrame {
         String ImagemCaminho3 = Imagem3.getText();
         String ImagemCaminho4 = Imagem4.getText();
         String ImagemCaminho5 = Imagem5.getText();
+        LocalDateTime dataPublicacao = LocalDateTime.now();
+        System.out.println(dataPublicacao);
+        List<Integer> categoria = new ArrayList<>();
+        List<Integer> idioma = new ArrayList<>();
         
-        System.out.println(classificacao);
+        if(jCheckBoxCustom1.isSelected()){
+            categoria.add(1);
+        }
+        if(jCheckBoxCustom2.isSelected()){
+            categoria.add(2);
+        }
+        if(jCheckBoxCustom3.isSelected()){
+            categoria.add(3);
+        }
+        if(jCheckBoxCustom4.isSelected()){
+            categoria.add(4);
+        }
+        if(jCheckBoxCustom5.isSelected()){
+            categoria.add(5);
+        }
+        if(jCheckBoxCustom6.isSelected()){
+            categoria.add(6);
+        }
+        if(jCheckBoxCustom7.isSelected()){
+            categoria.add(7);
+        }
+        if(jCheckBoxCustom8.isSelected()){
+            categoria.add(8);
+        }
+        if(jCheckBoxCustom9.isSelected()){
+            categoria.add(9);
+        }
+        
+        try{
+            String insert_sql="insert into jogo (titulo_do_jogo, descricao_jogo, data_publicacao, ID_desenvolvedor, sinopse, classificacao_indicativa, preco, requisitos) values ('" +nome+ "','" +descricao+"','" +dataPublicacao+ "','" +id_desenvolvedor+ "','" +sinopse+ "','" +classificacao+ "','" +precojogo+  "','"+Requisitos+"' )";
+            conexao.statement.executeUpdate(insert_sql);
+            JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            conexao.resultset.first();
+            
+            String queryUltimoID = "SELECT LAST_INSERT_ID() AS ultimo_id";
+            conexao.resultset = conexao.statement.executeQuery(queryUltimoID);
+    
+            if (conexao.resultset.first()) {
+                int id_jogo = conexao.resultset.getInt("ultimo_id");
+                JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso! ID do jogo: " + id_jogo, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);  
+     }     
+    }
+    
+    public void CadastrarCategoria(int ID_jogo, List<Integer> categoriasSelecionadas){
+           
+            for(int categoria : categoriasSelecionadas) {               
+                try{   
+                    String insert_sql="insert into jogo_categoria (ID_jogo, ID_categoria) values ('" +ID_jogo+ "','" +categoria+"' )";
+                    conexao.statement.executeUpdate(insert_sql);
+                    JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+                    conexao.resultset.first();
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+    
+     }
+                
+            }
+
         
     }
 
