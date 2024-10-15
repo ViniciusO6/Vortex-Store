@@ -116,7 +116,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="Dia" min="-2" pref="90" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="Mes" min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="Mes" min="-2" pref="120" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="Ano" min="-2" pref="90" max="-2" attributes="0"/>
                               </Group>

@@ -49,94 +49,100 @@ public class Cadastro extends javax.swing.JFrame {
     }
     
     public void atualizarData(){
+        String mes = (String) Mes.getSelectedItem();
+        int ano = Integer.parseInt(Ano.getSelectedItem().toString());
         
-    // Obter o mês e o ano selecionados
-    String mes = (String) Mes.getSelectedItem();
-    int ano = Integer.parseInt(Ano.getSelectedItem().toString());
-    
-    // Verificar se as seleções são válidas
-    if (mes == null || ano <= 0) {
-        return; // Se não há mês ou o ano não é válido, sai da função
-    }
+            // Verificar se as seleções são válidas
+         // Verificar se as seleções são válidas
+        if (mes == null || ano <= 0) {
+            return; // Se não há mês ou o ano não é válido, sai da função
+        }
 
-    int dia = 0; // Inicializa a variável dia
-    Dia.removeAllItems(); // Limpa os dias antes de repopular
 
-    // Transformando o mês em número e determinando a quantidade de dias
-    switch (mes) {
-        case "Janeiro":
-            mes = "1";
-            dia = 31;
-            break;
-        case "Fevereiro":
-            mes = "2";
-            // Verifica se é ano bissexto
-            if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
-                dia = 29;
-            } else {
-                dia = 28;
+        int diaSelecionado = Dia.getSelectedItem() != null ? Integer.parseInt(Dia.getSelectedItem().toString()) : 1;
+
+        Dia.removeAllItems(); // Limpa os dias antes de repopular
+
+        int maxDias = 0; // Inicializa a variável dia
+        
+       // Transformando o mês em número e determinando a quantidade de dias
+        switch (mes) {
+            case "Janeiro":
+                mes = "1";
+                maxDias = 31;
+                break;
+            case "Fevereiro":
+                mes = "2";
+                // Verifica se é ano bissexto
+                if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+                    maxDias = 29;
+                } else {
+                    maxDias = 28;
+                }
+                break;
+            case "Março":
+                mes = "3";
+                maxDias = 31;
+                break;
+            case "Abril":
+                mes = "4";
+                maxDias = 30;
+                break;
+            case "Maio":
+                mes = "5";
+                maxDias = 31;
+                break;
+            case "Junho":
+                mes = "6";
+                maxDias = 30;
+                break;
+            case "Julho":
+                mes = "7";
+                maxDias = 31;
+                break;
+            case "Agosto":
+                mes = "8";
+                maxDias = 31;
+                break;
+            case "Setembro":
+                mes = "9";
+                maxDias = 30;
+                break;
+            case "Outubro":
+                mes = "10";
+                maxDias = 31;
+                break;
+            case "Novembro":
+                mes = "11";
+                maxDias = 30;
+                break;
+            case "Dezembro":
+                mes = "12";
+                maxDias = 31;
+                break;
+            default:
+                maxDias = 31; // Se mês não reconhecido, assume 31 dias (safeguard)
+                break;
+        }
+
+            
+            for(int i=1; i<=maxDias;i++){
+            Dia.addItem(String.valueOf(i));
             }
-            break;
-        case "Março":
-            mes = "3";
-            dia = 31;
-            break;
-        case "Abril":
-            mes = "4";
-            dia = 30;
-            break;
-        case "Maio":
-            mes = "5";
-            dia = 31;
-            break;
-        case "Junho":
-            mes = "6";
-            dia = 30;
-            break;
-        case "Julho":
-            mes = "7";
-            dia = 31;
-            break;
-        case "Agosto":
-            mes = "8";
-            dia = 31;
-            break;
-        case "Setembro":
-            mes = "9";
-            dia = 30;
-            break;
-        case "Outubro":
-            mes = "10";
-            dia = 31;
-            break;
-        case "Novembro":
-            mes = "11";
-            dia = 30;
-            break;
-        case "Dezembro":
-            mes = "12";
-            dia = 31;
-            break;
-        default:
-            dia = 31; // Se mês não reconhecido, assume 31 dias (safeguard)
-            break;
-    }
-
-    // Adiciona os dias ao ComboBox
-    for (int i = 1; i <= dia; i++) {
-        Dia.addItem(String.valueOf(i));
-    }
-
-    // Define o ano formatado (a data deve ser formatada corretamente)
-    if (Dia.getItemCount() > 0) {
-        int diaSelecionado = Integer.parseInt((String) Dia.getSelectedItem());
-        anoformatado = String.format("%04d-%s-%02d", ano, mes, diaSelecionado);
-        System.out.println(""+anoformatado);
-    }
-}
-
-        
+            
+                    // Verifica se o dia anteriormente selecionado ainda é válido
+            if (diaSelecionado <= maxDias) {
+                Dia.setSelectedItem(String.valueOf(diaSelecionado)); // Seleciona o dia anterior
+            } else {
+                Dia.setSelectedIndex(maxDias - 1); // Seleciona o último dia do mês, se o anterior for inválido
+            }
+            
+             // Define o ano formatado (a data deve ser formatada corretamente)
+              anoformatado = String.format("%04d-%s-%02d", ano, mes, Integer.parseInt(Dia.getSelectedItem().toString()));
     
+            System.out.println("Ano Formatado: "+anoformatado);
+            
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -367,7 +373,7 @@ public class Cadastro extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(Dia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Ano, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 1, Short.MAX_VALUE)))
@@ -442,7 +448,7 @@ public class Cadastro extends javax.swing.JFrame {
         
         String email = txtEmail.getText();
         String nome = txtNome.getText();
-        String senha= txtSenha.getPassword().toString();
+        String senha= txtSenha.getText();
         String pais = (String) txtPais.getSelectedItem();
         System.out.println(senha+"");
 
