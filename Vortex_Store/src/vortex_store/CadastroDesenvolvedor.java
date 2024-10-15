@@ -21,6 +21,8 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
     /**
      * Creates new form Cadastro
      */
+    private String anoformatado;
+     
     public CadastroDesenvolvedor() {
         initComponents();
         con_cliente = new Conexao(); 
@@ -28,6 +30,113 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
         
         ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
         setIconImage(icon.getImage());
+        
+        // Listener para quando o mês for alterado
+        Mes.addActionListener(e -> atualizarData());
+
+        // Listener para quando o ano for alterado
+        Ano.addActionListener(e -> atualizarData());
+        
+        Mes.setSelectedItem("Janeiro");  // Define o mês como Janeiro
+        atualizarData();  // Chama o método para preencher os dias
+        
+        
+    }
+    
+    public void atualizarData(){
+        String mes = (String) Mes.getSelectedItem();
+        int ano = Integer.parseInt(Ano.getSelectedItem().toString());
+        
+            // Verificar se as seleções são válidas
+         // Verificar se as seleções são válidas
+        if (mes == null || ano <= 0) {
+            return; // Se não há mês ou o ano não é válido, sai da função
+        }
+
+
+        int diaSelecionado = Dia.getSelectedItem() != null ? Integer.parseInt(Dia.getSelectedItem().toString()) : 1;
+
+        Dia.removeAllItems(); // Limpa os dias antes de repopular
+
+        int maxDias = 0; // Inicializa a variável dia
+        
+       // Transformando o mês em número e determinando a quantidade de dias
+        switch (mes) {
+            case "Janeiro":
+                mes = "1";
+                maxDias = 31;
+                break;
+            case "Fevereiro":
+                mes = "2";
+                // Verifica se é ano bissexto
+                if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+                    maxDias = 29;
+                } else {
+                    maxDias = 28;
+                }
+                break;
+            case "Março":
+                mes = "3";
+                maxDias = 31;
+                break;
+            case "Abril":
+                mes = "4";
+                maxDias = 30;
+                break;
+            case "Maio":
+                mes = "5";
+                maxDias = 31;
+                break;
+            case "Junho":
+                mes = "6";
+                maxDias = 30;
+                break;
+            case "Julho":
+                mes = "7";
+                maxDias = 31;
+                break;
+            case "Agosto":
+                mes = "8";
+                maxDias = 31;
+                break;
+            case "Setembro":
+                mes = "9";
+                maxDias = 30;
+                break;
+            case "Outubro":
+                mes = "10";
+                maxDias = 31;
+                break;
+            case "Novembro":
+                mes = "11";
+                maxDias = 30;
+                break;
+            case "Dezembro":
+                mes = "12";
+                maxDias = 31;
+                break;
+            default:
+                maxDias = 31; // Se mês não reconhecido, assume 31 dias (safeguard)
+                break;
+        }
+
+            
+            for(int i=1; i<=maxDias;i++){
+            Dia.addItem(String.valueOf(i));
+            }
+            
+                    // Verifica se o dia anteriormente selecionado ainda é válido
+            if (diaSelecionado <= maxDias) {
+                Dia.setSelectedItem(String.valueOf(diaSelecionado)); // Seleciona o dia anterior
+            } else {
+                Dia.setSelectedIndex(maxDias - 1); // Seleciona o último dia do mês, se o anterior for inválido
+            }
+            
+             // Define o ano formatado (a data deve ser formatada corretamente)
+              anoformatado = String.format("%04d-%s-%02d", ano, mes, Integer.parseInt(Dia.getSelectedItem().toString()));
+    
+            System.out.println("Ano Formatado: "+anoformatado);
+            
     }
 
     /**
@@ -77,11 +186,12 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         txtCPF = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        txtNasc = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         button2 = new com.raven.swing.Button();
         jLabel10 = new javax.swing.JLabel();
+        Dia = new com.raven.swing.combobox.ComboBoxSuggestion();
+        Mes = new com.raven.swing.combobox.ComboBoxSuggestion();
+        Ano = new com.raven.swing.combobox.ComboBoxSuggestion();
         jPanel3 = new javax.swing.JPanel();
         Cadastro2 = new javax.swing.JPanel();
         Back = new javax.swing.JLabel();
@@ -464,31 +574,6 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("CPF");
 
-        jPanel12.setBackground(new java.awt.Color(50, 53, 60));
-
-        txtNasc.setBackground(new java.awt.Color(50, 53, 60));
-        txtNasc.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtNasc.setForeground(new java.awt.Color(255, 255, 255));
-        txtNasc.setBorder(null);
-        txtNasc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNascActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtNasc))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtNasc, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-        );
-
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Data de nascimento");
@@ -513,13 +598,48 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
             }
         });
 
+        Dia.setBackground(new java.awt.Color(50, 53, 60));
+        Dia.setBorder(null);
+        Dia.setEditable(false);
+        Dia.setForeground(new java.awt.Color(255, 255, 255));
+        Dia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        Mes.setBackground(new java.awt.Color(50, 53, 60));
+        Mes.setBorder(null);
+        Mes.setEditable(false);
+        Mes.setForeground(new java.awt.Color(255, 255, 255));
+        Mes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro", " " }));
+        Mes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Mes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MesActionPerformed(evt);
+            }
+        });
+
+        Ano.setBackground(new java.awt.Color(50, 53, 60));
+        Ano.setBorder(null);
+        Ano.setEditable(false);
+        Ano.setForeground(new java.awt.Color(255, 255, 255));
+        Ano.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926", "1925", "1924", "1923", "1922", "1921", "1920", " " }));
+        Ano.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout CadastroLayout = new javax.swing.GroupLayout(Cadastro);
         Cadastro.setLayout(CadastroLayout);
         CadastroLayout.setHorizontalGroup(
             CadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CadastroLayout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastroLayout.createSequentialGroup()
                 .addContainerGap(58, Short.MAX_VALUE)
                 .addGroup(CadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CadastroLayout.createSequentialGroup()
+                        .addComponent(Dia, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Ano, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5)
                     .addGroup(CadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel10)
@@ -531,13 +651,8 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(55, 55, 55))
-            .addGroup(CadastroLayout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CadastroLayout.setVerticalGroup(
             CadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -562,13 +677,16 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(CadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Ano, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Dia, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -580,7 +698,7 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 12, Short.MAX_VALUE)
                 .addComponent(Cadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -787,7 +905,7 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
                         .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(120, 120, 120)
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         Cadastro2Layout.setVerticalGroup(
             Cadastro2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -897,10 +1015,6 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void txtNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNascActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNascActionPerformed
-
     private void txtNomeDev1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeDev1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeDev1ActionPerformed
@@ -938,7 +1052,6 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
         String nomeDev = txtNomeDev.getText();
         String senha= txtSenha.getText();
         String cpf = txtCPF.getText();
-        String data_nasc = txtNasc.getText();
         String telefone = txtFone.getText();
         String cidade = txtCidade.getText();
         String endereco = txtEndereco.getText();
@@ -947,7 +1060,7 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
         String pais = (String) txtPais.getSelectedItem();
 
         try{
-            String insert_sql="insert into desenvolvedor (email, nome, senha, data_nasc, pais, CPF, telefone, endereco, estado, foto_perfil, cidade, numero_conta_bancaria, endereco_conta_bancaria) values ('" +email+ "','" +nomeDev+"','" +senha+ "','" +data_nasc+ "','" +pais+ "','" +cpf+ "','" +telefone+ "','" +endereco+ "','" +estado+ "','" +null+ "','" +cidade+ "','" +null+ "','" +null+ "' )";
+            String insert_sql="insert into desenvolvedor (email, nome, senha, data_nasc, pais, CPF, telefone, endereco, estado, foto_perfil, cidade, numero_conta_bancaria, endereco_conta_bancaria) values ('" +email+ "','" +nomeDev+"','" +senha+ "','" +anoformatado+ "','" +pais+ "','" +cpf+ "','" +telefone+ "','" +endereco+ "','" +estado+ "','" +null+ "','" +cidade+ "','" +null+ "','" +null+ "' )";
             con_cliente.statement.executeUpdate(insert_sql);
             JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
             con_cliente.resultset.first();
@@ -965,6 +1078,10 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_BackMouseClicked
+
+    private void MesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MesActionPerformed
     
      private void abrirSuavemente() {
         new Thread(() -> {
@@ -1034,10 +1151,13 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.raven.swing.combobox.ComboBoxSuggestion Ano;
     private javax.swing.JLabel Back;
     private javax.swing.JPanel Cadastro;
     private javax.swing.JPanel Cadastro1;
     private javax.swing.JPanel Cadastro2;
+    private com.raven.swing.combobox.ComboBoxSuggestion Dia;
+    private com.raven.swing.combobox.ComboBoxSuggestion Mes;
     private com.raven.swing.Button button2;
     private com.raven.swing.Button button3;
     private com.raven.swing.Button button4;
@@ -1066,7 +1186,6 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
@@ -1091,7 +1210,6 @@ public class CadastroDesenvolvedor extends javax.swing.JFrame {
     private javax.swing.JTextField txtEndereco;
     private com.raven.swing.combobox.ComboBoxSuggestion txtEstado;
     private javax.swing.JTextField txtFone;
-    private javax.swing.JTextField txtNasc;
     private javax.swing.JTextField txtNasc3;
     private javax.swing.JTextField txtNomeDev;
     private javax.swing.JTextField txtNomeDev1;
