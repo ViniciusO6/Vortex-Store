@@ -137,7 +137,7 @@ public class ComboSuggestionUI extends BasicComboBoxUI {
         public ArrowButton() {
             setContentAreaFilled(false);
             setBorder(new EmptyBorder(5, 5, 5, 5));
-            setBackground(new Color(59,32,91));
+            setBackground( new Color(150,150,150)); //Cor da Flexinha sem estar selecionada
         }
 
         @Override
