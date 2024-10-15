@@ -21,6 +21,12 @@ public class Cadastro extends javax.swing.JFrame {
     /**
      * Creates new form Cadastro
      */
+    
+    /*Criando a váriavel ano formatado que guardará o dia, mes e ano do comboBox no metódo atualizarData() 
+      e formatará a data para incluir na query presente no botão*/
+    private String anoformatado;
+    
+    
     public Cadastro() {
         initComponents();
         con_cliente = new Conexao(); 
@@ -29,13 +35,108 @@ public class Cadastro extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
         setIconImage(icon.getImage());
        
+        // Listener para quando o mês for alterado
+        Mes.addActionListener(e -> atualizarData());
+
+        // Listener para quando o ano for alterado
+        Ano.addActionListener(e -> atualizarData());
+        
+        Mes.setSelectedItem("Janeiro");  // Define o mês como Janeiro
+        atualizarData();  // Chama o método para preencher os dias
+        
         
            
     }
     
-    public void atualizarDia(){
-      
+    public void atualizarData(){
+        
+    // Obter o mês e o ano selecionados
+    String mes = (String) Mes.getSelectedItem();
+    int ano = Integer.parseInt(Ano.getSelectedItem().toString());
+    
+    // Verificar se as seleções são válidas
+    if (mes == null || ano <= 0) {
+        return; // Se não há mês ou o ano não é válido, sai da função
     }
+
+    int dia = 0; // Inicializa a variável dia
+    Dia.removeAllItems(); // Limpa os dias antes de repopular
+
+    // Transformando o mês em número e determinando a quantidade de dias
+    switch (mes) {
+        case "Janeiro":
+            mes = "1";
+            dia = 31;
+            break;
+        case "Fevereiro":
+            mes = "2";
+            // Verifica se é ano bissexto
+            if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+                dia = 29;
+            } else {
+                dia = 28;
+            }
+            break;
+        case "Março":
+            mes = "3";
+            dia = 31;
+            break;
+        case "Abril":
+            mes = "4";
+            dia = 30;
+            break;
+        case "Maio":
+            mes = "5";
+            dia = 31;
+            break;
+        case "Junho":
+            mes = "6";
+            dia = 30;
+            break;
+        case "Julho":
+            mes = "7";
+            dia = 31;
+            break;
+        case "Agosto":
+            mes = "8";
+            dia = 31;
+            break;
+        case "Setembro":
+            mes = "9";
+            dia = 30;
+            break;
+        case "Outubro":
+            mes = "10";
+            dia = 31;
+            break;
+        case "Novembro":
+            mes = "11";
+            dia = 30;
+            break;
+        case "Dezembro":
+            mes = "12";
+            dia = 31;
+            break;
+        default:
+            dia = 31; // Se mês não reconhecido, assume 31 dias (safeguard)
+            break;
+    }
+
+    // Adiciona os dias ao ComboBox
+    for (int i = 1; i <= dia; i++) {
+        Dia.addItem(String.valueOf(i));
+    }
+
+    // Define o ano formatado (a data deve ser formatada corretamente)
+    if (Dia.getItemCount() > 0) {
+        int diaSelecionado = Integer.parseInt((String) Dia.getSelectedItem());
+        anoformatado = String.format("%04d-%s-%02d", ano, mes, diaSelecionado);
+        System.out.println(""+anoformatado);
+    }
+}
+
+        
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -227,7 +328,6 @@ public class Cadastro extends javax.swing.JFrame {
         Dia.setBorder(null);
         Dia.setEditable(false);
         Dia.setForeground(new java.awt.Color(255, 255, 255));
-        Dia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         Dia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         Mes.setBackground(new java.awt.Color(50, 53, 60));
@@ -339,58 +439,16 @@ public class Cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        
         String email = txtEmail.getText();
         String nome = txtNome.getText();
         String senha= txtSenha.getPassword().toString();
-        System.out.println(senha+"");
-        
-        String dia = (String) Dia.getSelectedItem();
-        String mes = (String) Mes.getSelectedItem();
-        String ano = (String) Ano.getSelectedItem();
         String pais = (String) txtPais.getSelectedItem();
+        System.out.println(senha+"");
+
         
 
-
-            if(mes.equals("Janeiro")){
-                mes = "1";
-            }
-            else if(mes.equals("Fevereiro")){
-                mes = "2";
-            }
-            else if(mes.equals("Março")){
-                mes = "3";
-            }
-            else if(mes.equals("Abril")){
-                mes = "4";
-            }
-            else if(mes.equals("Maio")){
-                mes = "5";
-            }
-            else if(mes.equals("Junho")){
-                mes = "6";
-            }
-            else if(mes.equals("Julho")){
-                mes = "7";
-            }
-            else if(mes.equals("Agosto")){
-                mes = "8";
-            }
-            else if(mes.equals("Setembro")){
-                mes = "9";
-            }
-            else if(mes.equals("Outubro")){
-                mes = "10";
-            }
-            else if(mes.equals("Novembro")){
-                mes = "11";
-            }
-            else if(mes.equals("Dezembro")){
-                mes = "12";
-            }
-                
-        String anoformatado =ano+"-"+mes+"-"+dia;        
-        
-        System.out.println(""+anoformatado);
+                       
         
         try{
             String insert_sql="insert into cliente (email, nome, senha, data_nasc, pais, foto_perfil) values ('" +email+ "','" +nome+"','" +senha+ "','" +anoformatado+ "','" +pais+ "','" +null+ "')";
