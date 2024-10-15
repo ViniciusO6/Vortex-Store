@@ -6,7 +6,6 @@ package vortex_store;
 
 import conexao.Conexao;
 import Buckup.*;
-import com.mysql.jdbc.PreparedStatement;
 import vortex_store.*;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -53,7 +52,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     public TelaPrincipal() {
         conexao = new Conexao(); 
-        conexao.conecta();
+        conexao.conecta(false);
         
         initComponents();
         
@@ -5230,7 +5229,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
               offset -= 20;
               System.out.println("Voltou");
             }
-                      
+            
             String pesquisa = "select ID_jogo, titulo_do_jogo, from jogo  ORDER BY ID_jogo ASC LIMIT 21 OFFSET " + offset + ";"; 
             String imagens = "select URL from jogo  ORDER BY ID_jogo ASC LIMIT 21 OFFSET " + offset + ";"; 
             conexao.executaSQL(pesquisa, false);
@@ -5379,6 +5378,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
             conexao.resultset.first();
             
+             // Buscar o último ID inserido
             String queryUltimoID = "SELECT LAST_INSERT_ID() AS ultimo_id";
             conexao.resultset = conexao.statement.executeQuery(queryUltimoID);
     
@@ -5386,7 +5386,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 int id_jogo = conexao.resultset.getInt("ultimo_id");
                 JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso! ID do jogo: " + id_jogo, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
             }
-
             
             
             

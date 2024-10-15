@@ -38,7 +38,7 @@ public class Loading extends javax.swing.JFrame {
         sVGImage1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
     
-        if(con_cliente.conecta() == false){   
+        if(con_cliente.conecta(true) == false){   
             
             jDialog1.setLocationRelativeTo(null);
             jDialog1.setModal(true);
@@ -333,7 +333,7 @@ public class Loading extends javax.swing.JFrame {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         jDialog1.dispose();
                 
-            if(con_cliente.conecta() == false){   
+            if(con_cliente.conecta(false) == false){   
                 jDialog1.setLocationRelativeTo(null);
                 jDialog1.setModal(true);
                 jDialog1.setVisible(true);
