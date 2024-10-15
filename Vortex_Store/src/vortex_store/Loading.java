@@ -38,7 +38,7 @@ public class Loading extends javax.swing.JFrame {
         sVGImage1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
     
-        if(con_cliente.conecta(false) == false){   
+        if(con_cliente.conecta(true) == false){   
             
             jDialog1.setLocationRelativeTo(null);
             jDialog1.setModal(true);
