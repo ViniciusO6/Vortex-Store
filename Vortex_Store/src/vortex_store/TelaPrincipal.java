@@ -4,6 +4,7 @@
  */
 package vortex_store;
 
+import conexao.Upload;
 import conexao.Conexao;
 import Buckup.*;
 import vortex_store.*;
@@ -32,6 +33,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar; 
 import javax.swing.JScrollPane;
+import jnafilechooser.api.JnaFileChooser;
 import scrollbar.ScrollBarCustom;
 /**
  *
@@ -40,7 +42,7 @@ import scrollbar.ScrollBarCustom;
 
 public class TelaPrincipal extends javax.swing.JFrame {
     Conexao conexao;
-    
+    String URLs[] = new String[8];
     int offset = -20;
     int[] ID_CARD = new int[20] ;
     int ID_BUSCAR;
@@ -547,7 +549,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jPanel65 = new javax.swing.JPanel();
-        jTextField29 = new javax.swing.JTextField();
+        ArquivoJogo = new javax.swing.JTextField();
         panelRounds9 = new com.raven.swing.combobox.PanelRounds();
         sVGImage18 = new imagens.SVGImage();
         jLabel52 = new javax.swing.JLabel();
@@ -1759,7 +1761,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(PanelCard19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
                         .addComponent(PanelCard20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
@@ -3727,11 +3729,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelRounds3.setRoundBottomRight(5);
         panelRounds3.setRoundTopLeft(5);
         panelRounds3.setRoundTopRight(5);
+        panelRounds3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelRounds3MouseClicked(evt);
+            }
+        });
 
         sVGImage12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sVGImage12.setMaximumSize(new java.awt.Dimension(30, 30));
         sVGImage12.setMinimumSize(new java.awt.Dimension(30, 30));
         sVGImage12.setPreferredSize(new java.awt.Dimension(30, 30));
+        sVGImage12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGImage12MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRounds3Layout = new javax.swing.GroupLayout(panelRounds3);
         panelRounds3.setLayout(panelRounds3Layout);
@@ -3761,11 +3773,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelRounds2.setRoundBottomRight(5);
         panelRounds2.setRoundTopLeft(5);
         panelRounds2.setRoundTopRight(5);
+        panelRounds2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelRounds2MouseClicked(evt);
+            }
+        });
 
         sVGImage11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sVGImage11.setMaximumSize(new java.awt.Dimension(30, 30));
         sVGImage11.setMinimumSize(new java.awt.Dimension(30, 30));
         sVGImage11.setPreferredSize(new java.awt.Dimension(30, 30));
+        sVGImage11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGImage11MouseClicked(evt);
+            }
+        });
+        sVGImage11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                sVGImage11KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRounds2Layout = new javax.swing.GroupLayout(panelRounds2);
         panelRounds2.setLayout(panelRounds2Layout);
@@ -3907,11 +3934,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelRounds4.setRoundBottomRight(5);
         panelRounds4.setRoundTopLeft(5);
         panelRounds4.setRoundTopRight(5);
+        panelRounds4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelRounds4MouseClicked(evt);
+            }
+        });
 
         sVGImage13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sVGImage13.setMaximumSize(new java.awt.Dimension(30, 30));
         sVGImage13.setMinimumSize(new java.awt.Dimension(30, 30));
         sVGImage13.setPreferredSize(new java.awt.Dimension(30, 30));
+        sVGImage13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGImage13MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRounds4Layout = new javax.swing.GroupLayout(panelRounds4);
         panelRounds4.setLayout(panelRounds4Layout);
@@ -3945,11 +3982,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelRounds5.setRoundBottomRight(5);
         panelRounds5.setRoundTopLeft(5);
         panelRounds5.setRoundTopRight(5);
+        panelRounds5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelRounds5MouseClicked(evt);
+            }
+        });
 
         sVGImage14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sVGImage14.setMaximumSize(new java.awt.Dimension(30, 30));
         sVGImage14.setMinimumSize(new java.awt.Dimension(30, 30));
         sVGImage14.setPreferredSize(new java.awt.Dimension(30, 30));
+        sVGImage14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGImage14MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRounds5Layout = new javax.swing.GroupLayout(panelRounds5);
         panelRounds5.setLayout(panelRounds5Layout);
@@ -4041,11 +4088,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelRounds6.setRoundBottomRight(5);
         panelRounds6.setRoundTopLeft(5);
         panelRounds6.setRoundTopRight(5);
+        panelRounds6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelRounds6MouseClicked(evt);
+            }
+        });
 
         sVGImage15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sVGImage15.setMaximumSize(new java.awt.Dimension(30, 30));
         sVGImage15.setMinimumSize(new java.awt.Dimension(30, 30));
         sVGImage15.setPreferredSize(new java.awt.Dimension(30, 30));
+        sVGImage15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGImage15MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRounds6Layout = new javax.swing.GroupLayout(panelRounds6);
         panelRounds6.setLayout(panelRounds6Layout);
@@ -4071,11 +4128,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelRounds7.setRoundBottomRight(5);
         panelRounds7.setRoundTopLeft(5);
         panelRounds7.setRoundTopRight(5);
+        panelRounds7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelRounds7MouseClicked(evt);
+            }
+        });
 
         sVGImage16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sVGImage16.setMaximumSize(new java.awt.Dimension(30, 30));
         sVGImage16.setMinimumSize(new java.awt.Dimension(30, 30));
         sVGImage16.setPreferredSize(new java.awt.Dimension(30, 30));
+        sVGImage16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGImage16MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRounds7Layout = new javax.swing.GroupLayout(panelRounds7);
         panelRounds7.setLayout(panelRounds7Layout);
@@ -4136,11 +4203,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelRounds8.setRoundBottomRight(5);
         panelRounds8.setRoundTopLeft(5);
         panelRounds8.setRoundTopRight(5);
+        panelRounds8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelRounds8MouseClicked(evt);
+            }
+        });
 
         sVGImage17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sVGImage17.setMaximumSize(new java.awt.Dimension(30, 30));
         sVGImage17.setMinimumSize(new java.awt.Dimension(30, 30));
         sVGImage17.setPreferredSize(new java.awt.Dimension(30, 30));
+        sVGImage17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGImage17MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRounds8Layout = new javax.swing.GroupLayout(panelRounds8);
         panelRounds8.setLayout(panelRounds8Layout);
@@ -4301,13 +4378,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel65.setBackground(new java.awt.Color(50, 53, 60));
 
-        jTextField29.setBackground(new java.awt.Color(50, 53, 60));
-        jTextField29.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jTextField29.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField29.setBorder(null);
-        jTextField29.addActionListener(new java.awt.event.ActionListener() {
+        ArquivoJogo.setBackground(new java.awt.Color(50, 53, 60));
+        ArquivoJogo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        ArquivoJogo.setForeground(new java.awt.Color(255, 255, 255));
+        ArquivoJogo.setBorder(null);
+        ArquivoJogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField29ActionPerformed(evt);
+                ArquivoJogoActionPerformed(evt);
             }
         });
 
@@ -4317,13 +4394,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel65Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField29, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE))
+                .addComponent(ArquivoJogo, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE))
         );
         jPanel65Layout.setVerticalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel65Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ArquivoJogo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         panelRounds9.setBackground(new java.awt.Color(59, 32, 91));
@@ -4333,11 +4410,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelRounds9.setRoundBottomRight(5);
         panelRounds9.setRoundTopLeft(5);
         panelRounds9.setRoundTopRight(5);
+        panelRounds9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelRounds9MouseClicked(evt);
+            }
+        });
 
         sVGImage18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sVGImage18.setMaximumSize(new java.awt.Dimension(30, 30));
         sVGImage18.setMinimumSize(new java.awt.Dimension(30, 30));
         sVGImage18.setPreferredSize(new java.awt.Dimension(30, 30));
+        sVGImage18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sVGImage18MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRounds9Layout = new javax.swing.GroupLayout(panelRounds9);
         panelRounds9.setLayout(panelRounds9Layout);
@@ -4559,8 +4646,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(descartar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(publicar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(242, Short.MAX_VALUE))
+                            .addComponent(publicar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -4572,8 +4658,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(panelRounds9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jPanel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel16.add(jPanel22);
@@ -5174,13 +5260,202 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel50MouseClicked
 
-    private void jTextField29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField29ActionPerformed
+    private void ArquivoJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArquivoJogoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField29ActionPerformed
+    }//GEN-LAST:event_ArquivoJogoActionPerformed
 
     private void publicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publicarActionPerformed
         CadastrarJogo();
     }//GEN-LAST:event_publicarActionPerformed
+    //ADICIONA A CAPA DO JOGO
+    private void panelRounds2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRounds2MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[5] = ch.getSelectedFile().toString();
+            CapaJogo.setText(URLs[5]);
+            System.out.println(URLs[5]);
+        }
+    }//GEN-LAST:event_panelRounds2MouseClicked
+    //ADICIONA A CAPA DO JOGO
+    private void sVGImage11KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sVGImage11KeyPressed
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[5] = ch.getSelectedFile().toString();
+            CapaJogo.setText(URLs[5]);
+            System.out.println(URLs[5]);
+        }
+    }//GEN-LAST:event_sVGImage11KeyPressed
+
+    //ADICIONA O POSTER DO JOGO
+    private void panelRounds3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRounds3MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[6] = ch.getSelectedFile().toString();
+            PosterJogo.setText(URLs[6]);
+            System.out.println(URLs[6]);
+        }
+    }//GEN-LAST:event_panelRounds3MouseClicked
+    //ADICIONA O POSTER DO JOGO
+    private void sVGImage12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage12MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[6] = ch.getSelectedFile().toString();
+            PosterJogo.setText(URLs[6]);
+            System.out.println(URLs[6]);
+        }
+    }//GEN-LAST:event_sVGImage12MouseClicked
+    // ADICIONA O ARQUIVO DO JOGO
+    private void panelRounds9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRounds9MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[7] = ch.getSelectedFile().toString();
+            ArquivoJogo.setText(URLs[6]);
+            System.out.println(URLs[7]);
+        }
+    }//GEN-LAST:event_panelRounds9MouseClicked
+     // ADICIONA O ARQUIVO DO JOGO
+    private void sVGImage18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage18MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[7] = ch.getSelectedFile().toString();
+            ArquivoJogo.setText(URLs[6]);
+            System.out.println(URLs[7]);
+        }
+    }//GEN-LAST:event_sVGImage18MouseClicked
+     // ADICIONA A IMAGEM 1
+    private void panelRounds4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRounds4MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[0] = ch.getSelectedFile().toString();
+            Imagem1.setText(URLs[0]);
+            System.out.println(URLs[0]);
+        }
+    }//GEN-LAST:event_panelRounds4MouseClicked
+    // ADICIONA A IMAGEM 1
+    private void sVGImage13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage13MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[0] = ch.getSelectedFile().toString();
+            Imagem1.setText(URLs[0]);
+            System.out.println(URLs[0]);
+        }
+    }//GEN-LAST:event_sVGImage13MouseClicked
+    // ADICIONA A IMAGEM 2
+    private void panelRounds5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRounds5MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[1] = ch.getSelectedFile().toString();
+            Imagem2.setText(URLs[1]);
+            System.out.println(URLs[1]);
+        }
+    }//GEN-LAST:event_panelRounds5MouseClicked
+
+    private void sVGImage14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage14MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[1] = ch.getSelectedFile().toString();
+            Imagem2.setText(URLs[1]);
+            System.out.println(URLs[1]);
+        }
+    }//GEN-LAST:event_sVGImage14MouseClicked
+    // ADICIONA A IMAGEM 3
+    private void panelRounds6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRounds6MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[2] = ch.getSelectedFile().toString();
+            Imagem3.setText(URLs[2]);
+            System.out.println(URLs[2]);
+        }
+    }//GEN-LAST:event_panelRounds6MouseClicked
+
+    private void sVGImage15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage15MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[2] = ch.getSelectedFile().toString();
+            Imagem3.setText(URLs[2]);
+            System.out.println(URLs[2]);
+        }
+    }//GEN-LAST:event_sVGImage15MouseClicked
+    // ADICIONA A IMAGEM 4
+    private void panelRounds7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRounds7MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[3] = ch.getSelectedFile().toString();
+            Imagem4.setText(URLs[3]);
+            System.out.println(URLs[3]);
+        }
+    }//GEN-LAST:event_panelRounds7MouseClicked
+
+    private void sVGImage16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage16MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[3] = ch.getSelectedFile().toString();
+            Imagem4.setText(URLs[3]);
+            System.out.println(URLs[3]);
+        }
+    }//GEN-LAST:event_sVGImage16MouseClicked
+    // ADICIONA A IMAGEM 5
+    private void panelRounds8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRounds8MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[4] = ch.getSelectedFile().toString();
+            Imagem5.setText(URLs[4]);
+            System.out.println(URLs[4]);
+        }
+    }//GEN-LAST:event_panelRounds8MouseClicked
+
+    private void sVGImage17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage17MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[4] = ch.getSelectedFile().toString();
+            Imagem5.setText(URLs[4]);
+            System.out.println(URLs[4]);
+        }
+    }//GEN-LAST:event_sVGImage17MouseClicked
+
+ // Adiciona a Capa do jogo 
+    private void sVGImage11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage11MouseClicked
+        JnaFileChooser ch=new JnaFileChooser();
+        boolean action = ch.showOpenDialog(this);
+        if(action){
+            System.out.println(ch.getSelectedFile());
+            URLs[5] = ch.getSelectedFile().toString();
+            CapaJogo.setText(URLs[5]);
+            System.out.println(URLs[5]);
+        }
+    }//GEN-LAST:event_sVGImage11MouseClicked
     
     
     
@@ -5230,9 +5505,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
               System.out.println("Voltou");
             }
             
-            String pesquisa = "select ID_jogo, titulo_do_jogo, from jogo  ORDER BY ID_jogo ASC LIMIT 21 OFFSET " + offset + ";"; 
-            String imagens = "select URL from jogo  ORDER BY ID_jogo ASC LIMIT 21 OFFSET " + offset + ";"; 
-            conexao.executaSQL(pesquisa, false);
+            String pesquisa = "SELECT jogo.ID_jogo, jogo.titulo_do_jogo, imagens_jogo.URL_imagem " +
+                  "FROM jogo " +
+                  "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
+                  "WHERE imagens_jogo.tipo_imagem = 2 " +
+                  "ORDER BY jogo.ID_jogo ASC LIMIT 21 OFFSET " + offset + ";";
+                  conexao.executaSQL(pesquisa, true);
             
             String titulo_jogo;
             String URL_IMG;
@@ -5267,7 +5545,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     System.out.println("Rodou"+ i +" Vez");
 
                     titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
-                    URL_IMG = ""+conexao.resultset.getString("imagens_do_jogo");               
+                    URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
                     URL imageUrl = new URL(URL_IMG);
                     Image image = ImageIO.read(imageUrl);
                     
@@ -5311,6 +5589,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     
     public void CadastrarJogo(){
+        int id_jogo = 0;
         int id_desenvolvedor = 1;
         String nome = NomeJogo.getText();
         String precoString = preco.getText();
@@ -5344,6 +5623,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         List<Integer> categoria = new ArrayList<>();
         List<Integer> idioma = new ArrayList<>();
         
+        
+        if(jCheckBoxCustom10.isSelected()){
+            idioma.add(1);
+        }
+        if(jCheckBoxCustom11.isSelected()){
+            idioma.add(2);
+        }
+        if(jCheckBoxCustom12.isSelected()){
+            idioma.add(3);
+        }
+        if(jCheckBoxCustom13.isSelected()){
+            idioma.add(4);
+        }
+        if(jCheckBoxCustom14.isSelected()){
+            idioma.add(5);
+        }
+       
+        
         if(jCheckBoxCustom1.isSelected()){
             categoria.add(1);
         }
@@ -5372,32 +5669,35 @@ public class TelaPrincipal extends javax.swing.JFrame {
             categoria.add(9);
         }
         
-        try{
-            String insert_sql="insert into jogo (titulo_do_jogo, descricao_jogo, data_publicacao, ID_desenvolvedor, sinopse, classificacao_indicativa, preco, requisitos) values ('" +nome+ "','" +descricao+"','" +dataPublicacao+ "','" +id_desenvolvedor+ "','" +sinopse+ "','" +classificacao+ "','" +precojogo+  "','"+Requisitos+"' )";
-            conexao.statement.executeUpdate(insert_sql);
-            JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-            conexao.resultset.first();
-            
-             // Buscar o último ID inserido
-            String queryUltimoID = "SELECT LAST_INSERT_ID() AS ultimo_id";
-            conexao.resultset = conexao.statement.executeQuery(queryUltimoID);
-    
-            if (conexao.resultset.first()) {
-                int id_jogo = conexao.resultset.getInt("ultimo_id");
-                JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso! ID do jogo: " + id_jogo, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-            }
-            
-            
-            
-            
-            
-            
-            
-            
+            try {
+                // Inserir o jogo
+                String insert_sql = "INSERT INTO jogo (titulo_do_jogo, descricao_jogo, data_publicacao, ID_desenvolvedor, sinopse, classificacao_indicativa, preco, requisitos) "
+                + "VALUES ('" + nome + "','" + descricao + "','" + dataPublicacao + "','" + id_desenvolvedor + "','" + sinopse + "','" + classificacao + "','" + precojogo + "','" + Requisitos + "')";
+                conexao.statement.executeUpdate(insert_sql);
 
-        }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);  
-     }     
+                JOptionPane.showMessageDialog(null, "Gravação Do Jogo Realizada com sucesso!!", "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+
+                //Faz a recuperação do ultimo id
+                String queryUltimoID = "SELECT LAST_INSERT_ID() AS ultimo_id";
+                conexao.resultset = conexao.statement.executeQuery(queryUltimoID);
+                if (conexao.resultset != null && conexao.resultset.next()) {
+                    id_jogo = conexao.resultset.getInt("ultimo_id");
+                    System.out.println("ID do jogo inserido: " + id_jogo);
+                } else {
+                    System.err.println("Falha ao recuperar o último ID inserido. O ResultSet está vazio ou nulo.");
+                }
+                
+                CadastrarCategoria(id_jogo, categoria);
+                CadastrarIdiomas(id_jogo, idioma);
+                CadastrarImagens(id_jogo, URLs);
+
+        } catch (SQLException errosql) {
+            JOptionPane.showMessageDialog(null, "Erro na gravação: \n" + errosql.getMessage(), "Mensagem do Programa", JOptionPane.ERROR_MESSAGE);
+        } catch (NullPointerException nullEx) {
+            JOptionPane.showMessageDialog(null, "Erro: Objeto nulo encontrado. Verifique a conexão ou a consulta.", "Mensagem do Programa", JOptionPane.ERROR_MESSAGE);
+            nullEx.printStackTrace();
+        }
+
     }
     
     public void CadastrarCategoria(int ID_jogo, List<Integer> categoriasSelecionadas){
@@ -5406,17 +5706,103 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 try{   
                     String insert_sql="insert into jogo_categoria (ID_jogo, ID_categoria) values ('" +ID_jogo+ "','" +categoria+"' )";
                     conexao.statement.executeUpdate(insert_sql);
-                    JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-                    conexao.resultset.first();
+                    JOptionPane.showMessageDialog(null, "Gravação da Categoria Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException errosql){
             JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
     
      }
                 
-            }
-
+   }
+       
+   }
+    
+    public void CadastrarIdiomas(int ID_jogo, List<Integer> idiomaSelecionados){
+           
+            for(int idioma : idiomaSelecionados) {               
+                try{   
+                    String insert_sql="insert into jogo_idioma (ID_jogo, ID_idioma) values ('" +ID_jogo+ "','" +idioma+"' )";
+                    conexao.statement.executeUpdate(insert_sql);
+                    JOptionPane.showMessageDialog(null, "Gravação do idioma Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+    
+     }
+                
+   }
+       
+   }
+    
+    public void CadastrarImagens(int ID_jogo, String[] URLs){
+        int TipoImagem = 0;
+               for (int i = 0; i < 5; i++) {
+               TipoImagem = 1; // Imagens do jogo
+               String URL_imagem = URLs[0]; 
+               Upload UpImagens = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[i]);
+               String NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/FotosJogos/"+UpImagens.nomeFile;
+               System.out.println("cassio gaymer "+NomeImagem);
+               System.out.println("URL_imagem");
+                      
+                try{   
+                    String insert_sql="insert into imagens_jogo (ID_jogo, URL_imagem, tipo_imagem) values ('" +ID_jogo+ "','" +NomeImagem + "','" +TipoImagem+"' )";
+                    conexao.statement.executeUpdate(insert_sql);
+                    JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+    
+     }
+   }
+        TipoImagem = 2; // Capa do Jogo
+        String URL_imagem = URLs[5]; 
+        Upload UpCapa = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[5]);
+        String NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/FotosJogos/"+UpCapa.nomeFile;
+        System.out.println("cassio gaymer "+NomeImagem);
+        System.out.println("URL_imagem");
+        try{   
+            String insert_sql="insert into imagens_jogo (ID_jogo, URL_imagem, tipo_imagem) values ('" +ID_jogo+ "','" +NomeImagem + "','" +TipoImagem+"' )";
+            conexao.statement.executeUpdate(insert_sql);
+           JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+    
+     }
         
-    }
+        TipoImagem = 3; // Poster do Jogo
+        URL_imagem = URLs[6]; 
+        Upload UpPoster = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[6]);
+        NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/FotosJogos/"+UpPoster.nomeFile;
+        System.out.println("cassio gaymer "+NomeImagem);
+        System.out.println("URL_imagem");
+        try{   
+            String insert_sql="insert into imagens_jogo (ID_jogo, URL_imagem, tipo_imagem) values ('" +ID_jogo+ "','" +NomeImagem + "','" +TipoImagem+"' )";
+            conexao.statement.executeUpdate(insert_sql);
+           JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+    
+     }
+        
+        TipoImagem = 10; // Jogo
+        URL_imagem = URLs[7]; 
+        Upload UpJogo = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[7]);
+        NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/Jogos/"+UpJogo.nomeFile;
+        System.out.println(""+NomeImagem);
+        System.out.println("URL_imagem");
+        try{   
+            String insert_sql="insert into imagens_jogo (ID_jogo, URL_imagem, tipo_imagem) values ('" +ID_jogo+ "','" +NomeImagem + "','" +TipoImagem+"' )";
+            conexao.statement.executeUpdate(insert_sql);
+           JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+    
+     }
+        
+               
+   }
+    
+    
+    
+    
+    
 
     
     
@@ -5465,6 +5851,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ArquivoJogo;
     private javax.swing.JTextField CapaJogo;
     private com.raven.swing.combobox.ComboBoxSuggestion Classificacao;
     private javax.swing.JTextArea Descricao;
@@ -5677,7 +6064,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
@@ -5757,8 +6143,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField29;
     private javax.swing.JPanel ocultoPanel;
     private com.raven.swing.combobox.PanelRounds panelRounds2;
     private com.raven.swing.combobox.PanelRounds panelRounds3;

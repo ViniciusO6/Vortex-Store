@@ -257,7 +257,7 @@
                                           <Component id="PanelCard20" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="80" max="32767" attributes="0"/>
+                                  <EmptySpace pref="68" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jPanel11" max="32767" attributes="0"/>
                           </Group>
@@ -5754,6 +5754,9 @@
                                     <Property name="roundTopLeft" type="int" value="5"/>
                                     <Property name="roundTopRight" type="int" value="5"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRounds3MouseClicked"/>
+                                  </Events>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -5789,6 +5792,9 @@
                                           <Dimension value="[30, 30]"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGImage12MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -5819,6 +5825,9 @@
                                     <Property name="roundTopLeft" type="int" value="5"/>
                                     <Property name="roundTopRight" type="int" value="5"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRounds2MouseClicked"/>
+                                  </Events>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -5854,6 +5863,10 @@
                                           <Dimension value="[30, 30]"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGImage11MouseClicked"/>
+                                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="sVGImage11KeyPressed"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -6128,6 +6141,9 @@
                                     <Property name="roundTopLeft" type="int" value="5"/>
                                     <Property name="roundTopRight" type="int" value="5"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRounds4MouseClicked"/>
+                                  </Events>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -6163,6 +6179,9 @@
                                           <Dimension value="[30, 30]"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGImage13MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -6204,6 +6223,9 @@
                                     <Property name="roundTopLeft" type="int" value="5"/>
                                     <Property name="roundTopRight" type="int" value="5"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRounds5MouseClicked"/>
+                                  </Events>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -6239,6 +6261,9 @@
                                           <Dimension value="[30, 30]"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGImage14MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -6385,6 +6410,9 @@
                                     <Property name="roundTopLeft" type="int" value="5"/>
                                     <Property name="roundTopRight" type="int" value="5"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRounds6MouseClicked"/>
+                                  </Events>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -6420,6 +6448,9 @@
                                           <Dimension value="[30, 30]"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGImage15MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -6439,6 +6470,9 @@
                                     <Property name="roundTopLeft" type="int" value="5"/>
                                     <Property name="roundTopRight" type="int" value="5"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRounds7MouseClicked"/>
+                                  </Events>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -6474,6 +6508,9 @@
                                           <Dimension value="[30, 30]"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGImage16MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -6562,6 +6599,9 @@
                                     <Property name="roundTopLeft" type="int" value="5"/>
                                     <Property name="roundTopRight" type="int" value="5"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRounds8MouseClicked"/>
+                                  </Events>
 
                                   <Layout>
                                     <DimensionLayout dim="0">
@@ -6597,6 +6637,9 @@
                                           <Dimension value="[30, 30]"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGImage17MouseClicked"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -6700,7 +6743,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextField29" pref="269" max="32767" attributes="0"/>
+                                          <Component id="ArquivoJogo" pref="269" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -6708,13 +6751,13 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                          <Component id="jTextField29" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="ArquivoJogo" min="-2" pref="34" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                               </Layout>
                               <SubComponents>
-                                <Component class="javax.swing.JTextField" name="jTextField29">
+                                <Component class="javax.swing.JTextField" name="ArquivoJogo">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="3c" green="35" red="32" type="rgb"/>
@@ -6730,7 +6773,7 @@
                                     </Property>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField29ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ArquivoJogoActionPerformed"/>
                                   </Events>
                                 </Component>
                               </SubComponents>
@@ -6751,6 +6794,9 @@
                                 <Property name="roundTopLeft" type="int" value="5"/>
                                 <Property name="roundTopRight" type="int" value="5"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="panelRounds9MouseClicked"/>
+                              </Events>
 
                               <Layout>
                                 <DimensionLayout dim="0">
@@ -6786,6 +6832,9 @@
                                       <Dimension value="[30, 30]"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="sVGImage18MouseClicked"/>
+                                  </Events>
                                 </Component>
                               </SubComponents>
                             </Container>
