@@ -353,7 +353,7 @@ public class Login extends javax.swing.JFrame {
       String Senha = jTextField1.getText();
         try{
             String pesquisa = "select * from cliente where email like '" + Email + "' && senha = '" + Senha + "'";
-            con_cliente.executaSQL(pesquisa, true);
+            con_cliente.executaSQL(pesquisa);
             if(con_cliente.resultset.first()){
                 TelaPrincipal mostra = new TelaPrincipal();
                 mostra.setVisible(true);
