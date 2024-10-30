@@ -108,7 +108,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sVGImage12.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                // Colocar função do botão de pesquisar
+                // Colocar função do botão de pesquisar sVGImage6
             }
         });
                 sVGImage13.setSvgImage("imagens/icones/arquivo.svg", 30, 30);
