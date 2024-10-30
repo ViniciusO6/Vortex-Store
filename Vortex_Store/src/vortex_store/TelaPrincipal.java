@@ -7381,7 +7381,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                   "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
                   "WHERE imagens_jogo.tipo_imagem = 2 " +
                   "ORDER BY jogo.ID_jogo ASC LIMIT 21 OFFSET " + offset + ";";
-                  conexao.executaSQL(pesquisa, true);
+                  conexao.executaSQL(pesquisa);
             
             String titulo_jogo;
             String URL_IMG;

@@ -64,7 +64,7 @@ public class Conexao {
     }
  
     // Método para executar uma consulta SQL
-    public void executaSQL(String sql, boolean mensagem) {
+    public void executaSQL(String sql) {
         try {
             if (statement == null) {
                 // Cria o statement se ele não existir
@@ -72,9 +72,9 @@ public class Conexao {
             }
             resultset = statement.executeQuery(sql);
         } catch (SQLException execao) {
-             if(mensagem == true){
+             //if(mensagem == true){
             JOptionPane.showMessageDialog(null, "Erro no comando SQL! \nErro: " + execao, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-             }
+             //}
         }
     }
 }
