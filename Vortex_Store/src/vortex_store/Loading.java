@@ -161,7 +161,6 @@ public class Loading extends javax.swing.JFrame {
         jProgressBar1 = new javax.swing.JProgressBar();
         Mensagens = new javax.swing.JLabel();
 
-        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         jDialog1.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog1.setUndecorated(true);
         jDialog1.setResizable(false);

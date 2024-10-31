@@ -4,7 +4,6 @@
   <NonVisualComponents>
     <Container class="javax.swing.JDialog" name="jDialog1">
       <Properties>
-        <Property name="defaultCloseOperation" type="int" value="2"/>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[480, 300]"/>
         </Property>
