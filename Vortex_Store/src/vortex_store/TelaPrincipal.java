@@ -8699,7 +8699,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_Avançar4ActionPerformed
     
     
-    
+    //Comentei
     
     
     public void CarregarJogos(boolean voltou, boolean recarregar){  

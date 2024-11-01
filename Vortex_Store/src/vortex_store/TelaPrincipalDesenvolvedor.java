@@ -58,7 +58,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         
         initComponents();
         jTabbedPane1.setSelectedIndex(1);
-
         
         btnVoltar.setVisible(false);
         btnAvancar.setVisible(false);
@@ -103,6 +102,9 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         //Setando icone
         ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
         setIconImage(icon.getImage());
+        sVGImage28.setSvgImage("imagens/ExcluirConta.svg", 100, 100);
+        sVGImage27.setSvgImage("imagens/ExcluirConta.svg", 100, 100);
+        
         
         sVGImage20.setSvgImage("imagens/icones/arquivo.svg", 30, 30);
         sVGImage20.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -254,6 +256,19 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         ocultoPanel = new javax.swing.JPanel();
         OcultoText = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jDialog1 = new javax.swing.JDialog();
+        jPanel121 = new javax.swing.JPanel();
+        jLabel153 = new javax.swing.JLabel();
+        sVGImage28 = new imagens.SVGImage();
+        jLabel154 = new javax.swing.JLabel();
+        AvançarExcluir = new com.raven.swing.Button();
+        CancelarExcluir = new com.raven.swing.Button();
+        jDialog2 = new javax.swing.JDialog();
+        jPanel119 = new javax.swing.JPanel();
+        jLabel155 = new javax.swing.JLabel();
+        sVGImage27 = new imagens.SVGImage();
+        jLabel156 = new javax.swing.JLabel();
+        Avançar2 = new com.raven.swing.Button();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
@@ -732,6 +747,164 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         OcultoText.setText("jLabel11");
 
         jLabel9.setText("jLabel9");
+
+        jDialog1.setMinimumSize(new java.awt.Dimension(480, 300));
+        jDialog1.setUndecorated(true);
+        jDialog1.getContentPane().setLayout(null);
+
+        jPanel121.setBackground(new java.awt.Color(27, 30, 43));
+
+        jLabel153.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel153.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel153.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel153.setText("Excluir Jogo");
+
+        jLabel154.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel154.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel154.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel154.setText("Deseja mesmo deseja mesmo excluir o seu jogo publicado?");
+
+        AvançarExcluir.setBackground(new java.awt.Color(76, 31, 128));
+        AvançarExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        AvançarExcluir.setText("Sim");
+        AvançarExcluir.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        AvançarExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AvançarExcluirMouseClicked(evt);
+            }
+        });
+        AvançarExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AvançarExcluirActionPerformed(evt);
+            }
+        });
+
+        CancelarExcluir.setBackground(new java.awt.Color(186, 33, 33));
+        CancelarExcluir.setForeground(new java.awt.Color(255, 255, 255));
+        CancelarExcluir.setText("Cancelar");
+        CancelarExcluir.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        CancelarExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelarExcluirMouseClicked(evt);
+            }
+        });
+        CancelarExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarExcluirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel121Layout = new javax.swing.GroupLayout(jPanel121);
+        jPanel121.setLayout(jPanel121Layout);
+        jPanel121Layout.setHorizontalGroup(
+            jPanel121Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel121Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(sVGImage28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel121Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel153, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(139, 139, 139))
+            .addGroup(jPanel121Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel154)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel121Layout.createSequentialGroup()
+                .addContainerGap(108, Short.MAX_VALUE)
+                .addComponent(AvançarExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(CancelarExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
+        );
+        jPanel121Layout.setVerticalGroup(
+            jPanel121Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel121Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel153)
+                .addGap(18, 18, 18)
+                .addComponent(sVGImage28, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel154)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel121Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AvançarExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CancelarExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        jDialog1.getContentPane().add(jPanel121);
+        jPanel121.setBounds(0, 0, 480, 300);
+
+        jDialog2.setMinimumSize(new java.awt.Dimension(480, 300));
+        jDialog2.setModal(true);
+        jDialog2.setUndecorated(true);
+        jDialog2.getContentPane().setLayout(null);
+
+        jPanel119.setBackground(new java.awt.Color(27, 30, 43));
+
+        jLabel155.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        jLabel155.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel155.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel155.setText("Excluir Jogo");
+
+        jLabel156.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabel156.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel156.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel156.setText("Jogo Excluido com Sucesso");
+
+        Avançar2.setBackground(new java.awt.Color(76, 31, 128));
+        Avançar2.setForeground(new java.awt.Color(255, 255, 255));
+        Avançar2.setText("Ok");
+        Avançar2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        Avançar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Avançar2MouseClicked(evt);
+            }
+        });
+        Avançar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Avançar2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel119Layout = new javax.swing.GroupLayout(jPanel119);
+        jPanel119.setLayout(jPanel119Layout);
+        jPanel119Layout.setHorizontalGroup(
+            jPanel119Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel119Layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(sVGImage27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel119Layout.createSequentialGroup()
+                .addContainerGap(141, Short.MAX_VALUE)
+                .addComponent(jLabel155, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(139, 139, 139))
+            .addGroup(jPanel119Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel156)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel119Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Avançar2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(190, 190, 190))
+        );
+        jPanel119Layout.setVerticalGroup(
+            jPanel119Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel119Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel155)
+                .addGap(18, 18, 18)
+                .addComponent(sVGImage27, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel156)
+                .addGap(18, 18, 18)
+                .addComponent(Avançar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        jDialog2.getContentPane().add(jPanel119);
+        jPanel119.setBounds(0, 0, 480, 300);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -5516,6 +5689,11 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         descartar1.setForeground(new java.awt.Color(255, 255, 255));
         descartar1.setText("Deletar Jogo");
         descartar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        descartar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                descartar1MouseClicked(evt);
+            }
+        });
         jPanel26.add(descartar1);
         descartar1.setBounds(463, 1664, 317, 34);
 
@@ -7076,6 +7254,44 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void AvançarExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AvançarExcluirMouseClicked
+        // TODO add your handling code here:
+        jDialog1.dispose();
+
+        jDialog2.setLocationRelativeTo(null);
+        jDialog2.setModal(true);
+        jDialog2.setUndecorated(true);
+        jDialog2.setVisible(true);
+    }//GEN-LAST:event_AvançarExcluirMouseClicked
+
+    private void AvançarExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvançarExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AvançarExcluirActionPerformed
+
+    private void CancelarExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelarExcluirMouseClicked
+        jDialog1.dispose();
+    }//GEN-LAST:event_CancelarExcluirMouseClicked
+
+    private void CancelarExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CancelarExcluirActionPerformed
+
+    private void descartar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descartar1MouseClicked
+        // TODO add your handling code here:
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setModal(true);
+        jDialog1.setUndecorated(true);
+        jDialog1.setVisible(true);
+    }//GEN-LAST:event_descartar1MouseClicked
+
+    private void Avançar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Avançar2MouseClicked
+        jDialog2.dispose();
+    }//GEN-LAST:event_Avançar2MouseClicked
+
+    private void Avançar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Avançar2ActionPerformed
+
+    }//GEN-LAST:event_Avançar2ActionPerformed
     
     
     
@@ -7486,6 +7702,9 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ArquivoJogo;
     private javax.swing.JTextField ArquivoJogo1;
+    private com.raven.swing.Button Avançar2;
+    private com.raven.swing.Button AvançarExcluir;
+    private com.raven.swing.Button CancelarExcluir;
     private javax.swing.JTextField CapaJogo;
     private javax.swing.JTextField CapaJogo1;
     private com.raven.swing.combobox.ComboBoxSuggestion Classificacao;
@@ -7612,6 +7831,8 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private checkbox.JCheckBoxCustom jCheckBoxCustom7;
     private checkbox.JCheckBoxCustom jCheckBoxCustom8;
     private checkbox.JCheckBoxCustom jCheckBoxCustom9;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -7672,6 +7893,10 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel150;
     private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
+    private javax.swing.JLabel jLabel153;
+    private javax.swing.JLabel jLabel154;
+    private javax.swing.JLabel jLabel155;
+    private javax.swing.JLabel jLabel156;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -7779,7 +8004,9 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel110;
     private javax.swing.JPanel jPanel111;
+    private javax.swing.JPanel jPanel119;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel121;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
@@ -7944,6 +8171,8 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private imagens.SVGImage sVGImage24;
     private imagens.SVGImage sVGImage25;
     private imagens.SVGImage sVGImage26;
+    private imagens.SVGImage sVGImage27;
+    private imagens.SVGImage sVGImage28;
     private imagens.SVGImage sVGImage3;
     private imagens.SVGImage sVGImage4;
     private imagens.SVGImage sVGImage5;
