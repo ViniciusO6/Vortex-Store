@@ -834,7 +834,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         );
 
         jDialog1.getContentPane().add(jPanel121);
-        jPanel121.setBounds(0, 0, 480, 300);
+        jPanel121.setBounds(0, 0, 480, 0);
 
         jDialog2.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog2.setModal(true);
@@ -904,7 +904,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         );
 
         jDialog2.getContentPane().add(jPanel119);
-        jPanel119.setBounds(0, 0, 480, 300);
+        jPanel119.setBounds(0, 0, 480, 0);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -5798,11 +5798,11 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1760, Short.MAX_VALUE)
+            .addGap(0, 1550, Short.MAX_VALUE)
         );
 
         jPanel58.add(jPanel13);
-        jPanel13.setBounds(620, 0, 10, 1760);
+        jPanel13.setBounds(620, 0, 10, 1550);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
         jPanel58.add(jLabel11);
@@ -6006,13 +6006,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             .addGroup(jPanel62Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(684, Short.MAX_VALUE))
+                .addContainerGap(681, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel62);
 
         jPanel58.add(jScrollPane2);
-        jScrollPane2.setBounds(640, 960, 300, 790);
+        jScrollPane2.setBounds(640, 960, 300, 550);
 
         jLabel113.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel113.setForeground(new java.awt.Color(255, 255, 255));
