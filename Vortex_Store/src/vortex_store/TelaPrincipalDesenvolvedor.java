@@ -7578,9 +7578,9 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
                for (int i = 0; i < 5; i++) {
                TipoImagem = 1; // Imagens do jogo
                String URL_imagem = URLs[0]; 
-               Upload UpImagens = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[i]);
-               String NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/FotosJogos/"+UpImagens.nomeFile;
-               System.out.println("cassio gaymer "+NomeImagem);
+               Upload UpImagens = new Upload("http://tcloud.site/Vinicius/Vortex/UploadImagens.php", URLs[i]);
+               String NomeImagem = "http://tcloud.site/Vinicius/Vortex/FotosJogos/"+UpImagens.nomeFile;
+               System.out.println("Log: "+NomeImagem);
                System.out.println("URL_imagem");
                       
                 try{   
@@ -7594,8 +7594,8 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
    }
         TipoImagem = 2; // Capa do Jogo
         String URL_imagem = URLs[5]; 
-        Upload UpCapa = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[5]);
-        String NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/FotosJogos/"+UpCapa.nomeFile;
+        Upload UpCapa = new Upload("http://tcloud.site/Vinicius/Vortex/UploadImagens.php", URLs[5]);
+        String NomeImagem = "http://tcloud.site/Vinicius/Vortex/FotosJogos/"+UpCapa.nomeFile;
         System.out.println("cassio gaymer "+NomeImagem);
         System.out.println("URL_imagem");
         try{   
@@ -7609,8 +7609,8 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         
         TipoImagem = 3; // Poster do Jogo
         URL_imagem = URLs[6]; 
-        Upload UpPoster = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[6]);
-        NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/FotosJogos/"+UpPoster.nomeFile;
+        Upload UpPoster = new Upload("http://tcloud.site/Vinicius/Vortex/UploadImagens.php", URLs[6]);
+        NomeImagem = "http://tcloud.site/Vinicius/Vortex/FotosJogos/"+UpPoster.nomeFile;
         System.out.println("cassio gaymer "+NomeImagem);
         System.out.println("URL_imagem");
         try{   
@@ -7624,8 +7624,8 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         
         TipoImagem = 10; // Jogo
         URL_imagem = URLs[7]; 
-        Upload UpJogo = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[7]);
-        NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/Jogos/"+UpJogo.nomeFile;
+        Upload UpJogo = new Upload("http://tcloud.site/Vinicius/Vortex/UploadImagens.php", URLs[7]);
+        NomeImagem = "http://tcloud.site/Vinicius/Vortex/Jogos/"+UpJogo.nomeFile;
         System.out.println(""+NomeImagem);
         System.out.println("URL_imagem");
         try{   

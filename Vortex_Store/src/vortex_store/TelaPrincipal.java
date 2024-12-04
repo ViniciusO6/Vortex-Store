@@ -44,11 +44,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
     Conexao conexao;
     String URLs[] = new String[8];
     int offset = -20;
+    int offset2 = -20;
     int[] ID_CARD = new int[20] ;
     int ID_BUSCAR;
+    
     int linhas = 0;
     int avancou = 0;
     boolean MaisJogos;
+    
+    int avancou2 = 0;
+    boolean MaisJogos2;
     
     ScrollBarCustom scrollBarCustom = new  ScrollBarCustom();
     
@@ -65,6 +70,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnAvancar.setVisible(false);
         
         CarregarJogos(false, false);
+        CarregarJogosAleatorios(false, false);
+        BuscarJogo();
         scrollBarCustom.imprimir();
 
         
@@ -228,6 +235,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sVGImage29 = new imagens.SVGImage();
         jLabel114 = new javax.swing.JLabel();
         Avançar4 = new com.raven.swing.Button();
+        ocultoPanel2 = new javax.swing.JPanel();
+        OcultoText2 = new javax.swing.JLabel();
+        OcultoImgCard2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel12 = new javax.swing.JPanel();
@@ -242,18 +252,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel56 = new javax.swing.JPanel();
         ImgCard22 = new javax.swing.JLabel();
         TextCard22 = new javax.swing.JLabel();
-        PanelCard23 = new javax.swing.JPanel();
+        PanelCard25 = new javax.swing.JPanel();
         jPanel57 = new javax.swing.JPanel();
+        ImgCard25 = new javax.swing.JLabel();
+        TextCard25 = new javax.swing.JLabel();
+        PanelCard23 = new javax.swing.JPanel();
+        jPanel58 = new javax.swing.JPanel();
         ImgCard23 = new javax.swing.JLabel();
         TextCard23 = new javax.swing.JLabel();
         PanelCard24 = new javax.swing.JPanel();
-        jPanel58 = new javax.swing.JPanel();
+        jPanel59 = new javax.swing.JPanel();
         ImgCard24 = new javax.swing.JLabel();
         TextCard24 = new javax.swing.JLabel();
-        PanelCard25 = new javax.swing.JPanel();
-        jPanel59 = new javax.swing.JPanel();
-        ImgCard25 = new javax.swing.JLabel();
-        TextCard25 = new javax.swing.JLabel();
         PanelCard26 = new javax.swing.JPanel();
         jPanel60 = new javax.swing.JPanel();
         ImgCard26 = new javax.swing.JLabel();
@@ -274,26 +284,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel64 = new javax.swing.JPanel();
         ImgCard30 = new javax.swing.JLabel();
         TextCard30 = new javax.swing.JLabel();
-        PanelCard31 = new javax.swing.JPanel();
+        PanelCard35 = new javax.swing.JPanel();
         jPanel76 = new javax.swing.JPanel();
-        ImgCard31 = new javax.swing.JLabel();
-        TextCard31 = new javax.swing.JLabel();
-        PanelCard32 = new javax.swing.JPanel();
-        jPanel77 = new javax.swing.JPanel();
-        ImgCard32 = new javax.swing.JLabel();
-        TextCard32 = new javax.swing.JLabel();
+        ImgCard35 = new javax.swing.JLabel();
+        TextCard35 = new javax.swing.JLabel();
         PanelCard33 = new javax.swing.JPanel();
-        jPanel78 = new javax.swing.JPanel();
+        jPanel77 = new javax.swing.JPanel();
         ImgCard33 = new javax.swing.JLabel();
         TextCard33 = new javax.swing.JLabel();
+        PanelCard31 = new javax.swing.JPanel();
+        jPanel78 = new javax.swing.JPanel();
+        ImgCard31 = new javax.swing.JLabel();
+        TextCard31 = new javax.swing.JLabel();
         PanelCard34 = new javax.swing.JPanel();
         jPanel79 = new javax.swing.JPanel();
         ImgCard34 = new javax.swing.JLabel();
         TextCard34 = new javax.swing.JLabel();
-        PanelCard35 = new javax.swing.JPanel();
+        PanelCard32 = new javax.swing.JPanel();
         jPanel80 = new javax.swing.JPanel();
-        ImgCard35 = new javax.swing.JLabel();
-        TextCard35 = new javax.swing.JLabel();
+        ImgCard32 = new javax.swing.JLabel();
+        TextCard32 = new javax.swing.JLabel();
         PanelCard36 = new javax.swing.JPanel();
         jPanel81 = new javax.swing.JPanel();
         ImgCard36 = new javax.swing.JLabel();
@@ -446,14 +456,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel138 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jPanel139 = new javax.swing.JPanel();
-        jLabel177 = new javax.swing.JLabel();
+        TituloPrincipal = new javax.swing.JLabel();
         jPanel140 = new javax.swing.JPanel();
         jLabel115 = new javax.swing.JLabel();
-        jLabel131 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        TituloJogo = new javax.swing.JLabel();
+        ImgPrincipal = new javax.swing.JLabel();
         jPanel141 = new javax.swing.JPanel();
         jLabel178 = new javax.swing.JLabel();
-        jLabel179 = new javax.swing.JLabel();
+        Sinopse = new javax.swing.JLabel();
         jLabel180 = new javax.swing.JLabel();
         jLabel181 = new javax.swing.JLabel();
         jLabel182 = new javax.swing.JLabel();
@@ -461,14 +471,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel184 = new javax.swing.JLabel();
         jLabel185 = new javax.swing.JLabel();
         jLabel186 = new javax.swing.JLabel();
-        jLabel187 = new javax.swing.JLabel();
-        jLabel188 = new javax.swing.JLabel();
-        jLabel189 = new javax.swing.JLabel();
-        jLabel190 = new javax.swing.JLabel();
-        jLabel191 = new javax.swing.JLabel();
+        img1 = new javax.swing.JLabel();
+        img5 = new javax.swing.JLabel();
+        img3 = new javax.swing.JLabel();
+        img4 = new javax.swing.JLabel();
+        img2 = new javax.swing.JLabel();
         jPanel142 = new javax.swing.JPanel();
         jSeparator4 = new javax.swing.JSeparator();
-        jLabel192 = new javax.swing.JLabel();
+        descricao = new javax.swing.JLabel();
         jLabel116 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jPanel143 = new javax.swing.JPanel();
@@ -523,6 +533,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel151 = new javax.swing.JLabel();
         jLabel152 = new javax.swing.JLabel();
         sVGImage31 = new imagens.SVGImage();
+        imageReajust1 = new javaswingdev.ImageReajust();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -556,7 +567,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jDialog2.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog2.setUndecorated(true);
-        jDialog2.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog2.getContentPane().setLayout(null);
 
         jPanel117.setBackground(new java.awt.Color(27, 30, 43));
@@ -636,10 +646,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog2.getContentPane().add(jPanel117);
-        jPanel117.setBounds(0, 0, 480, 300);
+        jPanel117.setBounds(0, 0, 480, 0);
 
         jDialog3.setMinimumSize(new java.awt.Dimension(600, 400));
-        jDialog3.setPreferredSize(new java.awt.Dimension(600, 400));
 
         jPanel118.setBackground(new java.awt.Color(27, 30, 43));
 
@@ -817,7 +826,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDialog4.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog4.setModal(true);
         jDialog4.setUndecorated(true);
-        jDialog4.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog4.getContentPane().setLayout(null);
 
         jPanel119.setBackground(new java.awt.Color(27, 30, 43));
@@ -883,11 +891,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog4.getContentPane().add(jPanel119);
-        jPanel119.setBounds(0, 0, 480, 300);
+        jPanel119.setBounds(0, 0, 480, 0);
 
         jDialog5.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog5.setUndecorated(true);
-        jDialog5.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog5.getContentPane().setLayout(null);
 
         jPanel121.setBackground(new java.awt.Color(27, 30, 43));
@@ -972,10 +979,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog5.getContentPane().add(jPanel121);
-        jPanel121.setBounds(0, 0, 480, 300);
+        jPanel121.setBounds(0, 0, 480, 0);
 
         jDialog6.setMinimumSize(new java.awt.Dimension(600, 400));
-        jDialog6.setPreferredSize(new java.awt.Dimension(600, 400));
 
         jPanel124.setBackground(new java.awt.Color(27, 30, 43));
 
@@ -1150,7 +1156,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDialog7.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog7.setModal(true);
         jDialog7.setUndecorated(true);
-        jDialog7.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog7.getContentPane().setLayout(null);
 
         jPanel125.setBackground(new java.awt.Color(27, 30, 43));
@@ -1216,7 +1221,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog7.getContentPane().add(jPanel125);
-        jPanel125.setBounds(0, 0, 480, 300);
+        jPanel125.setBounds(0, 0, 480, 0);
+
+        javax.swing.GroupLayout ocultoPanel2Layout = new javax.swing.GroupLayout(ocultoPanel2);
+        ocultoPanel2.setLayout(ocultoPanel2Layout);
+        ocultoPanel2Layout.setHorizontalGroup(
+            ocultoPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 19, Short.MAX_VALUE)
+        );
+        ocultoPanel2Layout.setVerticalGroup(
+            ocultoPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 13, Short.MAX_VALUE)
+        );
+
+        OcultoText2.setText("jLabel11");
+
+        OcultoImgCard2.setText("jLabel9");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -1342,106 +1362,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        PanelCard23.setBackground(new java.awt.Color(18, 22, 32));
-
-        ImgCard23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
-        ImgCard23.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImgCard23MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
-        jPanel57.setLayout(jPanel57Layout);
-        jPanel57Layout.setHorizontalGroup(
-            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel57Layout.createSequentialGroup()
-                .addComponent(ImgCard23)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel57Layout.setVerticalGroup(
-            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel57Layout.createSequentialGroup()
-                .addComponent(ImgCard23)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        TextCard23.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        TextCard23.setForeground(new java.awt.Color(255, 255, 255));
-        TextCard23.setText("Nome do Jogo");
-        TextCard23.setToolTipText("");
-        TextCard23.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        TextCard23.setMaximumSize(new java.awt.Dimension(107, 32));
-
-        javax.swing.GroupLayout PanelCard23Layout = new javax.swing.GroupLayout(PanelCard23);
-        PanelCard23.setLayout(PanelCard23Layout);
-        PanelCard23Layout.setHorizontalGroup(
-            PanelCard23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard23Layout.createSequentialGroup()
-                .addGroup(PanelCard23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TextCard23, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        PanelCard23Layout.setVerticalGroup(
-            PanelCard23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard23Layout.createSequentialGroup()
-                .addComponent(jPanel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextCard23, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        PanelCard24.setBackground(new java.awt.Color(18, 22, 32));
-
-        ImgCard24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
-        ImgCard24.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImgCard24MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
-        jPanel58.setLayout(jPanel58Layout);
-        jPanel58Layout.setHorizontalGroup(
-            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel58Layout.createSequentialGroup()
-                .addComponent(ImgCard24)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel58Layout.setVerticalGroup(
-            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel58Layout.createSequentialGroup()
-                .addComponent(ImgCard24)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        TextCard24.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        TextCard24.setForeground(new java.awt.Color(255, 255, 255));
-        TextCard24.setText("Nome do Jogo");
-        TextCard24.setToolTipText("");
-        TextCard24.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        TextCard24.setMaximumSize(new java.awt.Dimension(107, 32));
-
-        javax.swing.GroupLayout PanelCard24Layout = new javax.swing.GroupLayout(PanelCard24);
-        PanelCard24.setLayout(PanelCard24Layout);
-        PanelCard24Layout.setHorizontalGroup(
-            PanelCard24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard24Layout.createSequentialGroup()
-                .addGroup(PanelCard24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TextCard24, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        PanelCard24Layout.setVerticalGroup(
-            PanelCard24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard24Layout.createSequentialGroup()
-                .addComponent(jPanel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextCard24, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
         PanelCard25.setBackground(new java.awt.Color(18, 22, 32));
 
         ImgCard25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
@@ -1451,17 +1371,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
-        jPanel59.setLayout(jPanel59Layout);
-        jPanel59Layout.setHorizontalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel59Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
+        jPanel57.setLayout(jPanel57Layout);
+        jPanel57Layout.setHorizontalGroup(
+            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel57Layout.createSequentialGroup()
                 .addComponent(ImgCard25)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel59Layout.setVerticalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel59Layout.createSequentialGroup()
+        jPanel57Layout.setVerticalGroup(
+            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel57Layout.createSequentialGroup()
                 .addComponent(ImgCard25)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -1479,16 +1399,116 @@ public class TelaPrincipal extends javax.swing.JFrame {
             PanelCard25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCard25Layout.createSequentialGroup()
                 .addGroup(PanelCard25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TextCard25, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         PanelCard25Layout.setVerticalGroup(
             PanelCard25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCard25Layout.createSequentialGroup()
-                .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextCard25, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        PanelCard23.setBackground(new java.awt.Color(18, 22, 32));
+
+        ImgCard23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
+        ImgCard23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImgCard23MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
+        jPanel58.setLayout(jPanel58Layout);
+        jPanel58Layout.setHorizontalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel58Layout.createSequentialGroup()
+                .addComponent(ImgCard23)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel58Layout.setVerticalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel58Layout.createSequentialGroup()
+                .addComponent(ImgCard23)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        TextCard23.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        TextCard23.setForeground(new java.awt.Color(255, 255, 255));
+        TextCard23.setText("Nome do Jogo");
+        TextCard23.setToolTipText("");
+        TextCard23.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        TextCard23.setMaximumSize(new java.awt.Dimension(107, 32));
+
+        javax.swing.GroupLayout PanelCard23Layout = new javax.swing.GroupLayout(PanelCard23);
+        PanelCard23.setLayout(PanelCard23Layout);
+        PanelCard23Layout.setHorizontalGroup(
+            PanelCard23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard23Layout.createSequentialGroup()
+                .addGroup(PanelCard23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TextCard23, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        PanelCard23Layout.setVerticalGroup(
+            PanelCard23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard23Layout.createSequentialGroup()
+                .addComponent(jPanel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TextCard23, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        PanelCard24.setBackground(new java.awt.Color(18, 22, 32));
+
+        ImgCard24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
+        ImgCard24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImgCard24MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
+        jPanel59.setLayout(jPanel59Layout);
+        jPanel59Layout.setHorizontalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel59Layout.createSequentialGroup()
+                .addComponent(ImgCard24)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel59Layout.setVerticalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel59Layout.createSequentialGroup()
+                .addComponent(ImgCard24)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        TextCard24.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        TextCard24.setForeground(new java.awt.Color(255, 255, 255));
+        TextCard24.setText("Nome do Jogo");
+        TextCard24.setToolTipText("");
+        TextCard24.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        TextCard24.setMaximumSize(new java.awt.Dimension(107, 32));
+
+        javax.swing.GroupLayout PanelCard24Layout = new javax.swing.GroupLayout(PanelCard24);
+        PanelCard24.setLayout(PanelCard24Layout);
+        PanelCard24Layout.setHorizontalGroup(
+            PanelCard24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard24Layout.createSequentialGroup()
+                .addGroup(PanelCard24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TextCard24, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        PanelCard24Layout.setVerticalGroup(
+            PanelCard24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard24Layout.createSequentialGroup()
+                .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TextCard24, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -1742,12 +1762,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        PanelCard31.setBackground(new java.awt.Color(18, 22, 32));
+        PanelCard35.setBackground(new java.awt.Color(18, 22, 32));
 
-        ImgCard31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
-        ImgCard31.addMouseListener(new java.awt.event.MouseAdapter() {
+        ImgCard35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
+        ImgCard35.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImgCard31MouseClicked(evt);
+                ImgCard35MouseClicked(evt);
             }
         });
 
@@ -1756,89 +1776,39 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel76Layout.setHorizontalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel76Layout.createSequentialGroup()
-                .addComponent(ImgCard31)
+                .addComponent(ImgCard35)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel76Layout.setVerticalGroup(
             jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel76Layout.createSequentialGroup()
-                .addComponent(ImgCard31)
+                .addComponent(ImgCard35)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        TextCard31.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        TextCard31.setForeground(new java.awt.Color(255, 255, 255));
-        TextCard31.setText("Nome do Jogo");
-        TextCard31.setToolTipText("");
-        TextCard31.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        TextCard31.setMaximumSize(new java.awt.Dimension(107, 32));
+        TextCard35.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        TextCard35.setForeground(new java.awt.Color(255, 255, 255));
+        TextCard35.setText("Nome do Jogo");
+        TextCard35.setToolTipText("");
+        TextCard35.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        TextCard35.setMaximumSize(new java.awt.Dimension(107, 32));
 
-        javax.swing.GroupLayout PanelCard31Layout = new javax.swing.GroupLayout(PanelCard31);
-        PanelCard31.setLayout(PanelCard31Layout);
-        PanelCard31Layout.setHorizontalGroup(
-            PanelCard31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard31Layout.createSequentialGroup()
-                .addGroup(PanelCard31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        javax.swing.GroupLayout PanelCard35Layout = new javax.swing.GroupLayout(PanelCard35);
+        PanelCard35.setLayout(PanelCard35Layout);
+        PanelCard35Layout.setHorizontalGroup(
+            PanelCard35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard35Layout.createSequentialGroup()
+                .addGroup(PanelCard35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TextCard31, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextCard35, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        PanelCard31Layout.setVerticalGroup(
-            PanelCard31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard31Layout.createSequentialGroup()
+        PanelCard35Layout.setVerticalGroup(
+            PanelCard35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard35Layout.createSequentialGroup()
                 .addComponent(jPanel76, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextCard31, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        PanelCard32.setBackground(new java.awt.Color(18, 22, 32));
-
-        ImgCard32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
-        ImgCard32.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImgCard32MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
-        jPanel77.setLayout(jPanel77Layout);
-        jPanel77Layout.setHorizontalGroup(
-            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel77Layout.createSequentialGroup()
-                .addComponent(ImgCard32)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel77Layout.setVerticalGroup(
-            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel77Layout.createSequentialGroup()
-                .addComponent(ImgCard32)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        TextCard32.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        TextCard32.setForeground(new java.awt.Color(255, 255, 255));
-        TextCard32.setText("Nome do Jogo");
-        TextCard32.setToolTipText("");
-        TextCard32.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        TextCard32.setMaximumSize(new java.awt.Dimension(107, 32));
-
-        javax.swing.GroupLayout PanelCard32Layout = new javax.swing.GroupLayout(PanelCard32);
-        PanelCard32.setLayout(PanelCard32Layout);
-        PanelCard32Layout.setHorizontalGroup(
-            PanelCard32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard32Layout.createSequentialGroup()
-                .addGroup(PanelCard32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TextCard32, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        PanelCard32Layout.setVerticalGroup(
-            PanelCard32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard32Layout.createSequentialGroup()
-                .addComponent(jPanel77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextCard32, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TextCard35, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -1851,17 +1821,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
-        jPanel78.setLayout(jPanel78Layout);
-        jPanel78Layout.setHorizontalGroup(
-            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel78Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
+        jPanel77.setLayout(jPanel77Layout);
+        jPanel77Layout.setHorizontalGroup(
+            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel77Layout.createSequentialGroup()
                 .addComponent(ImgCard33)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel78Layout.setVerticalGroup(
-            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel78Layout.createSequentialGroup()
+        jPanel77Layout.setVerticalGroup(
+            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel77Layout.createSequentialGroup()
                 .addComponent(ImgCard33)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -1879,16 +1849,66 @@ public class TelaPrincipal extends javax.swing.JFrame {
             PanelCard33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCard33Layout.createSequentialGroup()
                 .addGroup(PanelCard33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TextCard33, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         PanelCard33Layout.setVerticalGroup(
             PanelCard33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCard33Layout.createSequentialGroup()
-                .addComponent(jPanel78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextCard33, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        PanelCard31.setBackground(new java.awt.Color(18, 22, 32));
+
+        ImgCard31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
+        ImgCard31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ImgCard31MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
+        jPanel78.setLayout(jPanel78Layout);
+        jPanel78Layout.setHorizontalGroup(
+            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel78Layout.createSequentialGroup()
+                .addComponent(ImgCard31)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel78Layout.setVerticalGroup(
+            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel78Layout.createSequentialGroup()
+                .addComponent(ImgCard31)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        TextCard31.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        TextCard31.setForeground(new java.awt.Color(255, 255, 255));
+        TextCard31.setText("Nome do Jogo");
+        TextCard31.setToolTipText("");
+        TextCard31.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        TextCard31.setMaximumSize(new java.awt.Dimension(107, 32));
+
+        javax.swing.GroupLayout PanelCard31Layout = new javax.swing.GroupLayout(PanelCard31);
+        PanelCard31.setLayout(PanelCard31Layout);
+        PanelCard31Layout.setHorizontalGroup(
+            PanelCard31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard31Layout.createSequentialGroup()
+                .addGroup(PanelCard31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TextCard31, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        PanelCard31Layout.setVerticalGroup(
+            PanelCard31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard31Layout.createSequentialGroup()
+                .addComponent(jPanel78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TextCard31, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -1942,12 +1962,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        PanelCard35.setBackground(new java.awt.Color(18, 22, 32));
+        PanelCard32.setBackground(new java.awt.Color(18, 22, 32));
 
-        ImgCard35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
-        ImgCard35.addMouseListener(new java.awt.event.MouseAdapter() {
+        ImgCard32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/DefaultImg.png"))); // NOI18N
+        ImgCard32.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ImgCard35MouseClicked(evt);
+                ImgCard32MouseClicked(evt);
             }
         });
 
@@ -1956,39 +1976,39 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel80Layout.setHorizontalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel80Layout.createSequentialGroup()
-                .addComponent(ImgCard35)
+                .addComponent(ImgCard32)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel80Layout.setVerticalGroup(
             jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel80Layout.createSequentialGroup()
-                .addComponent(ImgCard35)
+                .addComponent(ImgCard32)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        TextCard35.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        TextCard35.setForeground(new java.awt.Color(255, 255, 255));
-        TextCard35.setText("Nome do Jogo");
-        TextCard35.setToolTipText("");
-        TextCard35.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        TextCard35.setMaximumSize(new java.awt.Dimension(107, 32));
+        TextCard32.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        TextCard32.setForeground(new java.awt.Color(255, 255, 255));
+        TextCard32.setText("Nome do Jogo");
+        TextCard32.setToolTipText("");
+        TextCard32.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        TextCard32.setMaximumSize(new java.awt.Dimension(107, 32));
 
-        javax.swing.GroupLayout PanelCard35Layout = new javax.swing.GroupLayout(PanelCard35);
-        PanelCard35.setLayout(PanelCard35Layout);
-        PanelCard35Layout.setHorizontalGroup(
-            PanelCard35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard35Layout.createSequentialGroup()
-                .addGroup(PanelCard35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        javax.swing.GroupLayout PanelCard32Layout = new javax.swing.GroupLayout(PanelCard32);
+        PanelCard32.setLayout(PanelCard32Layout);
+        PanelCard32Layout.setHorizontalGroup(
+            PanelCard32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard32Layout.createSequentialGroup()
+                .addGroup(PanelCard32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TextCard35, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TextCard32, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        PanelCard35Layout.setVerticalGroup(
-            PanelCard35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCard35Layout.createSequentialGroup()
+        PanelCard32Layout.setVerticalGroup(
+            PanelCard32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCard32Layout.createSequentialGroup()
                 .addComponent(jPanel80, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextCard35, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TextCard32, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -2322,15 +2342,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(90, 90, 90)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(PanelCard33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addComponent(PanelCard35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PanelCard31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
                         .addComponent(PanelCard32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
+                        .addComponent(PanelCard33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
                         .addComponent(PanelCard34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
-                        .addComponent(PanelCard31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PanelCard35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel13Layout.createSequentialGroup()
                             .addComponent(PanelCard26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2352,11 +2372,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     .addGap(45, 45, 45)
                                     .addComponent(PanelCard22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(45, 45, 45)
+                            .addComponent(PanelCard23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(45, 45, 45)
                             .addComponent(PanelCard24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(45, 45, 45)
-                            .addComponent(PanelCard25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(45, 45, 45)
-                            .addComponent(PanelCard23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(PanelCard25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addComponent(PanelCard36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)
@@ -2379,9 +2399,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(PanelCard21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelCard22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelCard25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelCard23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelCard24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelCard25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PanelCard24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PanelCard26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2391,10 +2411,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(PanelCard29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelCard33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelCard35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelCard31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelCard32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCard35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCard33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PanelCard34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4087,13 +4107,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel139.setMaximumSize(new java.awt.Dimension(1195, 1890));
         jPanel139.setMinimumSize(new java.awt.Dimension(1195, 1890));
 
-        jLabel177.setBackground(new java.awt.Color(76, 31, 129));
-        jLabel177.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel177.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel177.setText("Título do Jogo");
-        jLabel177.addMouseListener(new java.awt.event.MouseAdapter() {
+        TituloPrincipal.setBackground(new java.awt.Color(76, 31, 129));
+        TituloPrincipal.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        TituloPrincipal.setForeground(new java.awt.Color(255, 255, 255));
+        TituloPrincipal.setText("Título do Jogo");
+        TituloPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel177MouseClicked(evt);
+                TituloPrincipalMouseClicked(evt);
             }
         });
 
@@ -4112,21 +4132,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel115);
         jLabel115.setBounds(20, 520, 206, 32);
 
-        jLabel131.setBackground(new java.awt.Color(76, 31, 129));
-        jLabel131.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel131.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel131.setText("Título do Jogo");
-        jLabel131.addMouseListener(new java.awt.event.MouseAdapter() {
+        TituloJogo.setBackground(new java.awt.Color(76, 31, 129));
+        TituloJogo.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        TituloJogo.setForeground(new java.awt.Color(255, 255, 255));
+        TituloJogo.setText("Título do Jogo");
+        TituloJogo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel131MouseClicked(evt);
+                TituloJogoMouseClicked(evt);
             }
         });
-        jPanel140.add(jLabel131);
-        jLabel131.setBounds(640, 190, 254, 27);
+        jPanel140.add(TituloJogo);
+        TituloJogo.setBounds(640, 190, 254, 27);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PosterDefault.png"))); // NOI18N
-        jPanel140.add(jLabel8);
-        jLabel8.setBounds(10, 10, 600, 370);
+        ImgPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PosterDefault.png"))); // NOI18N
+        jPanel140.add(ImgPrincipal);
+        ImgPrincipal.setBounds(10, 10, 600, 370);
 
         jPanel141.setBackground(new java.awt.Color(18, 22, 32));
 
@@ -4148,12 +4168,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel178);
         jLabel178.setBounds(640, 10, 300, 170);
 
-        jLabel179.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jLabel179.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel179.setText("<html>Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption, tendo sido lançado em outubro de 2018 para PlayStation 4 e Xbox One e em novembro de 2019 para Microsoft Windows e Google Stadia.</html>");
-        jLabel179.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel179);
-        jLabel179.setBounds(640, 230, 300, 140);
+        Sinopse.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        Sinopse.setForeground(new java.awt.Color(255, 255, 255));
+        Sinopse.setText("<html>Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption, tendo sido lançado em outubro de 2018 para PlayStation 4 e Xbox One e em novembro de 2019 para Microsoft Windows e Google Stadia.</html>"); // NOI18N
+        Sinopse.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Sinopse.setMaximumSize(new java.awt.Dimension(300, 140));
+        Sinopse.setMinimumSize(new java.awt.Dimension(300, 140));
+        jPanel140.add(Sinopse);
+        Sinopse.setBounds(640, 230, 300, 140);
 
         jLabel180.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel180.setForeground(new java.awt.Color(255, 255, 255));
@@ -4164,7 +4186,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel181.setForeground(new java.awt.Color(255, 255, 255));
         jLabel181.setText("Nome desenvolvedor");
         jPanel140.add(jLabel181);
-        jLabel181.setBounds(730, 370, 150, 16);
+        jLabel181.setBounds(730, 370, 200, 16);
 
         jLabel182.setForeground(new java.awt.Color(255, 255, 255));
         jLabel182.setText("xx/xx/xxxx");
@@ -4190,34 +4212,34 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel186.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel186.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel186.setText("R$ 229,99");
+        jLabel186.setText("GRÁTIS");
         jPanel140.add(jLabel186);
-        jLabel186.setBounds(850, 440, 90, 20);
+        jLabel186.setBounds(870, 450, 70, 20);
 
-        jLabel187.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        jLabel187.setText("jLabel102");
-        jPanel140.add(jLabel187);
-        jLabel187.setBounds(10, 400, 112, 70);
+        img1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
+        img1.setText("jLabel102");
+        jPanel140.add(img1);
+        img1.setBounds(10, 400, 112, 70);
 
-        jLabel188.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        jLabel188.setText("jLabel102");
-        jPanel140.add(jLabel188);
-        jLabel188.setBounds(498, 400, 112, 70);
+        img5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
+        img5.setText("jLabel102");
+        jPanel140.add(img5);
+        img5.setBounds(498, 400, 112, 70);
 
-        jLabel189.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        jLabel189.setText("jLabel102");
-        jPanel140.add(jLabel189);
-        jLabel189.setBounds(254, 400, 112, 70);
+        img3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
+        img3.setText("jLabel102");
+        jPanel140.add(img3);
+        img3.setBounds(254, 400, 112, 70);
 
-        jLabel190.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        jLabel190.setText("jLabel102");
-        jPanel140.add(jLabel190);
-        jLabel190.setBounds(376, 400, 112, 70);
+        img4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
+        img4.setText("jLabel102");
+        jPanel140.add(img4);
+        img4.setBounds(376, 400, 112, 70);
 
-        jLabel191.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        jLabel191.setText("jLabel102");
-        jPanel140.add(jLabel191);
-        jLabel191.setBounds(132, 400, 112, 70);
+        img2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
+        img2.setText("jLabel102");
+        jPanel140.add(img2);
+        img2.setBounds(132, 400, 112, 70);
 
         jPanel142.setBackground(new java.awt.Color(18, 22, 32));
 
@@ -4237,12 +4259,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jSeparator4);
         jSeparator4.setBounds(10, 560, 600, 10);
 
-        jLabel192.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel192.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel192.setText("<html><p>Estados Unidos, 1899.   Arthur Morgan e a gangue Van der Linde são bandidos em fuga. Com agentes federais e os melhores caçadores de recompensas no seu encalço, a gangue precisa roubar, assaltar e lutar para sobreviver no impiedoso coração dos Estados Unidos. Conforme divisões internas profundas ameaçam despedaçar a gangue, Arthur deve fazer uma escolha entre os seus próprios ideais e a lealdade à gangue que o criou.  Agora com conteúdo adicional no Modo História e um Modo Foto repleto de recursos, Red Dead Redemption 2 também inclui acesso gratuito ao mundo compartilhado de Red Dead Online. Nele, os jogadores assumem uma diversidade de ofícios para construir suas próprias trajetórias na fronteira, seja perseguindo criminosos procurados como Caçador de Recompensa, estabelecendo um negócio como Mercador, escavando tesouros exóticos como Colecionador ou operando uma destilaria subterrânea como Moonshiner, e muito mais.  Com novas melhorias gráficas e técnicas que tornam o jogo mais imersivo, Red Dead Redemption 2 para PC aproveita ao máximo a potência do PC para dar vida a cada canto deste mundo gigantesco, rico e detalhado, incluindo maiores distâncias de renderização; iluminação global de maior qualidade e oclusão do ambiente para melhorar a iluminação do dia e da noite; melhorias nos reflexos e sombras mais fortes e de maior resolução a todas as distâncias; texturas de árvore tesseladas e melhorias nas texturas de grama e pelo, tornando todas as plantas e animais mais realistas.  Red Dead Redemption 2 para PC também oferece suporte a HDR e a monitores de ponta com resolução 4K ou superior, configurações com vários monitores, widescreen, taxas de quadros mais rápidas, entre outras opções.</html>");
-        jLabel192.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel192);
-        jLabel192.setBounds(20, 580, 580, 410);
+        descricao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        descricao.setForeground(new java.awt.Color(255, 255, 255));
+        descricao.setText("<html><p>Estados Unidos, 1899.   Arthur Morgan e a gangue Van der Linde são bandidos em fuga. Com agentes federais e os melhores caçadores de recompensas no seu encalço, a gangue precisa roubar, assaltar e lutar para sobreviver no impiedoso coração dos Estados Unidos. Conforme divisões internas profundas ameaçam despedaçar a gangue, Arthur deve fazer uma escolha entre os seus próprios ideais e a lealdade à gangue que o criou.  Agora com conteúdo adicional no Modo História e um Modo Foto repleto de recursos, Red Dead Redemption 2 também inclui acesso gratuito ao mundo compartilhado de Red Dead Online. Nele, os jogadores assumem uma diversidade de ofícios para construir suas próprias trajetórias na fronteira, seja perseguindo criminosos procurados como Caçador de Recompensa, estabelecendo um negócio como Mercador, escavando tesouros exóticos como Colecionador ou operando uma destilaria subterrânea como Moonshiner, e muito mais.  Com novas melhorias gráficas e técnicas que tornam o jogo mais imersivo, Red Dead Redemption 2 para PC aproveita ao máximo a potência do PC para dar vida a cada canto deste mundo gigantesco, rico e detalhado, incluindo maiores distâncias de renderização; iluminação global de maior qualidade e oclusão do ambiente para melhorar a iluminação do dia e da noite; melhorias nos reflexos e sombras mais fortes e de maior resolução a todas as distâncias; texturas de árvore tesseladas e melhorias nas texturas de grama e pelo, tornando todas as plantas e animais mais realistas.  Red Dead Redemption 2 para PC também oferece suporte a HDR e a monitores de ponta com resolução 4K ou superior, configurações com vários monitores, widescreen, taxas de quadros mais rápidas, entre outras opções.</html>");
+        descricao.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(descricao);
+        descricao.setBounds(20, 580, 580, 410);
 
         jLabel116.setBackground(new java.awt.Color(76, 31, 129));
         jLabel116.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -4397,7 +4419,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         publicar3.setBackground(new java.awt.Color(59, 32, 91));
         publicar3.setForeground(new java.awt.Color(255, 255, 255));
-        publicar3.setText("Comprar");
+        publicar3.setText("Baixar");
         publicar3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         publicar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4653,6 +4675,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel152.setBounds(640, 580, 250, 70);
         jPanel140.add(sVGImage31);
         sVGImage31.setBounds(640, 440, 124, 20);
+        jPanel140.add(imageReajust1);
+        imageReajust1.setBounds(0, 0, 50, 40);
 
         javax.swing.GroupLayout jPanel139Layout = new javax.swing.GroupLayout(jPanel139);
         jPanel139.setLayout(jPanel139Layout);
@@ -4661,7 +4685,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel139Layout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addGroup(jPanel139Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel177, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TituloPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel140, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(153, 153, 153))
         );
@@ -4669,7 +4693,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jPanel139Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel139Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
-                .addComponent(jLabel177)
+                .addComponent(TituloPrincipal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel140, javax.swing.GroupLayout.PREFERRED_SIZE, 1540, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -4899,7 +4923,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -5285,25 +5309,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard36MouseClicked
 
-    private void ImgCard35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard35MouseClicked
+    private void ImgCard32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard32MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_ImgCard35MouseClicked
+    }//GEN-LAST:event_ImgCard32MouseClicked
 
     private void ImgCard34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard34MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard34MouseClicked
 
+    private void ImgCard31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard31MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImgCard31MouseClicked
+
     private void ImgCard33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard33MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard33MouseClicked
 
-    private void ImgCard32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard32MouseClicked
+    private void ImgCard35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard35MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_ImgCard32MouseClicked
-
-    private void ImgCard31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard31MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ImgCard31MouseClicked
+    }//GEN-LAST:event_ImgCard35MouseClicked
 
     private void ImgCard30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard30MouseClicked
         // TODO add your handling code here:
@@ -5325,10 +5349,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard26MouseClicked
 
-    private void ImgCard25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard25MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ImgCard25MouseClicked
-
     private void ImgCard24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard24MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard24MouseClicked
@@ -5336,6 +5356,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void ImgCard23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard23MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard23MouseClicked
+
+    private void ImgCard25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard25MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ImgCard25MouseClicked
 
     private void ImgCard22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard22MouseClicked
         // TODO add your handling code here:
@@ -5349,17 +5373,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel11MouseClicked
 
-    private void jLabel177MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel177MouseClicked
+    private void TituloPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TituloPrincipalMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel177MouseClicked
+    }//GEN-LAST:event_TituloPrincipalMouseClicked
 
     private void jLabel115MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel115MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel115MouseClicked
 
-    private void jLabel131MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel131MouseClicked
+    private void TituloJogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TituloJogoMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel131MouseClicked
+    }//GEN-LAST:event_TituloJogoMouseClicked
 
     private void jLabel116MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel116MouseClicked
         // TODO add your handling code here:
@@ -5398,19 +5422,19 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
             PanelCard1, PanelCard2, PanelCard3, PanelCard4, PanelCard5,
             PanelCard6, PanelCard7, PanelCard8, PanelCard9, PanelCard10,
             PanelCard11, PanelCard12, PanelCard13, PanelCard14, PanelCard15,
-            PanelCard16, PanelCard17, PanelCard18, PanelCard19, PanelCard20, ocultoPanel
+            PanelCard16, PanelCard17, PanelCard18, PanelCard19, PanelCard20, ocultoPanel2
             };
             JLabel[] labels = {
             TextCard1, TextCard2, TextCard3, TextCard4, TextCard5, 
             TextCard6, TextCard7, TextCard8, TextCard9, TextCard10, 
             TextCard11, TextCard12, TextCard13, TextCard14, TextCard15, 
-            TextCard16, TextCard17, TextCard18, TextCard19, TextCard20, OcultoText
+            TextCard16, TextCard17, TextCard18, TextCard19, TextCard20, OcultoText2
             };
             JLabel[] ImgCard = {
             ImgCard1, ImgCard2, ImgCard3, ImgCard4, ImgCard5, 
             ImgCard6, ImgCard7, ImgCard8, ImgCard9, ImgCard10, 
             ImgCard11, ImgCard12, ImgCard13, ImgCard14, ImgCard15, 
-            ImgCard16, ImgCard17, ImgCard18, ImgCard19, ImgCard20, jLabel9
+            ImgCard16, ImgCard17, ImgCard18, ImgCard19, ImgCard20, OcultoImgCard2
             };
             int[] MargemLihas = {
             450, 450, 445, 410, 390
@@ -5511,6 +5535,183 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
 
             }
             else{
+                JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void CarregarJogosAleatorios(boolean voltou, boolean recarregar){  
+            JPanel[] JPanel = {
+                PanelCard21, PanelCard22, PanelCard23, PanelCard24, PanelCard25,
+                PanelCard26, PanelCard27, PanelCard28, PanelCard29, PanelCard30,
+                PanelCard31, PanelCard32, PanelCard33, PanelCard34, PanelCard35,
+                PanelCard36, PanelCard37, PanelCard38, PanelCard39, PanelCard40, ocultoPanel
+            };
+            JLabel[] labels = {
+                TextCard21, TextCard22, TextCard23, TextCard24, TextCard25, 
+                TextCard26, TextCard27, TextCard28, TextCard29, TextCard30, 
+                TextCard31, TextCard32, TextCard33, TextCard34, TextCard35, 
+                TextCard36, TextCard37, TextCard38, TextCard39, TextCard40, OcultoText
+            };
+            JLabel[] ImgCard = {
+                ImgCard21, ImgCard22, ImgCard23, ImgCard24, ImgCard25, 
+                ImgCard26, ImgCard27, ImgCard28, ImgCard29, ImgCard30, 
+                ImgCard31, ImgCard32, ImgCard33, ImgCard34, ImgCard35, 
+                ImgCard36, ImgCard37, ImgCard38, ImgCard39, ImgCard40, jLabel9
+            };
+
+            int[] MargemLihas = {
+            450, 450, 445, 410, 390
+            };
+            int Margem;
+            
+  
+           ocultoPanel.setVisible(false);
+           OcultoText.setVisible(false);
+           
+            for(int i = 0; i < 20; i++) {
+                JPanel[i].setVisible(false);
+             }
+        
+        try{
+            int i = -1;
+            
+            if(recarregar == true){
+              offset2 = offset2;
+            }
+            else if(voltou == false){
+              offset2 += 20; 
+              System.out.println("Avançou");
+            }else{
+              offset2 -= 20;
+              System.out.println("Voltou");
+            }
+            
+            String pesquisa = "SELECT jogo.ID_jogo, jogo.titulo_do_jogo, imagens_jogo.URL_imagem " +
+                  "FROM jogo " +
+                  "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
+                  "WHERE imagens_jogo.tipo_imagem = 2 " +
+                  "ORDER BY jogo.ID_jogo ASC LIMIT 21 OFFSET " + offset2 + ";";
+                  conexao.executaSQL(pesquisa);
+            
+            String titulo_jogo;
+            String URL_IMG;
+            
+ 
+            if(conexao.resultset != null && conexao.resultset.first()){
+                do {               
+                    i++;
+                    switch(i){
+                        case 0:
+                           linhas = 1;
+                           MaisJogos = false;
+                           break;
+                        case 5:
+                           linhas = 2;
+                           MaisJogos = false;
+                           break;
+                        case 10:
+                           linhas = 3;
+                           MaisJogos = false;
+                           break;
+                        case 15:
+                            linhas = 4;
+                            MaisJogos = false;
+                            System.out.println("4");
+                           break;
+                        case 20:
+                            MaisJogos = true;
+                           break;
+                    }
+                    
+                    System.out.println("Rodou"+ i +" Vez");
+
+                    titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
+                    URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
+                    URL imageUrl = new URL(URL_IMG);
+                    Image image = ImageIO.read(imageUrl);
+                    
+                    JPanel[i].setVisible(true);
+                    labels[i].setText("<html>" + titulo_jogo + "</html>");      
+                    ImgCard[i].setIcon(new ImageIcon(image));
+                    
+                } while (conexao.resultset.next());
+                
+                    Margem = MargemLihas[linhas] * linhas;
+                    System.out.println(Margem);
+                    jPanel6.setPreferredSize(new Dimension(1263, Margem));
+                    jPanel6.revalidate();
+                    jPanel6.repaint(); 
+                    
+                    if(MaisJogos == true){
+                        btnAvancar.setVisible(true);
+                        System.out.println("truou");           
+                    }else{
+                        btnAvancar.setVisible(false);
+                        System.out.println("falsou");
+                    }
+                    if(avancou == 0){
+                        btnVoltar.setVisible(false);
+                        System.out.println("não pode mais voltar, voltou demais");
+                    }
+                        
+                    
+
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void BuscarJogo(){  
+
+            
+           try{ 
+            String pesquisa = "SELECT * " +
+                  "FROM jogo " +
+                  "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
+                  "WHERE imagens_jogo.tipo_imagem = 2 AND jogo.ID_jogo = 31";
+            
+                  
+                  conexao.executaSQL(pesquisa);
+            
+            String titulo_jogo;
+            String URL_IMG;
+            
+ 
+            if(conexao.resultset != null && conexao.resultset.first()){
+                System.out.println("");
+                    
+                System.out.println("Rodou a pesquisa do jogo");
+
+                titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
+                String sinopse = ""+conexao.resultset.getString("sinopse");
+                String descricao_jogo = ""+conexao.resultset.getString("descricao_jogo");
+                URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
+                URL imageUrl = new URL(URL_IMG);
+                Image image = ImageIO.read(imageUrl);
+                System.out.println("titulo: " + titulo_jogo);
+                //JPanel[i].setVisible(true);
+                Sinopse.setText("<html> " + sinopse + " </html>");
+                descricao.setText("<html> " + descricao_jogo + " </html>");
+                TituloJogo.setText("<html>" + titulo_jogo + "</html>");      
+                TituloPrincipal.setText("<html>" + titulo_jogo + "</html>"); 
+                //ImgCard[i].setIcon(new ImageIcon(image));
+                    
+                }else{
                 JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
             }
         }catch(SQLException errosql){
@@ -5728,9 +5929,12 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel ImgCard7;
     private javax.swing.JLabel ImgCard8;
     private javax.swing.JLabel ImgCard9;
+    private javax.swing.JLabel ImgPrincipal;
     private javax.swing.JTextField Nome;
     private javax.swing.JTextField Nome2;
+    private javax.swing.JLabel OcultoImgCard2;
     private javax.swing.JLabel OcultoText;
+    private javax.swing.JLabel OcultoText2;
     private javax.swing.JPanel PanelCard1;
     private javax.swing.JPanel PanelCard10;
     private javax.swing.JPanel PanelCard11;
@@ -5773,6 +5977,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPanel PanelCard9;
     private com.raven.swing.Button Salvar;
     private com.raven.swing.Button Senha;
+    private javax.swing.JLabel Sinopse;
     private javax.swing.JLabel TextCard1;
     private javax.swing.JLabel TextCard10;
     private javax.swing.JLabel TextCard11;
@@ -5813,17 +6018,26 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel TextCard7;
     private javax.swing.JLabel TextCard8;
     private javax.swing.JLabel TextCard9;
+    private javax.swing.JLabel TituloJogo;
+    private javax.swing.JLabel TituloPrincipal;
     private javax.swing.JPanel btnAvancar;
     private javax.swing.JPanel btnAvancar1;
     private javax.swing.JPanel btnVoltar;
     private javax.swing.JPanel btnVoltar1;
     private com.raven.swing.Button button1;
+    private javax.swing.JLabel descricao;
     private imagens.SVGImage editarEmail;
     private imagens.SVGImage editarFoto;
     private imagens.SVGImage editarNome;
     private imagens.SVGImage editarNome1;
     private com.raven.swing.Button excluir;
     private com.raven.Perfil.ImageAvatar imageAvatar1;
+    private javaswingdev.ImageReajust imageReajust1;
+    private javax.swing.JLabel img1;
+    private javax.swing.JLabel img2;
+    private javax.swing.JLabel img3;
+    private javax.swing.JLabel img4;
+    private javax.swing.JLabel img5;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
     private javax.swing.JDialog jDialog4;
@@ -5866,7 +6080,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
@@ -5888,9 +6101,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel150;
     private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
-    private javax.swing.JLabel jLabel177;
     private javax.swing.JLabel jLabel178;
-    private javax.swing.JLabel jLabel179;
     private javax.swing.JLabel jLabel180;
     private javax.swing.JLabel jLabel181;
     private javax.swing.JLabel jLabel182;
@@ -5898,12 +6109,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel184;
     private javax.swing.JLabel jLabel185;
     private javax.swing.JLabel jLabel186;
-    private javax.swing.JLabel jLabel187;
-    private javax.swing.JLabel jLabel188;
-    private javax.swing.JLabel jLabel189;
-    private javax.swing.JLabel jLabel190;
-    private javax.swing.JLabel jLabel191;
-    private javax.swing.JLabel jLabel192;
     private javax.swing.JLabel jLabel193;
     private javax.swing.JLabel jLabel194;
     private javax.swing.JLabel jLabel195;
@@ -5916,7 +6121,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
@@ -6022,6 +6226,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPasswordField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JPanel ocultoPanel;
+    private javax.swing.JPanel ocultoPanel2;
     private javax.swing.JLabel paisLabel;
     private com.raven.swing.combobox.PanelRounds panelRounds18;
     private com.raven.swing.combobox.PanelRounds panelRounds19;
