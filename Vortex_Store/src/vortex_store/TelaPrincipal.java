@@ -94,10 +94,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon(getClass().getResource("/imagens/logos/VortexIcon3.png"));
         setIconImage(icon.getImage());
         
+      
         sVGImage10.setSvgImage("imagens/SenhaRedefinida.svg", 100,100);
         sVGImage27.setSvgImage("imagens/SenhaAlterada.svg", 100,100);
         sVGImage28.setSvgImage("imagens/ExcluirConta.svg", 100,100);
         sVGImage29.setSvgImage("imagens/RostoFalha.svg", 100,100);
+        editarNome.setSvgImage("imagens/edit.svg", 24, 24);
+        editarEmail.setSvgImage("imagens/edit.svg", 24, 24);
+        editarFoto.setSvgImage("imagens/edit.svg", 24, 24);
         
         sVGImage1.setSvgImage("imagens/icones/sacola.svg", 35, 35);
         sVGImage1.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -415,7 +419,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         button1 = new com.raven.swing.Button();
         imageAvatar1 = new com.raven.Perfil.ImageAvatar();
-        editarPerfil = new imagens.SVGImage();
+        editarNome1 = new imagens.SVGImage();
+        editarFoto = new imagens.SVGImage();
         excluir = new com.raven.swing.Button();
         jPanel112 = new javax.swing.JPanel();
         jLabel93 = new javax.swing.JLabel();
@@ -551,6 +556,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jDialog2.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog2.setUndecorated(true);
+        jDialog2.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog2.getContentPane().setLayout(null);
 
         jPanel117.setBackground(new java.awt.Color(27, 30, 43));
@@ -630,9 +636,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog2.getContentPane().add(jPanel117);
-        jPanel117.setBounds(0, 0, 480, 0);
+        jPanel117.setBounds(0, 0, 480, 300);
 
-        jDialog3.setMinimumSize(new java.awt.Dimension(600, 390));
+        jDialog3.setMinimumSize(new java.awt.Dimension(600, 400));
+        jDialog3.setPreferredSize(new java.awt.Dimension(600, 400));
 
         jPanel118.setBackground(new java.awt.Color(27, 30, 43));
 
@@ -775,7 +782,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel118Layout.setVerticalGroup(
             jPanel118Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel118Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jLabel100)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel101)
@@ -810,6 +817,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDialog4.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog4.setModal(true);
         jDialog4.setUndecorated(true);
+        jDialog4.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog4.getContentPane().setLayout(null);
 
         jPanel119.setBackground(new java.awt.Color(27, 30, 43));
@@ -875,10 +883,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog4.getContentPane().add(jPanel119);
-        jPanel119.setBounds(0, 0, 480, 0);
+        jPanel119.setBounds(0, 0, 480, 300);
 
         jDialog5.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog5.setUndecorated(true);
+        jDialog5.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog5.getContentPane().setLayout(null);
 
         jPanel121.setBackground(new java.awt.Color(27, 30, 43));
@@ -963,9 +972,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog5.getContentPane().add(jPanel121);
-        jPanel121.setBounds(0, 0, 480, 0);
+        jPanel121.setBounds(0, 0, 480, 300);
 
-        jDialog6.setMinimumSize(new java.awt.Dimension(600, 390));
+        jDialog6.setMinimumSize(new java.awt.Dimension(600, 400));
+        jDialog6.setPreferredSize(new java.awt.Dimension(600, 400));
 
         jPanel124.setBackground(new java.awt.Color(27, 30, 43));
 
@@ -1111,7 +1121,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(EmailPuxado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel111)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabel110)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel126, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1140,6 +1150,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jDialog7.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog7.setModal(true);
         jDialog7.setUndecorated(true);
+        jDialog7.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog7.getContentPane().setLayout(null);
 
         jPanel125.setBackground(new java.awt.Color(27, 30, 43));
@@ -1205,7 +1216,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog7.getContentPane().add(jPanel125);
-        jPanel125.setBounds(0, 0, 480, 0);
+        jPanel125.setBounds(0, 0, 480, 300);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -3648,10 +3659,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
         imageAvatar1.setBorderSize(5);
         imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/FotoPerfil.png"))); // NOI18N
 
-        editarPerfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        editarPerfil.setMaximumSize(new java.awt.Dimension(30, 30));
-        editarPerfil.setMinimumSize(new java.awt.Dimension(30, 30));
-        editarPerfil.setPreferredSize(new java.awt.Dimension(30, 30));
+        editarNome1.setBackground(new java.awt.Color(255, 0, 0));
+        editarNome1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        editarNome1.setMaximumSize(new java.awt.Dimension(30, 30));
+        editarNome1.setMinimumSize(new java.awt.Dimension(30, 30));
+        editarNome1.setPreferredSize(new java.awt.Dimension(30, 30));
+        editarNome1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editarNome1MouseClicked(evt);
+            }
+        });
+        imageAvatar1.add(editarNome1);
+        editarNome1.setBounds(90, 80, 24, 22);
+
+        editarFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        editarFoto.setMaximumSize(new java.awt.Dimension(30, 30));
+        editarFoto.setMinimumSize(new java.awt.Dimension(30, 30));
+        editarFoto.setPreferredSize(new java.awt.Dimension(30, 30));
 
         excluir.setBackground(new java.awt.Color(186, 33, 33));
         excluir.setForeground(new java.awt.Color(255, 255, 255));
@@ -3678,7 +3702,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel111Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
-                        .addComponent(editarPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(editarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -3705,7 +3729,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel111Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editarPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -4875,7 +4899,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -5360,6 +5384,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void sVGImage6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage6MouseClicked
 jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     }//GEN-LAST:event_sVGImage6MouseClicked
+
+    private void editarNome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editarNome1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarNome1MouseClicked
     
     
     //Comentei
@@ -5791,8 +5819,9 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPanel btnVoltar1;
     private com.raven.swing.Button button1;
     private imagens.SVGImage editarEmail;
+    private imagens.SVGImage editarFoto;
     private imagens.SVGImage editarNome;
-    private imagens.SVGImage editarPerfil;
+    private imagens.SVGImage editarNome1;
     private com.raven.swing.Button excluir;
     private com.raven.Perfil.ImageAvatar imageAvatar1;
     private javax.swing.JDialog jDialog2;
