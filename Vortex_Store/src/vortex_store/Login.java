@@ -26,6 +26,7 @@ import javax.swing.*;
 public class Login extends javax.swing.JFrame {
     Conexao con_cliente;
 
+
     /**
      * Creates new form Login
      */
