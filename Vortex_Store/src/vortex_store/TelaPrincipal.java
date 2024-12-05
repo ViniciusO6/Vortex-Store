@@ -125,7 +125,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sVGImage29.setSvgImage("imagens/RostoFalha.svg", 100,100);
         editarNome.setSvgImage("imagens/edit.svg", 24, 24);
         editarEmail.setSvgImage("imagens/edit.svg", 24, 24);
-        editarFoto.setSvgImage("imagens/edit.svg", 24, 24);
         
         sVGImage1.setSvgImage("imagens/icones/sacola.svg", 35, 35);
         sVGImage1.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -440,8 +439,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         button1 = new com.raven.swing.Button();
         imageAvatar1 = new com.raven.Perfil.ImageAvatar();
         editarNome1 = new imagens.SVGImage();
-        editarFoto = new imagens.SVGImage();
-        excluir = new com.raven.swing.Button();
         jPanel112 = new javax.swing.JPanel();
         jLabel93 = new javax.swing.JLabel();
         jPanel113 = new javax.swing.JPanel();
@@ -460,8 +457,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel116 = new javax.swing.JPanel();
         Flag = new imagens.SVGImage();
         paisLabel = new javax.swing.JLabel();
-        Salvar = new com.raven.swing.Button();
-        Senha = new com.raven.swing.Button();
         jLabel97 = new javax.swing.JLabel();
         jPanel138 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -3677,40 +3672,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         imageAvatar1.add(editarNome1);
         editarNome1.setBounds(90, 80, 24, 22);
 
-        editarFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        editarFoto.setMaximumSize(new java.awt.Dimension(30, 30));
-        editarFoto.setMinimumSize(new java.awt.Dimension(30, 30));
-        editarFoto.setPreferredSize(new java.awt.Dimension(30, 30));
-
-        excluir.setBackground(new java.awt.Color(186, 33, 33));
-        excluir.setForeground(new java.awt.Color(255, 255, 255));
-        excluir.setText("Excluir Conta");
-        excluir.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        excluir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                excluirMouseClicked(evt);
-            }
-        });
-        excluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                excluirActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel111Layout = new javax.swing.GroupLayout(jPanel111);
         jPanel111.setLayout(jPanel111Layout);
         jPanel111Layout.setHorizontalGroup(
             jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel111Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel111Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(editarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
             .addGroup(jPanel111Layout.createSequentialGroup()
@@ -3733,11 +3702,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel111Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addGroup(jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel111Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(19, 19, 19))
         );
 
@@ -3942,31 +3907,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         paisLabel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         paisLabel.setForeground(new java.awt.Color(255, 255, 255));
 
-        Salvar.setBackground(new java.awt.Color(76, 31, 129));
-        Salvar.setForeground(new java.awt.Color(255, 255, 255));
-        Salvar.setText("Salvar Alterações");
-        Salvar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        Salvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalvarActionPerformed(evt);
-            }
-        });
-
-        Senha.setBackground(new java.awt.Color(76, 31, 129));
-        Senha.setForeground(new java.awt.Color(255, 255, 255));
-        Senha.setText("Alterar Senha");
-        Senha.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        Senha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SenhaMouseClicked(evt);
-            }
-        });
-        Senha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SenhaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel112Layout = new javax.swing.GroupLayout(jPanel112);
         jPanel112.setLayout(jPanel112Layout);
         jPanel112Layout.setHorizontalGroup(
@@ -3976,11 +3916,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel112Layout.createSequentialGroup()
                         .addComponent(jLabel93, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel112Layout.createSequentialGroup()
                         .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4009,30 +3945,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel93)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel112Layout.createSequentialGroup()
-                        .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panelRounds18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel113, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel94)
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panelRounds19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel114, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel95)
-                        .addGap(5, 5, 5)
-                        .addComponent(jPanel115, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel96)
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(paisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel116, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelRounds18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel113, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel94)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelRounds19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel114, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel95)
+                .addGap(5, 5, 5)
+                .addComponent(jPanel115, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel96)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel112Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(paisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel116, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
@@ -5005,46 +4936,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Nome2ActionPerformed
 
-    private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
-        String nome, email, foto, sql, msg;
-        nome = Nome.getText();
-        email = Email.getText();
-
-        /*
-        try{
-            if(txtCod.getText().equals("")){
-                sql="insert into cliente (nome, email) values ('"+nome+"','"+email+"')";
-                msg="Gravação de um novo registro";
-            }else{
-                sql = "update tbclientes set nome = '"+nome+"', email = '"+email+"' where cod = " + txtCod.getText();
-                msg="Alterações de registro";
-            }
-
-            con_cliente.statement.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null,msg+ " realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-            con_cliente.executaSQL("select * from tbclientes order by cod");
-            con_cliente.resultset.first();
-
-        }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-        }*/
-
-    }//GEN-LAST:event_SalvarActionPerformed
-
-    private void SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SenhaActionPerformed
-
-    private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_excluirActionPerformed
-
-    private void SenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SenhaMouseClicked
-         jDialog2.setLocationRelativeTo(null);
-         jDialog2.setModal(true);
-         jDialog2.setVisible(true);
-    }//GEN-LAST:event_SenhaMouseClicked
-
     private void Cancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancelar1ActionPerformed
         // TODO add your handling code here:
         jDialog2.dispose();
@@ -5109,14 +5000,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void CancelarExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarExcluirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CancelarExcluirActionPerformed
-
-    private void excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_excluirMouseClicked
-        // TODO add your handling code here:
-        jDialog5.setLocationRelativeTo(null);
-        jDialog5.setModal(true);
-        jDialog5.setUndecorated(true);
-        jDialog5.setVisible(true);
-    }//GEN-LAST:event_excluirMouseClicked
 
     private void Avançar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Avançar3MouseClicked
         // TODO add your handling code here:
@@ -6346,8 +6229,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPanel PanelCard7;
     private javax.swing.JPanel PanelCard8;
     private javax.swing.JPanel PanelCard9;
-    private com.raven.swing.Button Salvar;
-    private com.raven.swing.Button Senha;
     private javax.swing.JLabel Sinopse;
     private javax.swing.JLabel TextCard1;
     private javax.swing.JLabel TextCard10;
@@ -6401,10 +6282,8 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel data_public;
     private javax.swing.JLabel descricao;
     private imagens.SVGImage editarEmail;
-    private imagens.SVGImage editarFoto;
     private imagens.SVGImage editarNome;
     private imagens.SVGImage editarNome1;
-    private com.raven.swing.Button excluir;
     private javax.swing.JLabel idiomasJogo;
     private com.raven.Perfil.ImageAvatar imageAvatar1;
     private javaswingdev.ImageReajust img1;
