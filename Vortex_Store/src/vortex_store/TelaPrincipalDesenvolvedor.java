@@ -36,6 +36,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import jnafilechooser.api.JnaFileChooser;
 import scrollbar.ScrollBarCustom;
+import conexao.TokenGenerator;
 /**
  *
  * @author vinic
@@ -50,6 +51,8 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     int linhas = 0;
     int avancou = 0;
     boolean MaisJogos;
+    
+    String ID_usuario = "";
     
      int idDesenvolvedor = 7;//Primeira Alteração
     
@@ -111,7 +114,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         sVGImage27.setSvgImage("imagens/ExcluirConta.svg", 100, 100);
         editarNome.setSvgImage("imagens/edit.svg", 24, 24);
         editarEmail.setSvgImage("imagens/edit.svg", 24, 24);
-        editarFoto.setSvgImage("imagens/edit.svg", 24, 24);
         
         sVGImage20.setSvgImage("imagens/icones/arquivo.svg", 30, 30);
         sVGImage20.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -543,40 +545,40 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         jLabel53 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         jPanel86 = new javax.swing.JPanel();
-        requisitos11 = new javax.swing.JTextField();
+        minimo1 = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jPanel87 = new javax.swing.JPanel();
-        requisitos12 = new javax.swing.JTextField();
+        minimo2 = new javax.swing.JTextField();
         jPanel88 = new javax.swing.JPanel();
-        requisitos13 = new javax.swing.JTextField();
+        minimo3 = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
         jPanel89 = new javax.swing.JPanel();
-        requisitos14 = new javax.swing.JTextField();
+        minimo4 = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
         jPanel90 = new javax.swing.JPanel();
-        requisitos15 = new javax.swing.JTextField();
+        minimo5 = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
-        requisitos16 = new javax.swing.JTextField();
+        recomendado5 = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         jPanel91 = new javax.swing.JPanel();
-        requisitos17 = new javax.swing.JTextField();
+        recomendado1 = new javax.swing.JTextField();
         jPanel92 = new javax.swing.JPanel();
-        requisitos18 = new javax.swing.JTextField();
+        recomendado2 = new javax.swing.JTextField();
         jPanel93 = new javax.swing.JPanel();
-        requisitos19 = new javax.swing.JTextField();
+        recomendado3 = new javax.swing.JTextField();
         jPanel94 = new javax.swing.JPanel();
-        requisitos20 = new javax.swing.JTextField();
+        recomendado4 = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jPanel95 = new javax.swing.JPanel();
-        NomeJogo1 = new javax.swing.JTextField();
+        TituloJogo = new javax.swing.JTextField();
         Classificacao1 = new com.raven.swing.combobox.ComboBoxSuggestion();
         jLabel67 = new javax.swing.JLabel();
         jPanel96 = new javax.swing.JPanel();
@@ -605,7 +607,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         Sinopse1 = new javax.swing.JTextArea();
         jLabel72 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        Descricao1 = new javax.swing.JTextArea();
+        descricao = new javax.swing.JTextArea();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
         jPanel99 = new javax.swing.JPanel();
@@ -748,8 +750,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         button2 = new com.raven.swing.Button();
         imageAvatar2 = new com.raven.Perfil.ImageAvatar();
         editarNome1 = new imagens.SVGImage();
-        editarFoto = new imagens.SVGImage();
-        excluir = new com.raven.swing.Button();
         jPanel115 = new javax.swing.JPanel();
         jLabel158 = new javax.swing.JLabel();
         jPanel116 = new javax.swing.JPanel();
@@ -768,8 +768,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         jPanel120 = new javax.swing.JPanel();
         Flag = new imagens.SVGImage();
         paisLabel = new javax.swing.JLabel();
-        Salvar1 = new com.raven.swing.Button();
-        Senha1 = new com.raven.swing.Button();
         jLabel162 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -801,7 +799,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jDialog5.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog5.setUndecorated(true);
-        jDialog5.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog5.getContentPane().setLayout(null);
 
         jPanel122.setBackground(new java.awt.Color(27, 30, 43));
@@ -1064,7 +1061,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         jDialog7.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog7.setModal(true);
         jDialog7.setUndecorated(true);
-        jDialog7.setPreferredSize(new java.awt.Dimension(480, 300));
         jDialog7.getContentPane().setLayout(null);
 
         jPanel125.setBackground(new java.awt.Color(27, 30, 43));
@@ -1130,7 +1126,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         );
 
         jDialog7.getContentPane().add(jPanel125);
-        jPanel125.setBounds(0, 0, 480, 300);
+        jPanel125.setBounds(0, 0, 480, 0);
 
         jDialog2.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog2.setUndecorated(true);
@@ -1213,7 +1209,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         );
 
         jDialog2.getContentPane().add(jPanel123);
-        jPanel123.setBounds(0, 0, 480, 300);
+        jPanel123.setBounds(0, 0, 480, 0);
 
         jDialog3.setMinimumSize(new java.awt.Dimension(600, 400));
 
@@ -4334,13 +4330,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel86.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos11.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos11.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos11.setBorder(null);
-        requisitos11.addActionListener(new java.awt.event.ActionListener() {
+        minimo1.setBackground(new java.awt.Color(50, 53, 60));
+        minimo1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        minimo1.setForeground(new java.awt.Color(255, 255, 255));
+        minimo1.setBorder(null);
+        minimo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos11ActionPerformed(evt);
+                minimo1ActionPerformed(evt);
             }
         });
 
@@ -4350,14 +4346,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel86Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos11, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(minimo1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel86Layout.setVerticalGroup(
             jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel86Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(minimo1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel86);
@@ -4389,13 +4385,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel87.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos12.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos12.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos12.setBorder(null);
-        requisitos12.addActionListener(new java.awt.event.ActionListener() {
+        minimo2.setBackground(new java.awt.Color(50, 53, 60));
+        minimo2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        minimo2.setForeground(new java.awt.Color(255, 255, 255));
+        minimo2.setBorder(null);
+        minimo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos12ActionPerformed(evt);
+                minimo2ActionPerformed(evt);
             }
         });
 
@@ -4405,14 +4401,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel87Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos12, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(minimo2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel87Layout.setVerticalGroup(
             jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel87Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(minimo2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel87);
@@ -4420,13 +4416,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel88.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos13.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos13.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos13.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos13.setBorder(null);
-        requisitos13.addActionListener(new java.awt.event.ActionListener() {
+        minimo3.setBackground(new java.awt.Color(50, 53, 60));
+        minimo3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        minimo3.setForeground(new java.awt.Color(255, 255, 255));
+        minimo3.setBorder(null);
+        minimo3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos13ActionPerformed(evt);
+                minimo3ActionPerformed(evt);
             }
         });
 
@@ -4436,14 +4432,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel88Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos13, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(minimo3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel88Layout.setVerticalGroup(
             jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel88Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(minimo3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel88);
@@ -4457,13 +4453,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel89.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos14.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos14.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos14.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos14.setBorder(null);
-        requisitos14.addActionListener(new java.awt.event.ActionListener() {
+        minimo4.setBackground(new java.awt.Color(50, 53, 60));
+        minimo4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        minimo4.setForeground(new java.awt.Color(255, 255, 255));
+        minimo4.setBorder(null);
+        minimo4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos14ActionPerformed(evt);
+                minimo4ActionPerformed(evt);
             }
         });
 
@@ -4473,14 +4469,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel89Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos14, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(minimo4, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel89Layout.setVerticalGroup(
             jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel89Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(minimo4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel89);
@@ -4494,13 +4490,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel90.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos15.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos15.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos15.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos15.setBorder(null);
-        requisitos15.addActionListener(new java.awt.event.ActionListener() {
+        minimo5.setBackground(new java.awt.Color(50, 53, 60));
+        minimo5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        minimo5.setForeground(new java.awt.Color(255, 255, 255));
+        minimo5.setBorder(null);
+        minimo5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos15ActionPerformed(evt);
+                minimo5ActionPerformed(evt);
             }
         });
 
@@ -4510,14 +4506,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel90Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos15, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(minimo5, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel90Layout.setVerticalGroup(
             jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel90Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(minimo5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel90);
@@ -4531,13 +4527,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel32.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos16.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos16.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos16.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos16.setBorder(null);
-        requisitos16.addActionListener(new java.awt.event.ActionListener() {
+        recomendado5.setBackground(new java.awt.Color(50, 53, 60));
+        recomendado5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        recomendado5.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado5.setBorder(null);
+        recomendado5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos16ActionPerformed(evt);
+                recomendado5ActionPerformed(evt);
             }
         });
 
@@ -4547,13 +4543,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos16, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
+                .addComponent(recomendado5, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(recomendado5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel32);
@@ -4591,13 +4587,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel91.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos17.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos17.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos17.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos17.setBorder(null);
-        requisitos17.addActionListener(new java.awt.event.ActionListener() {
+        recomendado1.setBackground(new java.awt.Color(50, 53, 60));
+        recomendado1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        recomendado1.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado1.setBorder(null);
+        recomendado1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos17ActionPerformed(evt);
+                recomendado1ActionPerformed(evt);
             }
         });
 
@@ -4607,14 +4603,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel91Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos17, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recomendado1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel91Layout.setVerticalGroup(
             jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel91Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(recomendado1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel91);
@@ -4622,13 +4618,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel92.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos18.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos18.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos18.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos18.setBorder(null);
-        requisitos18.addActionListener(new java.awt.event.ActionListener() {
+        recomendado2.setBackground(new java.awt.Color(50, 53, 60));
+        recomendado2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        recomendado2.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado2.setBorder(null);
+        recomendado2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos18ActionPerformed(evt);
+                recomendado2ActionPerformed(evt);
             }
         });
 
@@ -4638,14 +4634,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel92Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos18, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recomendado2, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel92Layout.setVerticalGroup(
             jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel92Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(recomendado2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel92);
@@ -4653,13 +4649,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel93.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos19.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos19.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos19.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos19.setBorder(null);
-        requisitos19.addActionListener(new java.awt.event.ActionListener() {
+        recomendado3.setBackground(new java.awt.Color(50, 53, 60));
+        recomendado3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        recomendado3.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado3.setBorder(null);
+        recomendado3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos19ActionPerformed(evt);
+                recomendado3ActionPerformed(evt);
             }
         });
 
@@ -4669,14 +4665,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel93Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos19, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recomendado3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel93Layout.setVerticalGroup(
             jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel93Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos19, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(recomendado3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel93);
@@ -4684,13 +4680,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel94.setBackground(new java.awt.Color(50, 53, 60));
 
-        requisitos20.setBackground(new java.awt.Color(50, 53, 60));
-        requisitos20.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        requisitos20.setForeground(new java.awt.Color(255, 255, 255));
-        requisitos20.setBorder(null);
-        requisitos20.addActionListener(new java.awt.event.ActionListener() {
+        recomendado4.setBackground(new java.awt.Color(50, 53, 60));
+        recomendado4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        recomendado4.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado4.setBorder(null);
+        recomendado4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requisitos20ActionPerformed(evt);
+                recomendado4ActionPerformed(evt);
             }
         });
 
@@ -4700,14 +4696,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel94Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(requisitos20, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recomendado4, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel94Layout.setVerticalGroup(
             jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel94Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(requisitos20, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(recomendado4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel94);
@@ -4733,13 +4729,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
         jPanel95.setBackground(new java.awt.Color(50, 53, 60));
 
-        NomeJogo1.setBackground(new java.awt.Color(50, 53, 60));
-        NomeJogo1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        NomeJogo1.setForeground(new java.awt.Color(255, 255, 255));
-        NomeJogo1.setBorder(null);
-        NomeJogo1.addActionListener(new java.awt.event.ActionListener() {
+        TituloJogo.setBackground(new java.awt.Color(50, 53, 60));
+        TituloJogo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        TituloJogo.setForeground(new java.awt.Color(255, 255, 255));
+        TituloJogo.setBorder(null);
+        TituloJogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomeJogo1ActionPerformed(evt);
+                TituloJogoActionPerformed(evt);
             }
         });
 
@@ -4749,14 +4745,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel95Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(NomeJogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TituloJogo, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel95Layout.setVerticalGroup(
             jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel95Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(NomeJogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(TituloJogo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel26.add(jPanel95);
@@ -5004,12 +5000,12 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         jPanel26.add(jLabel72);
         jLabel72.setBounds(461, 304, 147, 25);
 
-        Descricao1.setBackground(new java.awt.Color(50, 53, 60));
-        Descricao1.setColumns(20);
-        Descricao1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Descricao1.setForeground(new java.awt.Color(255, 255, 255));
-        Descricao1.setRows(5);
-        jScrollPane8.setViewportView(Descricao1);
+        descricao.setBackground(new java.awt.Color(50, 53, 60));
+        descricao.setColumns(20);
+        descricao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        descricao.setForeground(new java.awt.Color(255, 255, 255));
+        descricao.setRows(5);
+        jScrollPane8.setViewportView(descricao);
         Descricao.setLineWrap(true);  // Quebra de linha automática
         Descricao.setWrapStyleWord(true);  // Quebra entre palavras
 
@@ -5818,6 +5814,11 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         publicar1.setForeground(new java.awt.Color(255, 255, 255));
         publicar1.setText("Salvar Alterações");
         publicar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        publicar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                publicar1MouseClicked(evt);
+            }
+        });
         publicar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 publicar1ActionPerformed(evt);
@@ -6537,41 +6538,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         imageAvatar2.add(editarNome1);
         editarNome1.setBounds(90, 80, 24, 22);
 
-        editarFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        editarFoto.setMaximumSize(new java.awt.Dimension(30, 30));
-        editarFoto.setMinimumSize(new java.awt.Dimension(30, 30));
-        editarFoto.setPreferredSize(new java.awt.Dimension(30, 30));
-
-        excluir.setBackground(new java.awt.Color(186, 33, 33));
-        excluir.setForeground(new java.awt.Color(255, 255, 255));
-        excluir.setText("Excluir Conta");
-        excluir.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        excluir.setOpaque(true);
-        excluir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                excluirMouseClicked(evt);
-            }
-        });
-        excluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                excluirActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel114Layout = new javax.swing.GroupLayout(jPanel114);
         jPanel114.setLayout(jPanel114Layout);
         jPanel114Layout.setHorizontalGroup(
             jPanel114Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel114Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanel114Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imageAvatar2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel114Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(editarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(imageAvatar2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
             .addGroup(jPanel114Layout.createSequentialGroup()
@@ -6594,11 +6568,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
                     .addComponent(imageAvatar2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel114Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addGroup(jPanel114Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(editarFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel114Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(19, 19, 19))
         );
 
@@ -6803,33 +6773,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         paisLabel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         paisLabel.setForeground(new java.awt.Color(255, 255, 255));
 
-        Salvar1.setBackground(new java.awt.Color(76, 31, 129));
-        Salvar1.setForeground(new java.awt.Color(255, 255, 255));
-        Salvar1.setText("Salvar Alterações");
-        Salvar1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        Salvar1.setOpaque(true);
-        Salvar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Salvar1ActionPerformed(evt);
-            }
-        });
-
-        Senha1.setBackground(new java.awt.Color(76, 31, 129));
-        Senha1.setForeground(new java.awt.Color(255, 255, 255));
-        Senha1.setText("Alterar Senha");
-        Senha1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        Senha1.setOpaque(true);
-        Senha1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Senha1MouseClicked(evt);
-            }
-        });
-        Senha1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Senha1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel115Layout = new javax.swing.GroupLayout(jPanel115);
         jPanel115.setLayout(jPanel115Layout);
         jPanel115Layout.setHorizontalGroup(
@@ -6839,11 +6782,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
                 .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel115Layout.createSequentialGroup()
                         .addComponent(jLabel158, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Salvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Senha1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel115Layout.createSequentialGroup()
                         .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel160, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6872,30 +6811,25 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel158)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel115Layout.createSequentialGroup()
-                        .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panelRounds20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel116, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel159)
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(panelRounds21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel117, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel160)
-                        .addGap(5, 5, 5)
-                        .addComponent(jPanel118, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel161)
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(paisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel120, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Salvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Senha1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelRounds20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel116, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel159)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelRounds21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel117, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel160)
+                .addGap(5, 5, 5)
+                .addComponent(jPanel118, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel161)
+                .addGap(5, 5, 5)
+                .addGroup(jPanel115Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(paisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel120, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
@@ -7153,14 +7087,15 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         jTabbedPane1.setSelectedIndex(0);
+        CarregarJogos(false, true);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void sVGImage3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage3MouseClicked
-        jTabbedPane1.setSelectedIndex(2);
+        jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_sVGImage3MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        jTabbedPane1.setSelectedIndex(2);
+        jTabbedPane1.setSelectedIndex(1);
         
     }//GEN-LAST:event_jLabel3MouseClicked
 
@@ -7171,8 +7106,9 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     
     // Mouse click dos Cards, direciona o usuario para parte de compra do jogo
     private void ImgCard1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard1MouseClicked
-        jTabbedPane1.setSelectedIndex(3);
-        ID_BUSCAR = ID_CARD[0];
+        jTabbedPane1.setSelectedIndex(2);
+        ID_BUSCAR = 47;
+        BuscarJogo();
     }//GEN-LAST:event_ImgCard1MouseClicked
 
     private void ImgCard2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard2MouseClicked
@@ -7697,57 +7633,57 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxCustom15ActionPerformed
 
-    private void NomeJogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeJogo1ActionPerformed
+    private void TituloJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TituloJogoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NomeJogo1ActionPerformed
+    }//GEN-LAST:event_TituloJogoActionPerformed
 
-    private void requisitos20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos20ActionPerformed
+    private void recomendado4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recomendado4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos20ActionPerformed
+    }//GEN-LAST:event_recomendado4ActionPerformed
 
-    private void requisitos19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos19ActionPerformed
+    private void recomendado3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recomendado3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos19ActionPerformed
+    }//GEN-LAST:event_recomendado3ActionPerformed
 
-    private void requisitos18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos18ActionPerformed
+    private void recomendado2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recomendado2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos18ActionPerformed
+    }//GEN-LAST:event_recomendado2ActionPerformed
 
-    private void requisitos17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos17ActionPerformed
+    private void recomendado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recomendado1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos17ActionPerformed
+    }//GEN-LAST:event_recomendado1ActionPerformed
 
     private void jLabel60MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel60MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel60MouseClicked
 
-    private void requisitos16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos16ActionPerformed
+    private void recomendado5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recomendado5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos16ActionPerformed
+    }//GEN-LAST:event_recomendado5ActionPerformed
 
-    private void requisitos15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos15ActionPerformed
+    private void minimo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimo5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos15ActionPerformed
+    }//GEN-LAST:event_minimo5ActionPerformed
 
-    private void requisitos14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos14ActionPerformed
+    private void minimo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimo4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos14ActionPerformed
+    }//GEN-LAST:event_minimo4ActionPerformed
 
-    private void requisitos13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos13ActionPerformed
+    private void minimo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimo3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos13ActionPerformed
+    }//GEN-LAST:event_minimo3ActionPerformed
 
-    private void requisitos12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos12ActionPerformed
+    private void minimo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimo2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos12ActionPerformed
+    }//GEN-LAST:event_minimo2ActionPerformed
 
     private void jLabel55MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel55MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel55MouseClicked
 
-    private void requisitos11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requisitos11ActionPerformed
+    private void minimo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimo1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requisitos11ActionPerformed
+    }//GEN-LAST:event_minimo1ActionPerformed
 
     private void jLabel53MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel53MouseClicked
         // TODO add your handling code here:
@@ -7791,10 +7727,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
 
     private void descartar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descartar1MouseClicked
         // TODO add your handling code here:
-        jDialog5.setLocationRelativeTo(null);
-        jDialog5.setModal(true);
-        jDialog5.setUndecorated(true);
-        jDialog5.setVisible(true);
+      //  jDialog5.setLocationRelativeTo(null);;
+      //  jDialog5.setModal(true);
+     //   jDialog5.setUndecorated(true);
+     //   jDialog5.setVisible(true);
+        Deletar();
+        jTabbedPane1.setSelectedIndex(0);
+        CarregarJogos(false, true);
     }//GEN-LAST:event_descartar1MouseClicked
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -7804,18 +7743,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private void editarNome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editarNome1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_editarNome1MouseClicked
-
-    private void excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_excluirMouseClicked
-        // TODO add your handling code here:
-        jDialog5.setLocationRelativeTo(null);
-        jDialog5.setModal(true);
-        jDialog5.setUndecorated(true);
-        jDialog5.setVisible(true);
-    }//GEN-LAST:event_excluirMouseClicked
-
-    private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_excluirActionPerformed
 
     private void NomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeActionPerformed
         // TODO add your handling code here:
@@ -7844,41 +7771,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private void DataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DataActionPerformed
-
-    private void Salvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salvar1ActionPerformed
-        String nome, email, foto, sql, msg;
-        nome = Nome.getText();
-        email = Email.getText();
-
-        /*
-        try{
-            if(txtCod.getText().equals("")){
-                sql="insert into cliente (nome, email) values ('"+nome+"','"+email+"')";
-                msg="Gravação de um novo registro";
-            }else{
-                sql = "update tbclientes set nome = '"+nome+"', email = '"+email+"' where cod = " + txtCod.getText();
-                msg="Alterações de registro";
-            }
-
-            con_cliente.statement.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null,msg+ " realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-            con_cliente.executaSQL("select * from tbclientes order by cod");
-            con_cliente.resultset.first();
-
-        }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-        }*/
-    }//GEN-LAST:event_Salvar1ActionPerformed
-
-    private void Senha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Senha1MouseClicked
-        jDialog2.setLocationRelativeTo(null);
-        jDialog2.setModal(true);
-        jDialog2.setVisible(true);
-    }//GEN-LAST:event_Senha1MouseClicked
-
-    private void Senha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Senha1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Senha1ActionPerformed
 
     private void AvançarExcluir1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AvançarExcluir1MouseClicked
         // TODO add your handling code here:
@@ -7984,6 +7876,12 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private void Avançar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Avançar2ActionPerformed
 
     }//GEN-LAST:event_Avançar2ActionPerformed
+
+    private void publicar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_publicar1MouseClicked
+        Atualizar();
+        jTabbedPane1.setSelectedIndex(0);
+        CarregarJogos(false, true);
+    }//GEN-LAST:event_publicar1MouseClicked
     
     public void CarregarPerfil(){
     try{
@@ -8109,7 +8007,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
             String pesquisa = "SELECT jogo.ID_jogo, jogo.titulo_do_jogo, imagens_jogo.URL_imagem " +
                   "FROM jogo " +
                   "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
-                  "WHERE imagens_jogo.tipo_imagem = 2 " +
+                  "WHERE imagens_jogo.tipo_imagem = 2 AND jogo.status = 'ativo' AND jogo.ID_desenvolvedor = 1 " +
                   "ORDER BY jogo.ID_jogo ASC LIMIT 21 OFFSET " + offset + ";";
                   conexao.executaSQL(pesquisa);
             
@@ -8272,11 +8170,11 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         if(jCheckBoxCustom9.isSelected()){
             categoria.add(9);
         }
-        
+        String status = "ativo";
             try {
                 // Inserir o jogo
-                String insert_sql = "INSERT INTO jogo (titulo_do_jogo, descricao_jogo, data_publicacao, ID_desenvolvedor, sinopse, classificacao_indicativa, preco, requisitos) "
-                + "VALUES ('" + nome + "','" + descricao + "','" + dataPublicacao + "','" + id_desenvolvedor + "','" + sinopse + "','" + classificacao + "','" + precojogo + "','" + Requisitos + "')";
+                String insert_sql = "INSERT INTO jogo (titulo_do_jogo, descricao_jogo, data_publicacao, ID_desenvolvedor, sinopse, classificacao_indicativa, preco, requisitos, status) "
+                + "VALUES ('" + nome + "','" + descricao + "','" + dataPublicacao + "','" + id_desenvolvedor + "','" + sinopse + "','" + classificacao + "','" + precojogo + "','" + Requisitos + "' ,'" + status + "')";
                 conexao.statement.executeUpdate(insert_sql);
 
                 JOptionPane.showMessageDialog(null, "Gravação Do Jogo Realizada com sucesso!!", "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
@@ -8320,15 +8218,252 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
        
    }
     
+    public void Atualizar(){
+        try {
+            String tituloNovo = TituloJogo.getText();
+               String pesquisa = "UPDATE jogo SET titulo_do_jogo = '" + tituloNovo + "' WHERE ID_jogo = '" + ID_BUSCAR + "'";
+
+                // Use executeUpdate() para comandos de modificação
+                int linhasAfetadas = conexao.statement.executeUpdate(pesquisa);
+
+                if (linhasAfetadas > 0) {
+                    System.out.println("Token atualizado com sucesso!");
+                } else {
+                    System.out.println("Nenhuma linha foi alterada. Verifique o ID_cliente.");
+                }
+            } catch (SQLException errosql) {
+                JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL: \n" + errosql.getMessage(),
+                                              "Mensagem do Programa", JOptionPane.ERROR_MESSAGE);
+            }
+    }
+    
+    public void Deletar(){
+        String status = "inativo";
+        try {
+            String tituloNovo = TituloJogo.getText();
+               String pesquisa = "UPDATE jogo SET status = '" + status + "' WHERE ID_jogo = '" + ID_BUSCAR + "'";
+
+                // Use executeUpdate() para comandos de modificação
+                int linhasAfetadas = conexao.statement.executeUpdate(pesquisa);
+
+                if (linhasAfetadas > 0) {
+                    System.out.println("Token atualizado com sucesso!");
+                } else {
+                    System.out.println("Nenhuma linha foi alterada. Verifique o ID_cliente.");
+                }
+            } catch (SQLException errosql) {
+                JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL: \n" + errosql.getMessage(),
+                                              "Mensagem do Programa", JOptionPane.ERROR_MESSAGE);
+            }
+    }
+    
+     public void BuscarJogo(){
+            //Pesquisa se o usuario possui o jogo
+            try{ 
+            String pesquisa = "SELECT ID_jogo "
+                    + "FROM jogos_adquiridos "
+                    + "INNER JOIN colecao_jogos ON colecao_jogos.ID_colecao = jogos_adquiridos.ID_colecao "
+                    + "WHERE jogos_adquiridos.ID_jogo = "+ ID_BUSCAR +" AND colecao_jogos.ID_cliente = '" + ID_usuario + "'";
+               
+            conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                    
+                System.out.println("Possui o jogo");
+                publicar3.setText("Baixar");
+
+                
+                }else{
+                 System.out.println("Não Possui o jogo");
+                 publicar3.setText("Adquirir");
+       
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        
+
+            String idDesenvolvedor = "";
+           try{ 
+            String pesquisa = "SELECT * " +
+                  "FROM jogo " +
+                  "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
+                  "WHERE jogo.ID_jogo = '" + ID_BUSCAR + "'";
+            
+                  
+                  conexao.executaSQL(pesquisa);
+            
+            String titulo_jogo;
+            String URL_IMG;
+            
+ 
+            if(conexao.resultset != null && conexao.resultset.first()){
+                    
+                System.out.println("Rodou a pesquisa do jogo");
+                idDesenvolvedor = ""+conexao.resultset.getString("ID_desenvolvedor");
+                
+                String requisitos = ""+conexao.resultset.getString("requisitos");
+                String[] partes = requisitos.split("#");
+                
+                minimo1.setText("" + partes[0] + "");
+                minimo2.setText("" + partes[1] + "");
+                minimo3.setText("" + partes[2] + "");
+                minimo4.setText("" + partes[3] + "");
+                minimo5.setText("" + partes[4] + "");
+                
+                recomendado1.setText("" + partes[5] + "");
+                recomendado2.setText("" + partes[6] + "");
+                recomendado3.setText("" + partes[7] + "");
+                recomendado4.setText("" + partes[8] + "");
+                recomendado5.setText("" + partes[9] + "");
+                
+
+                titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
+                String sinopse = ""+conexao.resultset.getString("sinopse");
+                String data_publicacao = ""+conexao.resultset.getString("data_publicacao");
+                String classificacao = ""+conexao.resultset.getString("classificacao_indicativa");
+                String[] dataSplit = data_publicacao.split("-");
+                
+                String descricao_jogo = ""+conexao.resultset.getString("descricao_jogo");
+                URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
+                URL imageUrl = new URL(URL_IMG);
+                Image image = ImageIO.read(imageUrl);
+                
+                System.out.println("titulo: " + titulo_jogo);
+                //JPanel[i].setVisible(true);
+                Sinopse.setText("" + sinopse + "");
+                descricao.setText("" + descricao_jogo + "");
+                TituloJogo.setText("" + titulo_jogo + "");      
+                System.out.println(classificacao);
+
+                    
+                }else{
+         //       JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+     //Faz a consulta dos dados da desenvolvedora      
+           try{ 
+            String pesquisa = "SELECT * FROM desenvolvedor WHERE ID_desenvolvedor = '" + idDesenvolvedor + "'";
+               
+            conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                    
+                System.out.println("Rodou a pesquisa da desenvolvedora");
+                String nome = ""+conexao.resultset.getString("nome");
+                
+
+
+                }else{
+          //      JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+        //    JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }
+           
+           //carrega todas as imagens do jogo
+           
+           try{ 
+            String URL_IMG;
+            String pesquisa = "SELECT * " +
+                  "FROM imagens_jogo " +
+                  "WHERE  ID_jogo = '" + ID_BUSCAR + "'";
+            
+                  
+                  conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                      int i=0;         
+                do {      
+                    i++;
+                    URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
+                    URL imageUrl = new URL(URL_IMG);
+                    Image image = ImageIO.read(imageUrl);
+   
+                          
+          
+               
+                } while (conexao.resultset.next());
+
+
+                }else{
+                JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+           //Carregar categorias
+            
+           String categorias = "";
+           String pesquisa = "SELECT * "
+                   + "FROM categoria "
+                   + "INNER JOIN jogo_categoria ON categoria.ID_categoria = jogo_categoria.ID_categoria "
+                   + "WHERE jogo_categoria.ID_jogo = '" + ID_BUSCAR + "'";
+       
+                  conexao.executaSQL(pesquisa);         
+        try {
+            if(conexao.resultset != null && conexao.resultset.first()){
+                
+                do {
+                   System.out.println(""+conexao.resultset.getString("ID_categoria"));               
+                   categorias = categorias  +conexao.resultset.getString("nome_categoria")+ ", "; 
+
+                } while (conexao.resultset.next());
+                System.out.println(""+categorias);
+                
+                
+            }
+        } catch (SQLException ex) { 
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        //Carregar idiomas
+        
+        String idiomas = "";
+        pesquisa = "SELECT * "
+                   + "FROM idioma "
+                   + "INNER JOIN jogo_idioma ON idioma.ID_idioma = jogo_idioma.ID_idioma "
+                   + "WHERE jogo_idioma.ID_jogo = '" + ID_BUSCAR + "'";
+ 
+       
+                  conexao.executaSQL(pesquisa);         
+        try {
+            if(conexao.resultset != null && conexao.resultset.first()){
+                System.out.println(""+conexao.resultset.getString("ID_idioma"));
+                do {
+                   System.out.println(""+conexao.resultset.getString("ID_idioma"));               
+                   idiomas = idiomas  +conexao.resultset.getString("nome_idioma")+ ", "; 
+
+                } while (conexao.resultset.next());
+                System.out.println(""+idiomas);
+                
+            }
+        } catch (SQLException ex) { 
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
     public void CadastrarIdiomas(int ID_jogo, List<Integer> idiomaSelecionados){
            
             for(int idioma : idiomaSelecionados) {               
                 try{   
                     String insert_sql="insert into jogo_idioma (ID_jogo, ID_idioma) values ('" +ID_jogo+ "','" +idioma+"' )";
                     conexao.statement.executeUpdate(insert_sql);
-                    JOptionPane.showMessageDialog(null, "Gravação do idioma Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+                  //  JOptionPane.showMessageDialog(null, "Gravação do idioma Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+         //   JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
     
      }
                 
@@ -8349,9 +8484,9 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
                 try{   
                     String insert_sql="insert into imagens_jogo (ID_jogo, URL_imagem, tipo_imagem) values ('" +ID_jogo+ "','" +NomeImagem + "','" +TipoImagem+"' )";
                     conexao.statement.executeUpdate(insert_sql);
-                    JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        //            JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+    //        JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
     
      }
    }
@@ -8359,14 +8494,13 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         String URL_imagem = URLs[5]; 
         Upload UpCapa = new Upload("http://tcloud.site/Vinicius/Vortex/UploadImagens.php", URLs[5]);
         String NomeImagem = "http://tcloud.site/Vinicius/Vortex/FotosJogos/"+UpCapa.nomeFile;
-        System.out.println("cassio gaymer "+NomeImagem);
         System.out.println("URL_imagem");
         try{   
             String insert_sql="insert into imagens_jogo (ID_jogo, URL_imagem, tipo_imagem) values ('" +ID_jogo+ "','" +NomeImagem + "','" +TipoImagem+"' )";
             conexao.statement.executeUpdate(insert_sql);
-           JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        //   JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+       //     JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
     
      }
         
@@ -8379,24 +8513,24 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
         try{   
             String insert_sql="insert into imagens_jogo (ID_jogo, URL_imagem, tipo_imagem) values ('" +ID_jogo+ "','" +NomeImagem + "','" +TipoImagem+"' )";
             conexao.statement.executeUpdate(insert_sql);
-           JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        //   JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+       //     JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
     
      }
         
         TipoImagem = 10; // Jogo
         URL_imagem = URLs[7]; 
         Upload UpJogo = new Upload("http://tcloud.site/Vinicius/Vortex/UploadImagens.php", URLs[7]);
-        NomeImagem = "http://tcloud.site/Vinicius/Vortex/Jogos/"+UpJogo.nomeFile;
+        NomeImagem = "http://tcloud.site/Vinicius/Vortex/FotosJogos/"+UpJogo.nomeFile;
         System.out.println(""+NomeImagem);
         System.out.println("URL_imagem");
         try{   
             String insert_sql="insert into imagens_jogo (ID_jogo, URL_imagem, tipo_imagem) values ('" +ID_jogo+ "','" +NomeImagem + "','" +TipoImagem+"' )";
             conexao.statement.executeUpdate(insert_sql);
-           JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+       //    JOptionPane.showMessageDialog(null, "Gravação das imagens Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+      //      JOptionPane.showMessageDialog(null, "\n Erro na gravação: \n "+errosql, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
     
      }
         
@@ -8481,7 +8615,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private com.raven.swing.combobox.ComboBoxSuggestion Classificacao1;
     private javax.swing.JTextField Data;
     private javax.swing.JTextArea Descricao;
-    private javax.swing.JTextArea Descricao1;
     private javax.swing.JTextField Email;
     private javax.swing.JLabel EmailPuxado;
     private imagens.SVGImage Flag;
@@ -8517,7 +8650,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private javax.swing.JLabel ImgCard9;
     private javax.swing.JTextField Nome;
     private javax.swing.JTextField NomeJogo;
-    private javax.swing.JTextField NomeJogo1;
     private javax.swing.JLabel OcultoText;
     private javax.swing.JPanel PanelCard1;
     private javax.swing.JPanel PanelCard10;
@@ -8541,8 +8673,6 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private javax.swing.JPanel PanelCard9;
     private javax.swing.JTextField PosterJogo;
     private javax.swing.JTextField PosterJogo1;
-    private com.raven.swing.Button Salvar1;
-    private com.raven.swing.Button Senha1;
     private javax.swing.JTextArea Sinopse;
     private javax.swing.JTextArea Sinopse1;
     private javax.swing.JLabel TextCard1;
@@ -8565,16 +8695,16 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private javax.swing.JLabel TextCard7;
     private javax.swing.JLabel TextCard8;
     private javax.swing.JLabel TextCard9;
+    private javax.swing.JTextField TituloJogo;
     private javax.swing.JPanel btnAvancar;
     private javax.swing.JPanel btnVoltar;
     private com.raven.swing.Button button2;
     private com.raven.swing.Button descartar;
     private com.raven.swing.Button descartar1;
+    private javax.swing.JTextArea descricao;
     private imagens.SVGImage editarEmail;
-    private imagens.SVGImage editarFoto;
     private imagens.SVGImage editarNome;
     private imagens.SVGImage editarNome1;
-    private com.raven.swing.Button excluir;
     private com.raven.Perfil.ImageAvatar imageAvatar2;
     private checkbox.JCheckBoxCustom jCheckBoxCustom1;
     private checkbox.JCheckBoxCustom jCheckBoxCustom10;
@@ -8911,6 +9041,11 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private javax.swing.JPasswordField jTextField4;
     private javax.swing.JPasswordField jTextField5;
     private javax.swing.JPasswordField jTextField6;
+    private javax.swing.JTextField minimo1;
+    private javax.swing.JTextField minimo2;
+    private javax.swing.JTextField minimo3;
+    private javax.swing.JTextField minimo4;
+    private javax.swing.JTextField minimo5;
     private javax.swing.JPanel ocultoPanel;
     private javax.swing.JLabel paisLabel;
     private com.raven.swing.combobox.PanelRounds panelRounds10;
@@ -8937,19 +9072,14 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private com.raven.swing.Button publicar1;
     private com.raven.swing.Button publicar2;
     private com.raven.swing.Button publicar3;
+    private javax.swing.JTextField recomendado1;
+    private javax.swing.JTextField recomendado2;
+    private javax.swing.JTextField recomendado3;
+    private javax.swing.JTextField recomendado4;
+    private javax.swing.JTextField recomendado5;
     private javax.swing.JTextField requisitos1;
     private javax.swing.JTextField requisitos10;
-    private javax.swing.JTextField requisitos11;
-    private javax.swing.JTextField requisitos12;
-    private javax.swing.JTextField requisitos13;
-    private javax.swing.JTextField requisitos14;
-    private javax.swing.JTextField requisitos15;
-    private javax.swing.JTextField requisitos16;
-    private javax.swing.JTextField requisitos17;
-    private javax.swing.JTextField requisitos18;
-    private javax.swing.JTextField requisitos19;
     private javax.swing.JTextField requisitos2;
-    private javax.swing.JTextField requisitos20;
     private javax.swing.JTextField requisitos3;
     private javax.swing.JTextField requisitos4;
     private javax.swing.JTextField requisitos5;

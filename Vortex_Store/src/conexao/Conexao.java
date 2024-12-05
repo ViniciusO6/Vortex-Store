@@ -29,7 +29,7 @@ public class Conexao {
             // Cria o statement após estabelecer a conexão
             statement = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             if(mensagem == true){
-                JOptionPane.showMessageDialog(null, "Conexão estabelecida", "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+       //         JOptionPane.showMessageDialog(null, "Conexão estabelecida", "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);;
             }
             
         } catch (ClassNotFoundException Driver) {
@@ -53,12 +53,12 @@ public class Conexao {
             if (conexao != null) {
                 conexao.close();
                  if(mensagem == true){
-                JOptionPane.showMessageDialog(null, "Conexão com o banco fechada", "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+         //       JOptionPane.showMessageDialog(null, "Conexão com o banco fechada", "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
                  }
                 }
         } catch (SQLException fecha) {
              if(mensagem == true){
-            JOptionPane.showMessageDialog(null, "Erro ao fechar a conexão: " + fecha, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+         //   JOptionPane.showMessageDialog(null, "Erro ao fechar a conexão: " + fecha, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
              }
              }
     }
@@ -73,7 +73,7 @@ public class Conexao {
             resultset = statement.executeQuery(sql);
         } catch (SQLException execao) {
              //if(mensagem == true){
-            JOptionPane.showMessageDialog(null, "Erro no comando SQL! \nErro: " + execao, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+     //       JOptionPane.showMessageDialog(null, "Erro no comando SQL! \nErro: " + execao, "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
              //}
         }
     }
