@@ -486,7 +486,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jPanel143 = new javax.swing.JPanel();
         jPanel144 = new javax.swing.JPanel();
-        jLabel193 = new javax.swing.JLabel();
+        imgClassificacao = new javax.swing.JLabel();
         jLabel194 = new javax.swing.JLabel();
         jLabel195 = new javax.swing.JLabel();
         jLabel196 = new javax.swing.JLabel();
@@ -501,37 +501,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         publicar3 = new com.raven.swing.Button();
         jLabel117 = new javax.swing.JLabel();
         jLabel199 = new javax.swing.JLabel();
-        jLabel118 = new javax.swing.JLabel();
-        jLabel119 = new javax.swing.JLabel();
+        minimo1 = new javax.swing.JLabel();
+        minimo2 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
-        jLabel121 = new javax.swing.JLabel();
+        minimo3 = new javax.swing.JLabel();
         jLabel122 = new javax.swing.JLabel();
-        jLabel123 = new javax.swing.JLabel();
+        minimo4 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
-        jLabel125 = new javax.swing.JLabel();
+        minimo5 = new javax.swing.JLabel();
         jLabel126 = new javax.swing.JLabel();
-        jLabel127 = new javax.swing.JLabel();
-        jLabel128 = new javax.swing.JLabel();
-        jLabel129 = new javax.swing.JLabel();
-        jLabel130 = new javax.swing.JLabel();
-        jLabel132 = new javax.swing.JLabel();
-        jLabel133 = new javax.swing.JLabel();
-        jLabel134 = new javax.swing.JLabel();
+        recomendado1 = new javax.swing.JLabel();
         jLabel135 = new javax.swing.JLabel();
         jLabel136 = new javax.swing.JLabel();
-        jLabel137 = new javax.swing.JLabel();
+        recomendado2 = new javax.swing.JLabel();
         jLabel138 = new javax.swing.JLabel();
-        jLabel139 = new javax.swing.JLabel();
+        recomendado3 = new javax.swing.JLabel();
         jLabel140 = new javax.swing.JLabel();
-        jLabel141 = new javax.swing.JLabel();
+        recomendado4 = new javax.swing.JLabel();
         jLabel142 = new javax.swing.JLabel();
-        jLabel143 = new javax.swing.JLabel();
-        jLabel144 = new javax.swing.JLabel();
-        jLabel145 = new javax.swing.JLabel();
-        jLabel146 = new javax.swing.JLabel();
-        jLabel147 = new javax.swing.JLabel();
-        jLabel148 = new javax.swing.JLabel();
-        jLabel149 = new javax.swing.JLabel();
+        recomendado5 = new javax.swing.JLabel();
         jLabel150 = new javax.swing.JLabel();
         jLabel151 = new javax.swing.JLabel();
         idiomasJogo = new javax.swing.JLabel();
@@ -4335,9 +4323,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jPanel144);
         jPanel144.setBounds(630, 840, 320, 10);
 
-        jLabel193.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/classificação/classificacao-18-anos-logo-1.png"))); // NOI18N
-        jPanel140.add(jLabel193);
-        jLabel193.setBounds(640, 690, 90, 90);
+        imgClassificacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/classificação/classificacao-18-anos-logo-1.png"))); // NOI18N
+        jPanel140.add(imgClassificacao);
+        imgClassificacao.setBounds(640, 690, 90, 90);
 
         jLabel194.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel194.setForeground(new java.awt.Color(255, 255, 255));
@@ -4471,17 +4459,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel199);
         jLabel199.setBounds(20, 1118, 11, 40);
 
-        jLabel118.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel118.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel118.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel118);
-        jLabel118.setBounds(40, 1130, 250, 40);
+        minimo1.setForeground(new java.awt.Color(255, 255, 255));
+        minimo1.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        minimo1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(minimo1);
+        minimo1.setBounds(40, 1130, 250, 40);
 
-        jLabel119.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel119.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel119.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel119);
-        jLabel119.setBounds(40, 1170, 250, 40);
+        minimo2.setForeground(new java.awt.Color(255, 255, 255));
+        minimo2.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        minimo2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(minimo2);
+        minimo2.setBounds(40, 1170, 250, 40);
 
         jLabel120.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel120.setForeground(new java.awt.Color(255, 255, 255));
@@ -4490,11 +4478,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel120);
         jLabel120.setBounds(20, 1160, 11, 40);
 
-        jLabel121.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel121.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel121.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel121);
-        jLabel121.setBounds(40, 1210, 250, 40);
+        minimo3.setForeground(new java.awt.Color(255, 255, 255));
+        minimo3.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        minimo3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(minimo3);
+        minimo3.setBounds(40, 1210, 250, 40);
 
         jLabel122.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel122.setForeground(new java.awt.Color(255, 255, 255));
@@ -4503,11 +4491,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel122);
         jLabel122.setBounds(20, 1200, 11, 40);
 
-        jLabel123.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel123.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel123.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel123);
-        jLabel123.setBounds(40, 1250, 250, 40);
+        minimo4.setForeground(new java.awt.Color(255, 255, 255));
+        minimo4.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        minimo4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(minimo4);
+        minimo4.setBounds(40, 1250, 250, 40);
 
         jLabel124.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel124.setForeground(new java.awt.Color(255, 255, 255));
@@ -4516,11 +4504,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel124);
         jLabel124.setBounds(20, 1240, 11, 40);
 
-        jLabel125.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel125.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel125.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel125);
-        jLabel125.setBounds(40, 1290, 250, 40);
+        minimo5.setForeground(new java.awt.Color(255, 255, 255));
+        minimo5.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        minimo5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(minimo5);
+        minimo5.setBounds(40, 1290, 250, 40);
 
         jLabel126.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel126.setForeground(new java.awt.Color(255, 255, 255));
@@ -4529,50 +4517,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel126);
         jLabel126.setBounds(20, 1280, 11, 40);
 
-        jLabel127.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel127.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel127.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel127);
-        jLabel127.setBounds(40, 1330, 250, 40);
-
-        jLabel128.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel128.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel128.setText("<html><p><span style=\"font-size: 20px;\">•</span></p></html>");
-        jLabel128.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel128);
-        jLabel128.setBounds(20, 1320, 11, 40);
-
-        jLabel129.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel129.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel129.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel129);
-        jLabel129.setBounds(40, 1370, 250, 40);
-
-        jLabel130.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel130.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel130.setText("<html><p><span style=\"font-size: 20px;\">•</span></p></html>");
-        jLabel130.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel130);
-        jLabel130.setBounds(20, 1360, 11, 40);
-
-        jLabel132.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel132.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel132.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel132);
-        jLabel132.setBounds(40, 1410, 250, 40);
-
-        jLabel133.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel133.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel133.setText("<html><p><span style=\"font-size: 20px;\">•</span></p></html>");
-        jLabel133.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel133);
-        jLabel133.setBounds(20, 1400, 11, 40);
-
-        jLabel134.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel134.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel134.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel134);
-        jLabel134.setBounds(360, 1130, 250, 40);
+        recomendado1.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado1.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        recomendado1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(recomendado1);
+        recomendado1.setBounds(360, 1130, 250, 40);
 
         jLabel135.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel135.setForeground(new java.awt.Color(255, 255, 255));
@@ -4588,11 +4537,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel136);
         jLabel136.setBounds(340, 1160, 11, 40);
 
-        jLabel137.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel137.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel137.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel137);
-        jLabel137.setBounds(360, 1170, 250, 40);
+        recomendado2.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado2.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        recomendado2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(recomendado2);
+        recomendado2.setBounds(360, 1170, 250, 40);
 
         jLabel138.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel138.setForeground(new java.awt.Color(255, 255, 255));
@@ -4601,11 +4550,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel138);
         jLabel138.setBounds(340, 1200, 11, 40);
 
-        jLabel139.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel139.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel139.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel139);
-        jLabel139.setBounds(360, 1210, 250, 40);
+        recomendado3.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado3.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        recomendado3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(recomendado3);
+        recomendado3.setBounds(360, 1210, 250, 40);
 
         jLabel140.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel140.setForeground(new java.awt.Color(255, 255, 255));
@@ -4614,11 +4563,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel140);
         jLabel140.setBounds(340, 1240, 11, 40);
 
-        jLabel141.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel141.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel141.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel141);
-        jLabel141.setBounds(360, 1250, 250, 40);
+        recomendado4.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado4.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        recomendado4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(recomendado4);
+        recomendado4.setBounds(360, 1250, 250, 40);
 
         jLabel142.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel142.setForeground(new java.awt.Color(255, 255, 255));
@@ -4627,50 +4576,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel142);
         jLabel142.setBounds(340, 1280, 11, 40);
 
-        jLabel143.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel143.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel143.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel143);
-        jLabel143.setBounds(360, 1290, 250, 40);
-
-        jLabel144.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel144.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel144.setText("<html><p><span style=\"font-size: 20px;\">•</span></p></html>");
-        jLabel144.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel144);
-        jLabel144.setBounds(340, 1320, 11, 40);
-
-        jLabel145.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel145.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel145.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel145);
-        jLabel145.setBounds(360, 1330, 250, 40);
-
-        jLabel146.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel146.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel146.setText("<html><p><span style=\"font-size: 20px;\">•</span></p></html>");
-        jLabel146.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel146);
-        jLabel146.setBounds(340, 1360, 11, 40);
-
-        jLabel147.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel147.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel147.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel147);
-        jLabel147.setBounds(360, 1370, 250, 40);
-
-        jLabel148.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel148.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel148.setText("<html><p><span style=\"font-size: 20px;\">•</span></p></html>");
-        jLabel148.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel148);
-        jLabel148.setBounds(340, 1400, 11, 40);
-
-        jLabel149.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel149.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
-        jLabel149.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel149);
-        jLabel149.setBounds(360, 1410, 250, 40);
+        recomendado5.setForeground(new java.awt.Color(255, 255, 255));
+        recomendado5.setText("<html>Requer um processador e sistema operacional de 64 bits</html>");
+        recomendado5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(recomendado5);
+        recomendado5.setBounds(360, 1290, 250, 40);
 
         jLabel150.setBackground(new java.awt.Color(76, 31, 129));
         jLabel150.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -5032,23 +4942,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[0];
         BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard1MouseClicked
 
     private void ImgCard2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard2MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[1];
+        System.out.println(ID_BUSCAR);
         BuscarJogo();
     }//GEN-LAST:event_ImgCard2MouseClicked
 
     private void ImgCard5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard5MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[2];
+        System.out.println(ID_BUSCAR);
         BuscarJogo();
     }//GEN-LAST:event_ImgCard5MouseClicked
 
     private void ImgCard3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard3MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[3];
+        System.out.println(ID_BUSCAR);
         BuscarJogo();
     }//GEN-LAST:event_ImgCard3MouseClicked
 
@@ -5056,42 +4970,49 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[4];
         BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard4MouseClicked
 
     private void ImgCard6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard6MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[5];
         BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard6MouseClicked
 
     private void ImgCard7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard7MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[6];
         BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard7MouseClicked
 
     private void ImgCard8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard8MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[7];
         BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard8MouseClicked
 
     private void ImgCard9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard9MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[8];
         BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard9MouseClicked
 
     private void ImgCard10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard10MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[9];
         BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard10MouseClicked
 
     private void ImgCard15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard15MouseClicked
         jTabbedPane1.setSelectedIndex(3);
         ID_BUSCAR = ID_CARD[10];
         BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard15MouseClicked
 
     private void ImgCard13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard13MouseClicked
@@ -5831,10 +5752,28 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
                     
                 System.out.println("Rodou a pesquisa do jogo");
                 idDesenvolvedor = ""+conexao.resultset.getString("ID_desenvolvedor");
+                
+                String requisitos = ""+conexao.resultset.getString("requisitos");
+                String[] partes = requisitos.split("#");
+                
+                minimo1.setText("<html>" + partes[0] + "</html>");
+                minimo2.setText("<html>" + partes[1] + "</html>");
+                minimo3.setText("<html>" + partes[2] + "</html>");
+                minimo4.setText("<html>" + partes[3] + "</html>");
+                minimo5.setText("<html>" + partes[4] + "</html>");
+                
+                recomendado1.setText("<html>" + partes[5] + "</html>");
+                recomendado2.setText("<html>" + partes[6] + "</html>");
+                recomendado3.setText("<html>" + partes[7] + "</html>");
+                recomendado4.setText("<html>" + partes[8] + "</html>");
+                recomendado5.setText("<html>" + partes[9] + "</html>");
+                
 
                 titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
                 String sinopse = ""+conexao.resultset.getString("sinopse");
                 String data_publicacao = ""+conexao.resultset.getString("data_publicacao");
+                String classificacao = ""+conexao.resultset.getString("classificacao_indicativa");
+                String[] dataSplit = data_publicacao.split("-");
                 
                 String descricao_jogo = ""+conexao.resultset.getString("descricao_jogo");
                 URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
@@ -5847,8 +5786,28 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
                 descricao.setText("<html> " + descricao_jogo + " </html>");
                 TituloJogo.setText("<html>" + titulo_jogo + "</html>");      
                 TituloPrincipal.setText("<html>" + titulo_jogo + "</html>");
-                data_public.setText("<html> " + data_publicacao + " </html>"); 
+                data_public.setText("<html> " + dataSplit[2]+"/"+dataSplit[1]+"/"+dataSplit[0]+" </html>"); 
                 ImgPrincipal.setIcon(new ImageIcon(image));
+                System.out.println(classificacao);
+                if(classificacao.equals("18")){
+                    ImageIcon icon = new ImageIcon("src/imagens/classificação/classificacao-18-anos-logo-1.png"); // Substitua pelo caminho da sua imagem
+                    imgClassificacao.setIcon(icon);
+                }else if(classificacao.equals("16")){
+                    ImageIcon icon = new ImageIcon("src/imagens/classificação/classificacao-16-anos-logo.png"); // Substitua pelo caminho da sua imagem
+                    imgClassificacao.setIcon(icon);
+                }else if(classificacao.equals("14")){
+                    ImageIcon icon = new ImageIcon("src/imagens/classificação/classificacao-14-anos-logo.png"); // Substitua pelo caminho da sua imagem
+                    imgClassificacao.setIcon(icon);
+                }else if(classificacao.equals("12")){
+                    ImageIcon icon = new ImageIcon("src/imagens/classificação/classificacao-12-anos-logo.png"); // Substitua pelo caminho da sua imagem
+                    imgClassificacao.setIcon(icon);
+                }else if(classificacao.equals("10")){
+                    ImageIcon icon = new ImageIcon("src/imagens/classificação/classificacao-10-anos-logo.png"); // Substitua pelo caminho da sua imagem
+                    imgClassificacao.setIcon(icon);
+                }else{
+                    ImageIcon icon = new ImageIcon("src/imagens/classificação/classificacao-livre-anos-logo"); // Substitua pelo caminho da sua imagem
+                    imgClassificacao.setIcon(icon);
+                }
                     
                 }else{
                 JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
@@ -6305,6 +6264,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javaswingdev.ImageReajust img3;
     private javaswingdev.ImageReajust img4;
     private javaswingdev.ImageReajust img5;
+    private javax.swing.JLabel imgClassificacao;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
     private javax.swing.JDialog jDialog4;
@@ -6332,46 +6292,23 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel115;
     private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel117;
-    private javax.swing.JLabel jLabel118;
-    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
-    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
-    private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
-    private javax.swing.JLabel jLabel125;
     private javax.swing.JLabel jLabel126;
-    private javax.swing.JLabel jLabel127;
-    private javax.swing.JLabel jLabel128;
-    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
-    private javax.swing.JLabel jLabel137;
     private javax.swing.JLabel jLabel138;
-    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel140;
-    private javax.swing.JLabel jLabel141;
     private javax.swing.JLabel jLabel142;
-    private javax.swing.JLabel jLabel143;
-    private javax.swing.JLabel jLabel144;
-    private javax.swing.JLabel jLabel145;
-    private javax.swing.JLabel jLabel146;
-    private javax.swing.JLabel jLabel147;
-    private javax.swing.JLabel jLabel148;
-    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel150;
     private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel180;
     private javax.swing.JLabel jLabel183;
     private javax.swing.JLabel jLabel185;
     private javax.swing.JLabel jLabel186;
-    private javax.swing.JLabel jLabel193;
     private javax.swing.JLabel jLabel194;
     private javax.swing.JLabel jLabel195;
     private javax.swing.JLabel jLabel196;
@@ -6487,6 +6424,11 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPasswordField jTextField5;
     private javax.swing.JPasswordField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel minimo1;
+    private javax.swing.JLabel minimo2;
+    private javax.swing.JLabel minimo3;
+    private javax.swing.JLabel minimo4;
+    private javax.swing.JLabel minimo5;
     private javax.swing.JLabel nomeDesenvolvedor;
     private javax.swing.JPanel ocultoPanel;
     private javax.swing.JPanel ocultoPanel2;
@@ -6495,6 +6437,11 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private com.raven.swing.combobox.PanelRounds panelRounds19;
     private com.raven.swing.Button publicar2;
     private com.raven.swing.Button publicar3;
+    private javax.swing.JLabel recomendado1;
+    private javax.swing.JLabel recomendado2;
+    private javax.swing.JLabel recomendado3;
+    private javax.swing.JLabel recomendado4;
+    private javax.swing.JLabel recomendado5;
     private imagens.SVGImage sVGImage1;
     private imagens.SVGImage sVGImage10;
     private imagens.SVGImage sVGImage2;
