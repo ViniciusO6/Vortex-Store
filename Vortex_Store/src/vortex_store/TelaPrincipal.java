@@ -165,7 +165,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 // Colocar função do botão de pesquisar
-                jTabbedPane1.setSelectedIndex(6);
+                jTabbedPane1.setSelectedIndex(5);
             }
         });
         
@@ -648,7 +648,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog2.getContentPane().add(jPanel117);
-        jPanel117.setBounds(0, 0, 480, 0);
+        jPanel117.setBounds(0, 0, 480, 300);
 
         jDialog3.setMinimumSize(new java.awt.Dimension(600, 400));
 
@@ -893,7 +893,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog4.getContentPane().add(jPanel119);
-        jPanel119.setBounds(0, 0, 480, 0);
+        jPanel119.setBounds(0, 0, 480, 300);
 
         jDialog5.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog5.setUndecorated(true);
@@ -981,7 +981,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog5.getContentPane().add(jPanel121);
-        jPanel121.setBounds(0, 0, 480, 0);
+        jPanel121.setBounds(0, 0, 480, 300);
 
         jDialog6.setMinimumSize(new java.awt.Dimension(600, 400));
 
@@ -1223,7 +1223,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog7.getContentPane().add(jPanel125);
-        jPanel125.setBounds(0, 0, 480, 0);
+        jPanel125.setBounds(0, 0, 480, 300);
 
         javax.swing.GroupLayout ocultoPanel2Layout = new javax.swing.GroupLayout(ocultoPanel2);
         ocultoPanel2.setLayout(ocultoPanel2Layout);
@@ -4944,7 +4944,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -6512,3 +6512,4 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javaswingdev.SimpleTitleBar simpleTitleBar1;
     // End of variables declaration//GEN-END:variables
 }
+//sVGImage6
