@@ -38,6 +38,11 @@ import javax.swing.JScrollPane;
 import jnafilechooser.api.JnaFileChooser;
 import scrollbar.ScrollBarCustom;
 import conexao.TokenGenerator;
+import java.awt.event.ActionEvent;
+import java.io.BufferedInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 /**
  *
  * @author vinic 
@@ -54,10 +59,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     String ID_BUSCAR;
     String token = lerDados();
     String ID_usuario = "";
+    String UrlJogo = "";
     
     int linhas = 0;
     int avancou = 0;
     boolean MaisJogos;
+    boolean adquirido = false;
+    String IDcolecao = "";
     
     int avancou2 = 0;
     boolean MaisJogos2;
@@ -491,7 +499,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel116 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
         jPanel143 = new javax.swing.JPanel();
-        jPanel144 = new javax.swing.JPanel();
         imgClassificacao = new javax.swing.JLabel();
         jLabel194 = new javax.swing.JLabel();
         jLabel195 = new javax.swing.JLabel();
@@ -499,11 +506,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel197 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jPanel145 = new javax.swing.JPanel();
-        jPanel146 = new javax.swing.JPanel();
-        jLabel198 = new javax.swing.JLabel();
-        jPanel147 = new javax.swing.JPanel();
-        jTextField7 = new javax.swing.JTextField();
-        publicar2 = new com.raven.swing.Button();
         publicar3 = new com.raven.swing.Button();
         jLabel117 = new javax.swing.JLabel();
         jLabel199 = new javax.swing.JLabel();
@@ -4256,7 +4258,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel186.setForeground(new java.awt.Color(255, 255, 255));
         jLabel186.setText("GRÁTIS");
         jPanel140.add(jLabel186);
-        jLabel186.setBounds(870, 450, 70, 20);
+        jLabel186.setBounds(640, 450, 70, 20);
 
         jPanel142.setBackground(new java.awt.Color(18, 22, 32));
 
@@ -4313,22 +4315,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jPanel143);
         jPanel143.setBounds(630, 660, 320, 10);
 
-        jPanel144.setBackground(new java.awt.Color(18, 22, 32));
-
-        javax.swing.GroupLayout jPanel144Layout = new javax.swing.GroupLayout(jPanel144);
-        jPanel144.setLayout(jPanel144Layout);
-        jPanel144Layout.setHorizontalGroup(
-            jPanel144Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
-        );
-        jPanel144Layout.setVerticalGroup(
-            jPanel144Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-
-        jPanel140.add(jPanel144);
-        jPanel144.setBounds(630, 840, 320, 10);
-
         imgClassificacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/classificação/classificacao-18-anos-logo-1.png"))); // NOI18N
         jPanel140.add(imgClassificacao);
         imgClassificacao.setBounds(640, 690, 90, 90);
@@ -4361,31 +4347,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel145.setBackground(new java.awt.Color(10, 15, 22));
 
-        jPanel146.setBackground(new java.awt.Color(18, 22, 32));
-
-        javax.swing.GroupLayout jPanel146Layout = new javax.swing.GroupLayout(jPanel146);
-        jPanel146.setLayout(jPanel146Layout);
-        jPanel146Layout.setHorizontalGroup(
-            jPanel146Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-        jPanel146Layout.setVerticalGroup(
-            jPanel146Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout jPanel145Layout = new javax.swing.GroupLayout(jPanel145);
         jPanel145.setLayout(jPanel145Layout);
         jPanel145Layout.setHorizontalGroup(
             jPanel145Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel146, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         jPanel145Layout.setVerticalGroup(
             jPanel145Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel145Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel146, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(684, Short.MAX_VALUE))
+            .addGap(0, 790, Short.MAX_VALUE)
         );
 
         jScrollPane11.setViewportView(jPanel145);
@@ -4393,50 +4363,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jScrollPane11);
         jScrollPane11.setBounds(640, 960, 300, 790);
 
-        jLabel198.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel198.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel198.setText("Avaliações");
-        jPanel140.add(jLabel198);
-        jLabel198.setBounds(640, 870, 100, 25);
-
-        jPanel147.setBackground(new java.awt.Color(18, 22, 32));
-
-        jTextField7.setBackground(new java.awt.Color(18, 22, 32));
-        jTextField7.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField7.setBorder(null);
-
-        publicar2.setBackground(new java.awt.Color(59, 32, 91));
-        publicar2.setForeground(new java.awt.Color(255, 255, 255));
-        publicar2.setText("Enviar");
-        publicar2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        publicar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                publicar2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel147Layout = new javax.swing.GroupLayout(jPanel147);
-        jPanel147.setLayout(jPanel147Layout);
-        jPanel147Layout.setHorizontalGroup(
-            jPanel147Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel147Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(publicar2, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
-        );
-        jPanel147Layout.setVerticalGroup(
-            jPanel147Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField7)
-            .addComponent(publicar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        jPanel140.add(jPanel147);
-        jPanel147.setBounds(640, 900, 300, 30);
-
         publicar3.setBackground(new java.awt.Color(59, 32, 91));
         publicar3.setForeground(new java.awt.Color(255, 255, 255));
-        publicar3.setText("Baixar");
+        publicar3.setText("Adquirir");
         publicar3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         publicar3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -5461,10 +5390,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel116MouseClicked
 
-    private void publicar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publicar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_publicar2ActionPerformed
-
     private void publicar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publicar3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_publicar3ActionPerformed
@@ -5559,7 +5484,40 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     }//GEN-LAST:event_img5MouseClicked
 
     private void publicar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_publicar3MouseClicked
-        publicar3.setText("Instalando");
+        if(adquirido == true){
+            publicar3.setText("Instalando");
+            
+                String fileURL = "http://tcloud.site/Vinicius/Vortex/FotosJogos/6722902f005f20.95021964.rar"; // URL do arquivo a ser baixado
+                String saveDir = "C:\\Users\\vinic\\Downloads"; // Diretório onde o arquivo será salvo
+                downloadFile(fileURL, saveDir);
+                publicar3.setText("Baixado");
+   
+        }else{
+            try {
+                String pesquisa = "INSERT INTO jogos_adquiridos (ID_colecao, ID_jogo) "
+                 + "VALUES (" + IDcolecao + ", '" + ID_BUSCAR + "')";
+
+                // Use executeUpdate() para comandos de modificação
+                int linhasAfetadas = conexao.statement.executeUpdate(pesquisa); 
+
+                if (linhasAfetadas > 0) {
+                    System.out.println("Token atualizado com sucesso!");
+                    adquirido = true;
+                     publicar3.setText("Baixar");
+                } else {
+                    System.out.println("Nenhuma linha foi alterada. Verifique o ID_cliente.");
+                }
+            } catch (SQLException errosql) {
+                JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL: \n" + errosql.getMessage(),
+                                              "Mensagem do Programa", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            
+            
+  
+        }
+        
+        
     }//GEN-LAST:event_publicar3MouseClicked
     
     
@@ -5599,6 +5557,27 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
             }
         }catch(SQLException errosql){
             JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        //Pesquisa a colecao do usuario
+        
+        try{ 
+            String pesquisa = "SELECT ID_colecao "
+                 + "FROM colecao_jogos "
+                 + "WHERE ID_cliente = " + ID_usuario + ";";
+
+               
+            conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                String id = ""+conexao.resultset.getString("ID_colecao");    
+                System.out.println("Pesquisou ID: "+id);
+                IDcolecao = id;
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "\n  Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados! colecao usuario! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
         }
         
         
@@ -5874,7 +5853,30 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
         }
     }
     
-    public void BuscarJogo(){  
+    public void BuscarJogo(){
+            //Pesquisa se o usuario possui o jogo
+            try{ 
+            String pesquisa = "SELECT ID_jogo "
+                    + "FROM jogos_adquiridos "
+                    + "INNER JOIN colecao_jogos ON colecao_jogos.ID_colecao = jogos_adquiridos.ID_colecao "
+                    + "WHERE jogos_adquiridos.ID_jogo = "+ ID_BUSCAR +" AND colecao_jogos.ID_cliente = '" + ID_usuario + "'";
+               
+            conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                    
+                System.out.println("Possui o jogo");
+                publicar3.setText("Baixar");
+                adquirido = true;
+                
+                }else{
+                 System.out.println("Não Possui o jogo");
+                 publicar3.setText("Adquirir");
+                 adquirido = false;
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
         
 
             String idDesenvolvedor = "";
@@ -6019,6 +6021,8 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
                       url_img5 = ""+conexao.resultset.getString("URL_imagem");
                     }else if(i ==7){
                       capaJogo.setIcon(new ImageIcon(image));  
+                    }else if(i ==8){
+                      UrlJogo = ""+conexao.resultset.getString("URL_imagem");  
                     }
                
                 } while (conexao.resultset.next());
@@ -6207,6 +6211,37 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
                
    }
     
+    public static void downloadFile(String fileURL, String saveDir) {
+        try {
+            URL url = new URL(fileURL);
+            HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+
+            // Verifica se a resposta é OK (200)
+            if (httpConn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                InputStream inputStream = new BufferedInputStream(httpConn.getInputStream());
+                String saveFilePath = saveDir + "/" + fileURL.substring(fileURL.lastIndexOf("/") + 1);
+
+                FileOutputStream outputStream = new FileOutputStream(saveFilePath);
+
+                byte[] buffer = new byte[4096];
+                int bytesRead;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                outputStream.close();
+                inputStream.close();
+
+                System.out.println("Arquivo baixado para: " + saveFilePath);
+            } else {
+                System.out.println("Não foi possível baixar o arquivo. Servidor respondeu com: " + httpConn.getResponseCode());
+            }
+            httpConn.disconnect();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     
     
     
@@ -6220,6 +6255,8 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -6473,7 +6510,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel195;
     private javax.swing.JLabel jLabel196;
     private javax.swing.JLabel jLabel197;
-    private javax.swing.JLabel jLabel198;
     private javax.swing.JLabel jLabel199;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -6519,10 +6555,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPanel jPanel141;
     private javax.swing.JPanel jPanel142;
     private javax.swing.JPanel jPanel143;
-    private javax.swing.JPanel jPanel144;
     private javax.swing.JPanel jPanel145;
-    private javax.swing.JPanel jPanel146;
-    private javax.swing.JPanel jPanel147;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -6583,7 +6616,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPasswordField jTextField3;
     private javax.swing.JPasswordField jTextField5;
     private javax.swing.JPasswordField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel minimo1;
     private javax.swing.JLabel minimo2;
     private javax.swing.JLabel minimo3;
@@ -6595,7 +6627,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel paisLabel;
     private com.raven.swing.combobox.PanelRounds panelRounds18;
     private com.raven.swing.combobox.PanelRounds panelRounds19;
-    private com.raven.swing.Button publicar2;
     private com.raven.swing.Button publicar3;
     private javax.swing.JLabel recomendado1;
     private javax.swing.JLabel recomendado2;
