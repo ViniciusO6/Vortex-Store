@@ -53,9 +53,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     String URLs[] = new String[8];
     int offset = -20;
     int offset2 = -20;
-    String[] ID_CARD = new String[20] ;
-    String[] ID_CARD_LOJA = new String[20] ;
     
+    String[] ID_CARD_LOJA = new String[20] ;
+    String[] ID_CARD = new String[20] ;
     String ID_BUSCAR;
     String token = lerDados();
     String ID_usuario = "";
@@ -164,14 +164,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         
-        sVGImage5.setSvgImage("imagens/icones/carrinho.svg", 35, 35);
-        sVGImage5.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        sVGImage5.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // Colocar função do botão de pesquisar 
-            }
-        });
+     
         
         sVGImage6.setSvgImage("imagens/icones/profile.svg", 50, 50);
         sVGImage6.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -255,6 +248,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ocultoPanel2 = new javax.swing.JPanel();
         OcultoText2 = new javax.swing.JLabel();
         OcultoImgCard2 = new javax.swing.JLabel();
+        btnAvancar1 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        sVGImage7 = new imagens.SVGImage();
+        btnVoltar1 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        sVGImage9 = new imagens.SVGImage();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel12 = new javax.swing.JPanel();
@@ -342,12 +341,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ImgCard40 = new javax.swing.JLabel();
         TextCard40 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
-        btnVoltar1 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        sVGImage9 = new imagens.SVGImage();
-        btnAvancar1 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        sVGImage7 = new imagens.SVGImage();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
@@ -543,8 +536,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         sVGImage3 = new imagens.SVGImage();
         jLabel3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        sVGImage5 = new imagens.SVGImage();
-        jLabel5 = new javax.swing.JLabel();
         sVGImage6 = new imagens.SVGImage();
         simpleTitleBar1 = new javaswingdev.SimpleTitleBar();
 
@@ -1235,6 +1226,72 @@ public class TelaPrincipal extends javax.swing.JFrame {
         OcultoText2.setText("jLabel11");
 
         OcultoImgCard2.setText("jLabel9");
+
+        btnAvancar1.setBackground(new java.awt.Color(59, 32, 91));
+        btnAvancar1.setMaximumSize(new java.awt.Dimension(212, 39));
+        btnAvancar1.setMinimumSize(new java.awt.Dimension(212, 39));
+        btnAvancar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAvancar1MouseClicked(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Próxima Página");
+
+        javax.swing.GroupLayout btnAvancar1Layout = new javax.swing.GroupLayout(btnAvancar1);
+        btnAvancar1.setLayout(btnAvancar1Layout);
+        btnAvancar1Layout.setHorizontalGroup(
+            btnAvancar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnAvancar1Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sVGImage7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+        btnAvancar1Layout.setVerticalGroup(
+            btnAvancar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnAvancar1Layout.createSequentialGroup()
+                .addGap(0, 5, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(9, 9, 9))
+            .addComponent(sVGImage7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btnVoltar1.setBackground(new java.awt.Color(59, 32, 91));
+        btnVoltar1.setMaximumSize(new java.awt.Dimension(212, 39));
+        btnVoltar1.setMinimumSize(new java.awt.Dimension(212, 39));
+        btnVoltar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVoltar1MouseClicked(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Página Anterior");
+
+        javax.swing.GroupLayout btnVoltar1Layout = new javax.swing.GroupLayout(btnVoltar1);
+        btnVoltar1.setLayout(btnVoltar1Layout);
+        btnVoltar1Layout.setHorizontalGroup(
+            btnVoltar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnVoltar1Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(sVGImage9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18))
+        );
+        btnVoltar1Layout.setVerticalGroup(
+            btnVoltar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sVGImage9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+            .addGroup(btnVoltar1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -2262,76 +2319,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel14.setOpaque(false);
 
-        btnVoltar1.setBackground(new java.awt.Color(59, 32, 91));
-        btnVoltar1.setMaximumSize(new java.awt.Dimension(212, 39));
-        btnVoltar1.setMinimumSize(new java.awt.Dimension(212, 39));
-        btnVoltar1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnVoltar1MouseClicked(evt);
-            }
-        });
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Página Anterior");
-
-        javax.swing.GroupLayout btnVoltar1Layout = new javax.swing.GroupLayout(btnVoltar1);
-        btnVoltar1.setLayout(btnVoltar1Layout);
-        btnVoltar1Layout.setHorizontalGroup(
-            btnVoltar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnVoltar1Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(sVGImage9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18))
-        );
-        btnVoltar1Layout.setVerticalGroup(
-            btnVoltar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sVGImage9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-            .addGroup(btnVoltar1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel14.add(btnVoltar1);
-
-        btnAvancar1.setBackground(new java.awt.Color(59, 32, 91));
-        btnAvancar1.setMaximumSize(new java.awt.Dimension(212, 39));
-        btnAvancar1.setMinimumSize(new java.awt.Dimension(212, 39));
-        btnAvancar1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAvancar1MouseClicked(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Próxima Página");
-
-        javax.swing.GroupLayout btnAvancar1Layout = new javax.swing.GroupLayout(btnAvancar1);
-        btnAvancar1.setLayout(btnAvancar1Layout);
-        btnAvancar1Layout.setHorizontalGroup(
-            btnAvancar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnAvancar1Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sVGImage7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
-        btnAvancar1Layout.setVerticalGroup(
-            btnAvancar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnAvancar1Layout.createSequentialGroup()
-                .addGap(0, 5, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(9, 9, 9))
-            .addComponent(sVGImage7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel14.add(btnAvancar1);
-
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
@@ -2423,7 +2410,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(PanelCard36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel13);
@@ -4711,45 +4698,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        sVGImage5.setMaximumSize(new java.awt.Dimension(30, 33));
-        sVGImage5.setMinimumSize(new java.awt.Dimension(30, 33));
-        sVGImage5.setPreferredSize(new java.awt.Dimension(30, 33));
-        sVGImage5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sVGImage5MouseClicked(evt);
-            }
-        });
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Carrinho");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sVGImage5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 128, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(sVGImage5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         sVGImage6.setMaximumSize(new java.awt.Dimension(30, 33));
@@ -4794,7 +4751,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -4849,6 +4806,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         jTabbedPane1.setSelectedIndex(0);
+        CarregarJogosAleatorios(false, true);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void sVGImage3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage3MouseClicked
@@ -4857,16 +4815,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         jTabbedPane1.setSelectedIndex(1);
+        CarregarJogos(false, true);
         
     }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        jTabbedPane1.setSelectedIndex(4);
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void sVGImage5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sVGImage5MouseClicked
-        jTabbedPane1.setSelectedIndex(4);
-    }//GEN-LAST:event_sVGImage5MouseClicked
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
         jTabbedPane1.setSelectedIndex(2);
@@ -5773,7 +5724,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
             String pesquisa = "SELECT jogo.ID_jogo, jogo.titulo_do_jogo, imagens_jogo.URL_imagem " +
                   "FROM jogo " +
                   "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
-                  "WHERE imagens_jogo.tipo_imagem = 2 " +
+                  "WHERE imagens_jogo.tipo_imagem = 2 AND jogo.status = 'ativo' " +
                   "ORDER BY jogo.ID_jogo ASC LIMIT 21 OFFSET " + offset2 + ";";
                   conexao.executaSQL(pesquisa);
             
@@ -6514,7 +6465,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel92;
@@ -6642,7 +6592,6 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private imagens.SVGImage sVGImage3;
     private imagens.SVGImage sVGImage31;
     private imagens.SVGImage sVGImage4;
-    private imagens.SVGImage sVGImage5;
     private imagens.SVGImage sVGImage6;
     private imagens.SVGImage sVGImage7;
     private imagens.SVGImage sVGImage8;
