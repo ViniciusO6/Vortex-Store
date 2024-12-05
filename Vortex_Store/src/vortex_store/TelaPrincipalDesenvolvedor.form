@@ -10273,6 +10273,7 @@
                             </Property>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button2MouseClicked"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button2ActionPerformed"/>
                           </Events>
                         </Component>
@@ -10333,39 +10334,32 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel158" alignment="0" min="-2" pref="265" max="-2" attributes="0"/>
+                                      <Component id="jLabel160" alignment="0" min="-2" pref="265" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel158" min="-2" pref="265" max="-2" attributes="0"/>
-                                          <EmptySpace min="15" max="32767" attributes="0"/>
+                                          <Component id="jPanel116" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="panelRounds20" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="jLabel159" alignment="0" min="-2" pref="265" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel160" alignment="0" min="-2" pref="265" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jPanel116" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="panelRounds20" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jLabel159" alignment="0" min="-2" pref="265" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jPanel117" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel161" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
-                                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="jPanel120" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                              <Component id="paisLabel" max="32767" attributes="0"/>
-                                                          </Group>
-                                                          <Component id="jPanel118" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
+                                              <Component id="jPanel117" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel161" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jPanel120" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="paisLabel" max="32767" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="panelRounds21" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jPanel118" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="panelRounds21" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
