@@ -290,6 +290,7 @@ public class CadastroEmpresa extends javax.swing.JFrame {
             String insert_sql="insert into empresa (email, nome, senha, CNPJ, numero_conta_bancaria, foto_perfil, endereco_conta_bancaria) values ('" +email+ "','" +nomeEmpresa+"','" +senha+ "','" +cnpj+ "','" +null+ "','" +null+ "','" +null+ "')";
             con_empresa.statement.executeUpdate(insert_sql);
             JOptionPane.showMessageDialog(null, "Gravação Realizada com sucesso!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            Cadastrado();
             con_empresa.resultset.first();/////
             
         }catch(SQLException errosql){
@@ -319,6 +320,23 @@ public class CadastroEmpresa extends javax.swing.JFrame {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }).start();
+    }
+     
+      private void Cadastrado() {
+        // Gradualmente reduz a opacidade da janela
+        new Thread(() -> {
+            try {
+                for (float i = 1.0f; i > 0.0f; i -= 0.05f) {
+                    setOpacity(i);  // Reduz a opacidade da janela
+                    Thread.sleep(2); // Aguarda 50ms para criar o efeito de transição suave
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            TelaPrincipalDesenvolvedor tela = new TelaPrincipalDesenvolvedor();
+            tela.setVisible(true);
+            setVisible(false);
         }).start();
     }
     

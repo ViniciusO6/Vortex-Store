@@ -51,7 +51,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     int avancou = 0;
     boolean MaisJogos;
     
-     int idDesenvolvedor = 5;//Primeira Alteração
+     int idDesenvolvedor = 7;//Primeira Alteração
     
     ScrollBarCustom scrollBarCustom = new  ScrollBarCustom();
     
@@ -7202,7 +7202,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
     private void ImgCard8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard8MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard8MouseClicked
-
+//publicar
     private void ImgCard9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard9MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ImgCard9MouseClicked
@@ -8280,7 +8280,7 @@ public class TelaPrincipalDesenvolvedor extends javax.swing.JFrame {
                 conexao.statement.executeUpdate(insert_sql);
 
                 JOptionPane.showMessageDialog(null, "Gravação Do Jogo Realizada com sucesso!!", "Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-
+                jTabbedPane1.setSelectedIndex(0);//N sei aonde colocar
                 //Faz a recuperação do ultimo id
                 String queryUltimoID = "SELECT LAST_INSERT_ID() AS ultimo_id";
                 conexao.resultset = conexao.statement.executeQuery(queryUltimoID);
