@@ -42,9 +42,6 @@ import scrollbar.ScrollBarCustom;
 
 public class TelaPrincipal extends javax.swing.JFrame {
     Conexao conexao;
-    
-    int id = 4;
-    
     String URLs[] = new String[8];
     int offset = -20;
     int offset2 = -20;
@@ -5418,22 +5415,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     
     
     //Comentei
-    public void CarregarPerfil(){
-        try{
-        String pesquisa = "SELECT * " +
-        "FROM cliente " +
-        "WHERE ID_cliente ="+id;
-        conexao.executaSQL(pesquisa);
-        
-        String nomecliente;
-        
-        nomecliente =""+conexao.resultset.getString("nome");
-        Nome.setText(nomecliente);
-            
-        }catch(SQLException errosql){
-            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
+    
     
     public void CarregarJogos(boolean voltou, boolean recarregar){  
             JPanel[] JPanel = {
