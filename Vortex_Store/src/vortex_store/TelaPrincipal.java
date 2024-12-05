@@ -54,6 +54,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     int avancou2 = 0;
     boolean MaisJogos2;
+   
+    //imagens do jogo
+    String url_img1, url_img2, url_img3, url_img4, url_img5;
     
     ScrollBarCustom scrollBarCustom = new  ScrollBarCustom();
     
@@ -460,22 +463,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140 = new javax.swing.JPanel();
         jLabel115 = new javax.swing.JLabel();
         TituloJogo = new javax.swing.JLabel();
+        img5 = new javaswingdev.ImageReajust();
+        img4 = new javaswingdev.ImageReajust();
+        img3 = new javaswingdev.ImageReajust();
+        img2 = new javaswingdev.ImageReajust();
+        img1 = new javaswingdev.ImageReajust();
         ImgPrincipal = new javax.swing.JLabel();
         jPanel141 = new javax.swing.JPanel();
-        jLabel178 = new javax.swing.JLabel();
+        capaJogo = new javax.swing.JLabel();
         Sinopse = new javax.swing.JLabel();
         jLabel180 = new javax.swing.JLabel();
-        jLabel181 = new javax.swing.JLabel();
-        jLabel182 = new javax.swing.JLabel();
+        nomeDesenvolvedor = new javax.swing.JLabel();
+        data_public = new javax.swing.JLabel();
         jLabel183 = new javax.swing.JLabel();
-        jLabel184 = new javax.swing.JLabel();
+        categoriasJogo = new javax.swing.JLabel();
         jLabel185 = new javax.swing.JLabel();
         jLabel186 = new javax.swing.JLabel();
-        img1 = new javax.swing.JLabel();
-        img5 = new javax.swing.JLabel();
-        img3 = new javax.swing.JLabel();
-        img4 = new javax.swing.JLabel();
-        img2 = new javax.swing.JLabel();
         jPanel142 = new javax.swing.JPanel();
         jSeparator4 = new javax.swing.JSeparator();
         descricao = new javax.swing.JLabel();
@@ -531,9 +534,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel149 = new javax.swing.JLabel();
         jLabel150 = new javax.swing.JLabel();
         jLabel151 = new javax.swing.JLabel();
-        jLabel152 = new javax.swing.JLabel();
+        idiomasJogo = new javax.swing.JLabel();
         sVGImage31 = new imagens.SVGImage();
-        imageReajust1 = new javaswingdev.ImageReajust();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -4144,6 +4146,51 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(TituloJogo);
         TituloJogo.setBounds(640, 190, 254, 27);
 
+        img5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PosterDefault.png"))); // NOI18N
+        img5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                img5MouseClicked(evt);
+            }
+        });
+        jPanel140.add(img5);
+        img5.setBounds(498, 374, 112, 125);
+
+        img4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PosterDefault.png"))); // NOI18N
+        img4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                img4MouseClicked(evt);
+            }
+        });
+        jPanel140.add(img4);
+        img4.setBounds(376, 374, 112, 125);
+
+        img3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PosterDefault.png"))); // NOI18N
+        img3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                img3MouseClicked(evt);
+            }
+        });
+        jPanel140.add(img3);
+        img3.setBounds(254, 374, 112, 125);
+
+        img2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PosterDefault.png"))); // NOI18N
+        img2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                img2MouseClicked(evt);
+            }
+        });
+        jPanel140.add(img2);
+        img2.setBounds(132, 374, 112, 125);
+
+        img1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PosterDefault.png"))); // NOI18N
+        img1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                img1MouseClicked(evt);
+            }
+        });
+        jPanel140.add(img1);
+        img1.setBounds(10, 374, 112, 125);
+
         ImgPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/PosterDefault.png"))); // NOI18N
         jPanel140.add(ImgPrincipal);
         ImgPrincipal.setBounds(10, 10, 600, 370);
@@ -4164,9 +4211,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jPanel141);
         jPanel141.setBounds(620, 0, 10, 1760);
 
-        jLabel178.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        jPanel140.add(jLabel178);
-        jLabel178.setBounds(640, 10, 300, 170);
+        capaJogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
+        jPanel140.add(capaJogo);
+        capaJogo.setBounds(640, 10, 300, 170);
 
         Sinopse.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         Sinopse.setForeground(new java.awt.Color(255, 255, 255));
@@ -4183,15 +4230,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel180);
         jLabel180.setBounds(640, 370, 90, 16);
 
-        jLabel181.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel181.setText("Nome desenvolvedor");
-        jPanel140.add(jLabel181);
-        jLabel181.setBounds(730, 370, 200, 16);
+        nomeDesenvolvedor.setForeground(new java.awt.Color(255, 255, 255));
+        nomeDesenvolvedor.setText("Nome desenvolvedor");
+        jPanel140.add(nomeDesenvolvedor);
+        nomeDesenvolvedor.setBounds(730, 370, 200, 16);
 
-        jLabel182.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel182.setText("xx/xx/xxxx");
-        jPanel140.add(jLabel182);
-        jLabel182.setBounds(760, 390, 110, 16);
+        data_public.setForeground(new java.awt.Color(255, 255, 255));
+        data_public.setText("xx/xx/xxxx");
+        jPanel140.add(data_public);
+        data_public.setBounds(760, 390, 110, 16);
 
         jLabel183.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel183.setForeground(new java.awt.Color(255, 255, 255));
@@ -4199,10 +4246,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel183);
         jLabel183.setBounds(640, 390, 120, 16);
 
-        jLabel184.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel184.setText("categoria, categoria, categoria");
-        jPanel140.add(jLabel184);
-        jLabel184.setBounds(700, 410, 190, 16);
+        categoriasJogo.setForeground(new java.awt.Color(255, 255, 255));
+        categoriasJogo.setText("categoria, categoria, categoria");
+        categoriasJogo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(categoriasJogo);
+        categoriasJogo.setBounds(700, 410, 240, 40);
 
         jLabel185.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel185.setForeground(new java.awt.Color(255, 255, 255));
@@ -4215,31 +4263,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel186.setText("GRÁTIS");
         jPanel140.add(jLabel186);
         jLabel186.setBounds(870, 450, 70, 20);
-
-        img1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        img1.setText("jLabel102");
-        jPanel140.add(img1);
-        img1.setBounds(10, 400, 112, 70);
-
-        img5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        img5.setText("jLabel102");
-        jPanel140.add(img5);
-        img5.setBounds(498, 400, 112, 70);
-
-        img3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        img3.setText("jLabel102");
-        jPanel140.add(img3);
-        img3.setBounds(254, 400, 112, 70);
-
-        img4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        img4.setText("jLabel102");
-        jPanel140.add(img4);
-        img4.setBounds(376, 400, 112, 70);
-
-        img2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/CapaDefault.png"))); // NOI18N
-        img2.setText("jLabel102");
-        jPanel140.add(img2);
-        img2.setBounds(132, 400, 112, 70);
 
         jPanel142.setBackground(new java.awt.Color(18, 22, 32));
 
@@ -4667,16 +4690,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel140.add(jLabel151);
         jLabel151.setBounds(640, 556, 60, 20);
 
-        jLabel152.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jLabel152.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel152.setText("<html>Português, Inglês, Espanhol</html>");
-        jLabel152.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel140.add(jLabel152);
-        jLabel152.setBounds(640, 580, 250, 70);
+        idiomasJogo.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        idiomasJogo.setForeground(new java.awt.Color(255, 255, 255));
+        idiomasJogo.setText("<html>Português, Inglês, Espanhol</html>");
+        idiomasJogo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel140.add(idiomasJogo);
+        idiomasJogo.setBounds(640, 580, 250, 70);
         jPanel140.add(sVGImage31);
         sVGImage31.setBounds(640, 440, 124, 20);
-        jPanel140.add(imageReajust1);
-        imageReajust1.setBounds(0, 0, 50, 40);
 
         javax.swing.GroupLayout jPanel139Layout = new javax.swing.GroupLayout(jPanel139);
         jPanel139.setLayout(jPanel139Layout);
@@ -5412,6 +5433,79 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private void editarNome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editarNome1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_editarNome1MouseClicked
+
+    private void img1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_img1MouseClicked
+        // onCLICK DA IMAGEM DO JOGO 1
+        try{                            
+        String URL_IMG = url_img1;             
+        URL imageUrl = new URL(URL_IMG);
+        Image image = ImageIO.read(imageUrl);
+        ImgPrincipal.setIcon(new ImageIcon(image));
+   
+        }catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_img1MouseClicked
+
+    private void img2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_img2MouseClicked
+        // onCLICK DA IMAGEM DO JOGO 2
+        try{                            
+        String URL_IMG = url_img2;             
+        URL imageUrl = new URL(URL_IMG);
+        Image image = ImageIO.read(imageUrl);
+        ImgPrincipal.setIcon(new ImageIcon(image));
+   
+        }catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_img2MouseClicked
+
+    private void img3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_img3MouseClicked
+        try{                            
+        String URL_IMG = url_img3;             
+        URL imageUrl = new URL(URL_IMG);
+        Image image = ImageIO.read(imageUrl);
+        ImgPrincipal.setIcon(new ImageIcon(image));
+   
+        }catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_img3MouseClicked
+
+    private void img4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_img4MouseClicked
+        try{                            
+        String URL_IMG = url_img4;             
+        URL imageUrl = new URL(URL_IMG);
+        Image image = ImageIO.read(imageUrl);
+        ImgPrincipal.setIcon(new ImageIcon(image));
+   
+        }catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_img4MouseClicked
+
+    private void img5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_img5MouseClicked
+        try{                            
+        String URL_IMG = url_img5;             
+        URL imageUrl = new URL(URL_IMG);
+        Image image = ImageIO.read(imageUrl);
+        ImgPrincipal.setIcon(new ImageIcon(image));
+   
+        }catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_img5MouseClicked
     
     
     //Comentei
@@ -5677,13 +5771,14 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     }
     
     public void BuscarJogo(){  
+        
 
-            
+            String idDesenvolvedor = "";
            try{ 
             String pesquisa = "SELECT * " +
                   "FROM jogo " +
                   "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
-                  "WHERE imagens_jogo.tipo_imagem = 2 AND jogo.ID_jogo = 31";
+                  "WHERE jogo.ID_jogo = 44";
             
                   
                   conexao.executaSQL(pesquisa);
@@ -5693,23 +5788,27 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
             
  
             if(conexao.resultset != null && conexao.resultset.first()){
-                System.out.println("");
                     
                 System.out.println("Rodou a pesquisa do jogo");
+                idDesenvolvedor = ""+conexao.resultset.getString("ID_desenvolvedor");
 
                 titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
                 String sinopse = ""+conexao.resultset.getString("sinopse");
+                String data_publicacao = ""+conexao.resultset.getString("data_publicacao");
+                
                 String descricao_jogo = ""+conexao.resultset.getString("descricao_jogo");
                 URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
                 URL imageUrl = new URL(URL_IMG);
                 Image image = ImageIO.read(imageUrl);
+                
                 System.out.println("titulo: " + titulo_jogo);
                 //JPanel[i].setVisible(true);
                 Sinopse.setText("<html> " + sinopse + " </html>");
                 descricao.setText("<html> " + descricao_jogo + " </html>");
                 TituloJogo.setText("<html>" + titulo_jogo + "</html>");      
-                TituloPrincipal.setText("<html>" + titulo_jogo + "</html>"); 
-                //ImgCard[i].setIcon(new ImageIcon(image));
+                TituloPrincipal.setText("<html>" + titulo_jogo + "</html>");
+                data_public.setText("<html> " + data_publicacao + " </html>"); 
+                ImgPrincipal.setIcon(new ImageIcon(image));
                     
                 }else{
                 JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
@@ -5721,6 +5820,131 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
         } catch (IOException ex) {
             Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
+           
+     //Faz a consulta dos dados da desenvolvedora      
+           try{ 
+            String pesquisa = "SELECT * FROM desenvolvedor WHERE ID_desenvolvedor = '" + idDesenvolvedor + "'";
+               
+            conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                    
+                System.out.println("Rodou a pesquisa da desenvolvedora");
+                String nome = ""+conexao.resultset.getString("nome");
+                
+                nomeDesenvolvedor.setText("<html> " + nome + " </html>");
+
+
+                }else{
+                JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }
+           
+           //carrega todas as imagens do jogo
+           
+           try{ 
+            String URL_IMG;
+            String pesquisa = "SELECT * " +
+                  "FROM imagens_jogo " +
+                  "WHERE  ID_jogo = 44";
+            
+                  
+                  conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                      int i=0;         
+                do {      
+                    i++;
+                    URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
+                    URL imageUrl = new URL(URL_IMG);
+                    Image image = ImageIO.read(imageUrl);
+   
+                          
+                    if(i == 1){
+                      img1.setIcon(new ImageIcon(image));
+                      url_img1 = ""+conexao.resultset.getString("URL_imagem");
+                    }else if(i == 2){
+                      img2.setIcon(new ImageIcon(image));
+                      url_img2 = ""+conexao.resultset.getString("URL_imagem");
+                    }else if(i== 3){
+                      img3.setIcon(new ImageIcon(image)); 
+                      url_img3 = ""+conexao.resultset.getString("URL_imagem");
+                    }else if(i == 4){   
+                      img4.setIcon(new ImageIcon(image));
+                      url_img4 = ""+conexao.resultset.getString("URL_imagem");
+                    }else if(i ==5){
+                      img5.setIcon(new ImageIcon(image));  
+                      url_img5 = ""+conexao.resultset.getString("URL_imagem");
+                    }else if(i ==7){
+                      capaJogo.setIcon(new ImageIcon(image));  
+                    }
+               
+                } while (conexao.resultset.next());
+
+
+                }else{
+                JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+           //Carregar categorias
+            
+           String categorias = "";
+           String pesquisa = "SELECT * "
+                   + "FROM categoria "
+                   + "INNER JOIN jogo_categoria ON categoria.ID_categoria = jogo_categoria.ID_categoria "
+                   + "WHERE jogo_categoria.ID_jogo = 44;";
+       
+                  conexao.executaSQL(pesquisa);         
+        try {
+            if(conexao.resultset != null && conexao.resultset.first()){
+                
+                do {
+                   System.out.println(""+conexao.resultset.getString("ID_categoria"));               
+                   categorias = categorias  +conexao.resultset.getString("nome_categoria")+ ", "; 
+
+                } while (conexao.resultset.next());
+                System.out.println(""+categorias);
+                categoriasJogo.setText("<html>" + categorias + "</html>");
+                
+            }
+        } catch (SQLException ex) { 
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        //Carregar idiomas
+        
+        String idiomas = "";
+        pesquisa = "SELECT * "
+                   + "FROM idioma "
+                   + "INNER JOIN jogo_idioma ON idioma.ID_idioma = jogo_idioma.ID_idioma "
+                   + "WHERE jogo_idioma.ID_jogo = 44;";
+ 
+       
+                  conexao.executaSQL(pesquisa);         
+        try {
+            if(conexao.resultset != null && conexao.resultset.first()){
+                System.out.println(""+conexao.resultset.getString("ID_idioma"));
+                do {
+                   System.out.println(""+conexao.resultset.getString("ID_idioma"));               
+                   idiomas = idiomas  +conexao.resultset.getString("nome_idioma")+ ", "; 
+
+                } while (conexao.resultset.next());
+                System.out.println(""+idiomas);
+                idiomasJogo.setText("<html>" + idiomas + "</html>");
+                
+            }
+        } catch (SQLException ex) { 
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
     
@@ -5762,9 +5986,9 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
                for (int i = 0; i < 5; i++) {
                TipoImagem = 1; // Imagens do jogo
                String URL_imagem = URLs[0]; 
-               Upload UpImagens = new Upload("http://tentreosbrothers.shop/Vinicius/Vortex/UploadImagens.php", URLs[i]);
-               String NomeImagem = "http://tentreosbrothers.shop/Vinicius/Vortex/FotosJogos/"+UpImagens.nomeFile;
-               System.out.println("cassio gaymer "+NomeImagem);
+               Upload UpImagens = new Upload("http://tcloud.site/Vinicius/Vortex/UploadImagens.php", URLs[i]);
+               String NomeImagem = "http://tcloud.site/Vinicius/Vortex/FotosJogos/"+UpImagens.nomeFile;
+               System.out.println("Imagem Upada: "+NomeImagem);
                System.out.println("URL_imagem");
                       
                 try{   
@@ -6025,19 +6249,22 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPanel btnVoltar;
     private javax.swing.JPanel btnVoltar1;
     private com.raven.swing.Button button1;
+    private javax.swing.JLabel capaJogo;
+    private javax.swing.JLabel categoriasJogo;
+    private javax.swing.JLabel data_public;
     private javax.swing.JLabel descricao;
     private imagens.SVGImage editarEmail;
     private imagens.SVGImage editarFoto;
     private imagens.SVGImage editarNome;
     private imagens.SVGImage editarNome1;
     private com.raven.swing.Button excluir;
+    private javax.swing.JLabel idiomasJogo;
     private com.raven.Perfil.ImageAvatar imageAvatar1;
-    private javaswingdev.ImageReajust imageReajust1;
-    private javax.swing.JLabel img1;
-    private javax.swing.JLabel img2;
-    private javax.swing.JLabel img3;
-    private javax.swing.JLabel img4;
-    private javax.swing.JLabel img5;
+    private javaswingdev.ImageReajust img1;
+    private javaswingdev.ImageReajust img2;
+    private javaswingdev.ImageReajust img3;
+    private javaswingdev.ImageReajust img4;
+    private javaswingdev.ImageReajust img5;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JDialog jDialog3;
     private javax.swing.JDialog jDialog4;
@@ -6100,13 +6327,8 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel150;
     private javax.swing.JLabel jLabel151;
-    private javax.swing.JLabel jLabel152;
-    private javax.swing.JLabel jLabel178;
     private javax.swing.JLabel jLabel180;
-    private javax.swing.JLabel jLabel181;
-    private javax.swing.JLabel jLabel182;
     private javax.swing.JLabel jLabel183;
-    private javax.swing.JLabel jLabel184;
     private javax.swing.JLabel jLabel185;
     private javax.swing.JLabel jLabel186;
     private javax.swing.JLabel jLabel193;
@@ -6225,6 +6447,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     private javax.swing.JPasswordField jTextField5;
     private javax.swing.JPasswordField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel nomeDesenvolvedor;
     private javax.swing.JPanel ocultoPanel;
     private javax.swing.JPanel ocultoPanel2;
     private javax.swing.JLabel paisLabel;
