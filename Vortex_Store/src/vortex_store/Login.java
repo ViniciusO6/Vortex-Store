@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vortex_store;
-
+import conexao.TokenGenerator;
 import Buckup.TelaPrincipal4;
 import javax.swing.ToolTipManager;
 import conexao.Conexao;
@@ -17,6 +17,12 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.event.DocumentEvent;
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Timestamp;
 import javax.swing.event.DocumentListener;
 import javax.swing.*;
 /**
@@ -47,6 +53,28 @@ public class Login extends javax.swing.JFrame {
     jPanel10.setBorder(defaultBorder);
     textoErro.setText(""); // Limpa a mensagem de erro, se necessário
 }
+    
+    public void salvarDados(String usuarioID) {
+        String path = "src/conexao/Token.txt"; // Caminho do arquivo
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+            writer.write(usuarioID); // Escreve o ID no arquivo
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public String lerDados() {
+        String linha = null; // Variável para armazenar a primeira linha
+        String path = "src/conexao/Token.txt"; // Caminho do arquivo
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            linha = reader.readLine(); // Lê apenas a primeira linha
+        } catch (IOException e) {
+            e.printStackTrace(); // Imprime a pilha de exceções se ocorrer um erro
+        }
+
+        return linha; // Retorna a primeira linha lida
+    }
     
     
 
@@ -481,6 +509,31 @@ public class Login extends javax.swing.JFrame {
             String pesquisa = "select * from cliente where email like '" + Email + "' && senha = '" + Senha + "'";
             con_cliente.executaSQL(pesquisa);
             if(con_cliente.resultset.first()){
+                                 
+                String token = TokenGenerator.generateToken();
+                salvarDados(token);
+                String id = ""+con_cliente.resultset.getString("ID_cliente");
+                
+                System.out.println(id);
+                System.out.println(token);
+                
+                try {
+                pesquisa = "UPDATE cliente SET token = '" + token + "' WHERE ID_cliente = '" + id + "'";
+
+                // Use executeUpdate() para comandos de modificação
+                int linhasAfetadas = con_cliente.statement.executeUpdate(pesquisa); 
+
+                if (linhasAfetadas > 0) {
+                    System.out.println("Token atualizado com sucesso!");
+                } else {
+                    System.out.println("Nenhuma linha foi alterada. Verifique o ID_cliente.");
+                }
+            } catch (SQLException errosql) {
+                JOptionPane.showMessageDialog(null, "Erro ao executar o comando SQL: \n" + errosql.getMessage(),
+                                              "Mensagem do Programa", JOptionPane.ERROR_MESSAGE);
+            }
+               
+                
                 TelaPrincipal mostra = new TelaPrincipal();
                 mostra.setVisible(true);
                 dispose();

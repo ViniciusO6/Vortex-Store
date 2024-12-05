@@ -16,6 +16,8 @@ import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,6 +37,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import jnafilechooser.api.JnaFileChooser;
 import scrollbar.ScrollBarCustom;
+import conexao.TokenGenerator;
 /**
  *
  * @author vinic 
@@ -46,8 +49,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     int offset = -20;
     int offset2 = -20;
     String[] ID_CARD = new String[20] ;
+    String[] ID_CARD_LOJA = new String[20] ;
     
     String ID_BUSCAR;
+    String ID_usuario = lerDados();
+    
     
     int linhas = 0;
     int avancou = 0;
@@ -636,7 +642,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog2.getContentPane().add(jPanel117);
-        jPanel117.setBounds(0, 0, 480, 300);
+        jPanel117.setBounds(0, 0, 480, 0);
 
         jDialog3.setMinimumSize(new java.awt.Dimension(600, 400));
 
@@ -881,7 +887,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog4.getContentPane().add(jPanel119);
-        jPanel119.setBounds(0, 0, 480, 300);
+        jPanel119.setBounds(0, 0, 480, 0);
 
         jDialog5.setMinimumSize(new java.awt.Dimension(480, 300));
         jDialog5.setUndecorated(true);
@@ -969,7 +975,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog5.getContentPane().add(jPanel121);
-        jPanel121.setBounds(0, 0, 480, 300);
+        jPanel121.setBounds(0, 0, 480, 0);
 
         jDialog6.setMinimumSize(new java.awt.Dimension(600, 400));
 
@@ -1211,7 +1217,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jDialog7.getContentPane().add(jPanel125);
-        jPanel125.setBounds(0, 0, 480, 300);
+        jPanel125.setBounds(0, 0, 480, 0);
 
         javax.swing.GroupLayout ocultoPanel2Layout = new javax.swing.GroupLayout(ocultoPanel2);
         ocultoPanel2.setLayout(ocultoPanel2Layout);
@@ -4432,6 +4438,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         publicar3.setForeground(new java.awt.Color(255, 255, 255));
         publicar3.setText("Baixar");
         publicar3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        publicar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                publicar3MouseClicked(evt);
+            }
+        });
         publicar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 publicar3ActionPerformed(evt);
@@ -5271,83 +5282,163 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltar1MouseClicked
 
     private void ImgCard40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard40MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 19
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[19];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard40MouseClicked
 
     private void ImgCard39MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard39MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 18
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[18];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard39MouseClicked
 
     private void ImgCard38MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard38MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 17
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[17];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard38MouseClicked
 
     private void ImgCard37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard37MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 16
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[16];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard37MouseClicked
 
     private void ImgCard36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard36MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 15
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[15];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard36MouseClicked
 
     private void ImgCard32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard32MouseClicked
-        // TODO add your handling code here:
+       // Evento de clicar no card do jogo indice 11
+       jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[11];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard32MouseClicked
 
     private void ImgCard34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard34MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 13
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[13];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard34MouseClicked
 
     private void ImgCard31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard31MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 10
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[10];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard31MouseClicked
 
     private void ImgCard33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard33MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 12
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[12];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard33MouseClicked
 
     private void ImgCard35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard35MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 14
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[14];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard35MouseClicked
 
     private void ImgCard30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard30MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 9
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[9];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard30MouseClicked
 
     private void ImgCard29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard29MouseClicked
-        // TODO add your handling code here:
+       // Evento de clicar no card do jogo indice 8
+       jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[8];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard29MouseClicked
 
     private void ImgCard28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard28MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 7
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[7];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard28MouseClicked
 
     private void ImgCard27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard27MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 6
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[6];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard27MouseClicked
 
     private void ImgCard26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard26MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 5
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[5];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard26MouseClicked
 
     private void ImgCard24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard24MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 3
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[3];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard24MouseClicked
 
     private void ImgCard23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard23MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 2
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[2];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard23MouseClicked
 
     private void ImgCard25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard25MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 4
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[4];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard25MouseClicked
 
     private void ImgCard22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard22MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 1
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[1];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard22MouseClicked
 
     private void ImgCard21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImgCard21MouseClicked
-        // TODO add your handling code here:
+        // Evento de clicar no card do jogo indice 0
+        jTabbedPane1.setSelectedIndex(3);
+        ID_BUSCAR = ID_CARD_LOJA[0];
+        BuscarJogo();
+        System.out.println(ID_BUSCAR);
     }//GEN-LAST:event_ImgCard21MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
@@ -5466,12 +5557,35 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
             Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_img5MouseClicked
+
+    private void publicar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_publicar3MouseClicked
+        publicar3.setText("Instalando");
+    }//GEN-LAST:event_publicar3MouseClicked
+    
+    
+    public String lerDados() {
+        String linha = null; // Variável para armazenar a primeira linha
+        String path = "src/conexao/Token.txt"; // Caminho do arquivo
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+            linha = reader.readLine(); // Lê apenas a primeira linha
+        } catch (IOException e) {
+            e.printStackTrace(); // Imprime a pilha de exceções se ocorrer um erro
+        }
+
+        return linha; // Retorna a primeira linha lida
+    }
+
+   
+    
+    
     
     
     //Comentei
     
     
     public void CarregarJogos(boolean voltou, boolean recarregar){  
+        System.out.println("Id usuario: "+ID_usuario);
             JPanel[] JPanel = {
             PanelCard1, PanelCard2, PanelCard3, PanelCard4, PanelCard5,
             PanelCard6, PanelCard7, PanelCard8, PanelCard9, PanelCard10,
@@ -5517,11 +5631,20 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
               System.out.println("Voltou");
             }
             
-            String pesquisa = "SELECT jogo.ID_jogo, jogo.titulo_do_jogo, imagens_jogo.URL_imagem " +
-                  "FROM jogo " +
-                  "JOIN imagens_jogo ON jogo.ID_jogo = imagens_jogo.ID_jogo " +
-                  "WHERE imagens_jogo.tipo_imagem = 2 " +
-                  "ORDER BY jogo.ID_jogo ASC LIMIT 21 OFFSET " + offset + ";";
+            String pesquisa = "SELECT "
+           + "jogo.ID_jogo, "
+           + "jogo.titulo_do_jogo, "
+           + "(SELECT URL_imagem "
+           + " FROM imagens_jogo "
+           + " WHERE imagens_jogo.ID_jogo = jogo.ID_jogo "
+           + "   AND imagens_jogo.tipo_imagem = 2 "
+           + " LIMIT 1) AS URL_imagem "
+           + "FROM jogo "
+           + "INNER JOIN jogos_adquiridos ON jogos_adquiridos.ID_jogo = jogo.ID_jogo "
+           + "INNER JOIN colecao_jogos ON jogos_adquiridos.ID_colecao = colecao_jogos.ID_colecao "
+           + "WHERE colecao_jogos.ID_cliente = 1 "
+           + "ORDER BY jogo.ID_jogo ASC "
+           + "LIMIT 21 OFFSET " + offset + ";";
                   conexao.executaSQL(pesquisa);
             
             String titulo_jogo;
@@ -5529,6 +5652,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
             
  
             if(conexao.resultset != null && conexao.resultset.first()){
+                System.out.println();
                 do {
                     
                     i++;
@@ -5556,7 +5680,8 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
                     }
                     
                     System.out.println("Rodou"+ i +" Vez");
-
+                    ID_CARD[i] = ""+conexao.resultset.getString("ID_jogo");
+                    System.out.println("ID CARD = "+ID_CARD[i]);
                     titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
                     URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
                     URL imageUrl = new URL(URL_IMG);
@@ -5686,7 +5811,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
                     }
                     
                     System.out.println("Rodou"+ i +" Vez");
-                    ID_CARD[i] = ""+conexao.resultset.getString("ID_jogo");
+                    ID_CARD_LOJA[i] = ""+conexao.resultset.getString("ID_jogo");
                     titulo_jogo = ""+conexao.resultset.getString("titulo_do_jogo");
                     URL_IMG = ""+conexao.resultset.getString("URL_imagem");               
                     URL imageUrl = new URL(URL_IMG);
