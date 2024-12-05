@@ -52,8 +52,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     String[] ID_CARD_LOJA = new String[20] ;
     
     String ID_BUSCAR;
-    String ID_usuario = lerDados();
-    
+    String token = lerDados();
+    String ID_usuario = "";
     
     int linhas = 0;
     int avancou = 0;
@@ -5584,7 +5584,25 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
     //Comentei
     
     
-    public void CarregarJogos(boolean voltou, boolean recarregar){  
+    public void CarregarJogos(boolean voltou, boolean recarregar){
+        try{ 
+            String pesquisa = "SELECT ID_cliente FROM cliente WHERE token = '" + token + "'";
+               
+            conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                String id = ""+conexao.resultset.getString("ID_cliente");    
+                System.out.println("Pesquisou ID: "+id);
+                ID_usuario = id;
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        
+        
         System.out.println("Id usuario: "+ID_usuario);
             JPanel[] JPanel = {
             PanelCard1, PanelCard2, PanelCard3, PanelCard4, PanelCard5,
@@ -5630,7 +5648,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
               offset -= 20;
               System.out.println("Voltou");
             }
-            
+            System.out.println("ID FINAL:" +ID_usuario);
             String pesquisa = "SELECT "
            + "jogo.ID_jogo, "
            + "jogo.titulo_do_jogo, "
@@ -5642,7 +5660,7 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
            + "FROM jogo "
            + "INNER JOIN jogos_adquiridos ON jogos_adquiridos.ID_jogo = jogo.ID_jogo "
            + "INNER JOIN colecao_jogos ON jogos_adquiridos.ID_colecao = colecao_jogos.ID_colecao "
-           + "WHERE colecao_jogos.ID_cliente = 1 "
+           + "WHERE colecao_jogos.ID_cliente = "+ID_usuario + " "
            + "ORDER BY jogo.ID_jogo ASC "
            + "LIMIT 21 OFFSET " + offset + ";";
                   conexao.executaSQL(pesquisa);
@@ -6104,6 +6122,23 @@ jTabbedPane1.setSelectedIndex(2);        // TODO add your handling code here:
    }
        
    }
+    
+    public void BuscarIdUsuario(String token){
+        try{ 
+            String pesquisa = "SELECT ID_cliente FROM cliente WHERE ID_cliente = '" + token + "'";
+               
+            conexao.executaSQL(pesquisa);         
+            if(conexao.resultset != null && conexao.resultset.first()){
+                String id = ""+conexao.resultset.getString("ID_cliente");    
+                System.out.println("Pesquisou ID: "+id);
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "\n Não existe dados com este paramêtro!!","Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }catch(SQLException errosql){
+            JOptionPane.showMessageDialog(null, "\n Os dados digitados não foram localizados!! :\n "+errosql,"Mensagem do Programa", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
     
     public void CadastrarImagens(int ID_jogo, String[] URLs){
         int TipoImagem = 0;
